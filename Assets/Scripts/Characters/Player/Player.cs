@@ -37,6 +37,15 @@ public partial class Player : MonoBehaviour
         moveInput.x = Input.GetAxis("Horizontal");
         moveInput.z = Input.GetAxis("Vertical");
 
+        camForward = cameraTransform.forward;
+        camRight = cameraTransform.right;
+
+        camForward.y = 0;
+        camRight.y = 0;
+
+        camForward.Normalize();
+        camRight.Normalize();
+
         if (moveInput.magnitude > 0)
         {
             Vector3 desiredMove = camForward * moveInput.z + camRight * moveInput.x;
