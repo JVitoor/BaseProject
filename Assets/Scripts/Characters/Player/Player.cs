@@ -4,9 +4,22 @@ public partial class Player : MonoBehaviour
 {
     #region Unity Methods
 
+    public Transform cameraTransform;
+    private Vector3 camForward;
+    private Vector3 camRight;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        camForward = cameraTransform.forward;
+        camRight = cameraTransform.right;
+
+        camForward.y = 0;
+        camRight.y = 0;
+
+        camForward.Normalize();
+        camRight.Normalize();
     }
 
     private void Update()
@@ -26,14 +39,20 @@ public partial class Player : MonoBehaviour
 
         if (moveInput.magnitude > 0)
         {
-            rot = Quaternion.LookRotation(moveInput);
+            Vector3 desiredMove = camForward * moveInput.z + camRight * moveInput.x;
+
+            rot = Quaternion.LookRotation(desiredMove);
+
             transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * rotateSpeed);
         }
     }
 
     private void HandleMove()
     {
-        move = moveInput.normalized * maxSpeed;
+        Vector3 desiredMove = camForward * moveInput.z + camRight * moveInput.x;
+
+        move = desiredMove.normalized * maxSpeed;
+
         controller.SimpleMove(move);
     }
 
