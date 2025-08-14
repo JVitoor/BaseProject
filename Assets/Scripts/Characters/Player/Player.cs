@@ -4,22 +4,13 @@ public partial class Player : MonoBehaviour
 {
     #region Unity Methods
 
-    public Transform cameraTransform;
-    private Vector3 camForward;
-    private Vector3 camRight;
+    private CameraController cameraController;
+    public GameObject mainCamera;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-
-        camForward = cameraTransform.forward;
-        camRight = cameraTransform.right;
-
-        camForward.y = 0;
-        camRight.y = 0;
-
-        camForward.Normalize();
-        camRight.Normalize();
+        cameraController = mainCamera.GetComponent<CameraController>();
     }
 
     private void Update()
@@ -34,34 +25,36 @@ public partial class Player : MonoBehaviour
 
     private void HandleInputs()
     {
+        // Captura o input do jogador para os eixos horizontal e vertical
         moveInput.x = Input.GetAxis("Horizontal");
         moveInput.z = Input.GetAxis("Vertical");
 
-        camForward = cameraTransform.forward;
-        camRight = cameraTransform.right;
-
-        camForward.y = 0;
-        camRight.y = 0;
-
-        camForward.Normalize();
-        camRight.Normalize();
-
+        // Se houver movimento, calcula a direção desejada baseada na orientação da câmera
         if (moveInput.magnitude > 0)
         {
-            Vector3 desiredMove = camForward * moveInput.z + camRight * moveInput.x;
+            // Calcula o vetor de movimento relativo à câmera
+            Vector3 desiredMove = (cameraController.camForward * moveInput.z) + (cameraController.camRight * moveInput.x);
 
+            // Calcula a rotação desejada para o player olhar na direção do movimento
             rot = Quaternion.LookRotation(desiredMove);
 
+            // Suaviza a rotação do player para a direção desejada
             transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * rotateSpeed);
         }
+
+        // Atualiza os vetores de direção da câmera
+        cameraController.HandleCamera();
     }
 
     private void HandleMove()
     {
-        Vector3 desiredMove = camForward * moveInput.z + camRight * moveInput.x;
+        // Calcula o vetor de movimento relativo à câmera
+        Vector3 desiredMove = (cameraController.camForward * moveInput.z) + (cameraController.camRight * moveInput.x);
 
-        move = desiredMove.normalized * maxSpeed;
+        // Normaliza o vetor de movimento e multiplica pela velocidade máxima
+        move = desiredMove.normalized * moveSpeed;
 
+        // Move o player usando o CharacterController
         controller.SimpleMove(move);
     }
 
