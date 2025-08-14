@@ -41,7 +41,6 @@ public partial class Player
 
     protected Vector3 moveInput, move;
     protected Quaternion rot;
-    public float maxSpeed = 10.0f;
     public float rotateSpeed = 10.0f;
     public float _moveSpeed = 10.0f;
 
