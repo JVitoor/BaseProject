@@ -3,14 +3,6 @@ using UnityEngine.InputSystem;
 
 public partial class Player : MonoBehaviour
 {
-    #region Properties
-
-    private float verticalVelocity;
-    public float jumpForce = 7f;
-    public float gravity = -20f;
-
-    #endregion Properties
-
     #region Unity Methods
 
     private void Start()
@@ -37,10 +29,21 @@ public partial class Player : MonoBehaviour
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        // Se pressionou o botão de pulo e está no chão, aplica o pulo
-        if (context.performed && controller.isGrounded)
+        // Permite pular se pressionou o botão e não excedeu o número máximo de pulos
+        if (context.performed && jumpCount < maxJumps)
         {
             verticalVelocity = jumpForce;
+            jumpCount++;
+        }
+        // Ativa o glide se estiver no ar, já usou o double jump e a tecla de pulo está pressionada
+        else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps)
+        {
+            isGliding = true;
+        }
+        // Desativa o glide ao soltar a tecla de pulo
+        else if (context.canceled)
+        {
+            isGliding = false;
         }
     }
 
@@ -56,7 +59,7 @@ public partial class Player : MonoBehaviour
         // Normaliza o vetor de movimento e multiplica pela velocidade máxima
         move = desiredMove.normalized * moveSpeed;
 
-        // Aplica movimento vertical (pulo e gravidade)
+        // Aplica movimento vertical (pulo, gravidade e glide)
         move.y = verticalVelocity;
 
         // Move o player usando o CharacterController
@@ -74,14 +77,25 @@ public partial class Player : MonoBehaviour
 
     private void HandlePlayerJump()
     {
-        // Aplica gravidade
-        if (controller.isGrounded && verticalVelocity < 0)
+        // Aplica gravidade e reseta o contador de pulos ao tocar o chão
+        if (controller.isGrounded)
         {
-            verticalVelocity = 0f;
+            if (verticalVelocity < 0)
+                verticalVelocity = 0f;
+            jumpCount = 0;
+            isGliding = false;
         }
         else
         {
-            verticalVelocity += gravity * Time.deltaTime;
+            // Se estiver planando, aplica gravidade reduzida
+            if (isGliding)
+            {
+                verticalVelocity += glideGravity * Time.deltaTime;
+            }
+            else
+            {
+                verticalVelocity += gravity * Time.deltaTime;
+            }
         }
     }
 
