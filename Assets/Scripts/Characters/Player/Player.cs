@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     private bool isGliding = false;
     public float glideGravity = -3f;
 
+    public float maxRollAngle = 30f; // Ângulo máximo de inclinação ao planar
+
     #endregion Movement Properties
 
     #region Data Properties
@@ -200,10 +202,21 @@ public class Player : MonoBehaviour
 
     private void HandlePlayerGlide()
     {
-        // Se estiver planando, aplica gravidade reduzida
+        // Se estiver planando, aplica gravidade reduzida e inclina o player
         if (isGliding && !controller.isGrounded)
         {
             verticalVelocity += glideGravity * Time.deltaTime;
+
+            // Inclina o player para o lado do movimento
+            float roll = maxRollAngle * moveInput.x;
+            Quaternion glideRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, -roll);
+            transform.rotation = Quaternion.Lerp(transform.rotation, glideRotation, Time.deltaTime * 5f);
+        }
+        else
+        {
+            // Quando não estiver planando, reseta a inclinação (mantém apenas yaw/pitch)
+            Quaternion resetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, resetRotation, Time.deltaTime * 5f);
         }
     }
 
