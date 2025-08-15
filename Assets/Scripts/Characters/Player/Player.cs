@@ -202,6 +202,9 @@ public class Player : MonoBehaviour
 
     private void HandlePlayerGlide()
     {
+        // TO-DO
+        // Se espaço estiver pressionado, o modo planagem continua ativo mesmo tocando o chão
+
         // Se estiver planando, aplica gravidade reduzida e inclina o player
         if (isGliding && !controller.isGrounded)
         {
