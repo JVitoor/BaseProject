@@ -39,8 +39,9 @@ public partial class Player
     [Header(" └─ Movement")]
     protected CharacterController controller;
 
-    protected Vector3 moveInput, move;
-    protected Quaternion rot;
+    protected Vector3 move;
+    public Vector2 moveInput;
+    protected Quaternion rotation;
     public float rotateSpeed = 10.0f;
     public float _moveSpeed = 10.0f;
 
@@ -72,4 +73,13 @@ public partial class Player
     }
 
     #endregion Player Health
+
+    #region Unity Tools
+
+    [Header(" └─ Camera")]
+    public GameObject mainCamera;
+
+    private CameraController cameraController;
+
+    #endregion Unity Tools
 }

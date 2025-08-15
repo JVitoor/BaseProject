@@ -271,8 +271,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2534013, y: 0.000000012137435, z: -0.0000000031794143, w: 0.9673613}
-  m_LocalPosition: {x: 100, y: 5.25, z: 96}
+  m_LocalRotation: {x: 0.21658352, y: 1.5848014e-16, z: -3.515871e-17, w: 0.9762641}
+  m_LocalPosition: {x: 100, y: 6.5, z: 92.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -656,6 +656,7 @@ GameObject:
   - component: {fileID: 640842006}
   - component: {fileID: 640842010}
   - component: {fileID: 640842009}
+  - component: {fileID: 640842011}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -767,9 +768,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3fc16b9ff4f3f46bf9f0a4a859341e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1753387293}
+  jumpForce: 15
+  gravity: -20
+  moveInput: {x: 0, y: 0}
   rotateSpeed: 9
   _moveSpeed: 10
+  mainCamera: {fileID: 1753387293}
 --- !u!143 &640842010
 CharacterController:
   m_ObjectHideFlags: 0
@@ -795,6 +799,84 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &640842011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640842004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 640842009}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnMoveInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
+    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6b444451-8a00-4d00-a97e-f47457f736a8
+    m_ActionName: 'Player/Look[/Mouse/delta,/Pen/delta]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
+    m_ActionName: 'Player/Interact[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
+    m_ActionName: 'Player/Crouch[/Keyboard/c]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 640842009}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnJumpInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f1ba0d36-48eb-4cd5-b651-1c94a6531f70
+    m_ActionName: 'Player/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 641cd816-40e6-41b4-8c3d-04687c349290
+    m_ActionName: 'Player/Sprint[/Keyboard/leftShift]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &797549037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,8 +1457,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753387293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2534013, y: 0.000000012137436, z: -0.0000000031794143, w: 0.9673613}
-  m_LocalPosition: {x: 100, y: 5.25, z: 96}
+  m_LocalRotation: {x: 0.21658352, y: 1.64429e-16, z: -6.19736e-17, w: 0.9762641}
+  m_LocalPosition: {x: 100, y: 6.5, z: 92.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1509,13 +1591,13 @@ MonoBehaviour:
   Radius: 10
   Orbits:
     Top:
-      Radius: 2
+      Radius: 5
       Height: 5
     Center:
-      Radius: 4
-      Height: 2.25
+      Radius: 7.5
+      Height: 3.5
     Bottom:
-      Radius: 2.5
+      Radius: 5
       Height: 0.1
     SplineCurvature: 0.5
   RecenteringTarget: 2
@@ -1635,8 +1717,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1753387294}
   - {fileID: 330585546}
+  - {fileID: 1753387294}
   m_Father: {fileID: 484676197}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1882494452
