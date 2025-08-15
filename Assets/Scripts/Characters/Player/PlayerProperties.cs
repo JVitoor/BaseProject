@@ -37,10 +37,11 @@ public partial class Player
     #region Player Movement
 
     [Header(" └─ Movement")]
+    public Vector2 moveInput;
+
     protected CharacterController controller;
 
     protected Vector3 move;
-    public Vector2 moveInput;
     protected Quaternion rotation;
     public float rotateSpeed = 10.0f;
     public float _moveSpeed = 10.0f;
@@ -50,6 +51,17 @@ public partial class Player
         get { return _moveSpeed; }
         set { _moveSpeed = value; }
     }
+
+    [Header(" └─ Jump")]
+    public float jumpForce = 7f;
+
+    private float verticalVelocity;
+
+    public float gravity = -20f;
+    private int jumpCount = 0;
+    public int maxJumps = 2;
+    private bool isGliding = false;
+    public float glideGravity = -3f;
 
     #endregion Player Movement
 
