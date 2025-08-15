@@ -1,8 +1,102 @@
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public partial class Player : MonoBehaviour
+public class Player : MonoBehaviour
 {
+    #region Properties
+
+    #region Movement Properties
+
+    [Header(" └─ Movement")]
+    public Vector2 moveInput;
+
+    protected CharacterController controller;
+
+    protected Vector3 move;
+    protected Quaternion rotation;
+    public float rotateSpeed = 10.0f;
+    public float _moveSpeed = 10.0f;
+
+    public float moveSpeed
+    {
+        get { return _moveSpeed; }
+        set { _moveSpeed = value; }
+    }
+
+    [Header(" └─ Jump")]
+    public float jumpForce = 7f;
+
+    public float verticalVelocity;
+
+    public float gravity = -20f;
+    private int jumpCount = 0;
+    public int maxJumps = 2;
+    private bool isGliding = false;
+    public float glideGravity = -3f;
+
+    #endregion Movement Properties
+
+    #region Data Properties
+
+    [Header(" └─ Data")]
+    protected new string name;
+
+    public string _name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    #endregion Data Properties
+
+    #region Skills Properties
+
+    [Header(" └─ Skills")]
+    protected List<string> skills = new List<string>();
+
+    public List<string> Skills
+    {
+        get { return skills; }
+        set { skills = value; }
+    }
+
+    #endregion Skills Properties
+
+    #region Health Properties
+
+    [Header(" └─ Health")]
+    protected int life;
+
+    public int _life
+    {
+        get { return life; }
+        set { life = value; }
+    }
+
+    protected int maxLife;
+
+    public int MaxLife
+    {
+        get { return maxLife; }
+        set { maxLife = value; }
+    }
+
+    #endregion Health Properties
+
+    #region Unity Tools Properties
+
+    [Header(" └─ Camera")]
+    public GameObject mainCamera;
+
+    private CameraController cameraController;
+
+    public GameObject planador;
+
+    #endregion Unity Tools Properties
+
+    #endregion Properties
+
     #region Unity Methods
 
     private void Start()
@@ -23,40 +117,42 @@ public partial class Player : MonoBehaviour
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
-        // L� o valor do input do sistema de entrada
+        // Lê o valor do input do sistema de entrada
         moveInput = context.ReadValue<Vector2>();
     }
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        // Permite pular se pressionou o bot�o e n�o excedeu o n�mero m�ximo de pulos
+        // Permite pular se pressionou o botão e não excedeu o número máximo de pulos
         if (context.performed && jumpCount < maxJumps)
         {
             verticalVelocity = jumpForce;
             jumpCount++;
         }
-        // Ativa o glide se estiver no ar, j� usou o double jump e a tecla de pulo est� pressionada
-        else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps)
+        // Ativa o glide se estiver no ar, já usou o double jump e a tecla de pulo está pressionada
+        else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding)
         {
             isGliding = true;
+            planador.SetActive(true);
         }
-        // Desativa o glide ao soltar a tecla de pulo
-        else if (context.canceled)
+        // Desativa o glide ao soltar a tecla de pulo ou ao tocar o chão
+        else if (context.canceled || controller.isGrounded)
         {
             isGliding = false;
+            planador.SetActive(false);
         }
     }
 
     #endregion Input Methods
 
-    #region Player Movement
+    #region Movement Methods
 
     private void HandlePlayerMovement()
     {
-        // Calcula o vetor de movimento relativo � c�mera
+        // Calcula o vetor de movimento relativo à câmera
         Vector3 desiredMove = (cameraController.camForward * moveInput.y) + (cameraController.camRight * moveInput.x);
 
-        // Normaliza o vetor de movimento e multiplica pela velocidade m�xima
+        // Normaliza o vetor de movimento e multiplica pela velocidade máxima
         move = desiredMove.normalized * moveSpeed;
 
         // Aplica movimento vertical (pulo, gravidade e glide)
@@ -65,7 +161,7 @@ public partial class Player : MonoBehaviour
         // Move o player usando o CharacterController
         controller.Move(move * Time.deltaTime);
 
-        // Rotaciona o player para a dire��o do movimento, se houver input
+        // Rotaciona o player para a direção do movimento, se houver input
         if (moveInput.magnitude > 0)
         {
             rotation = Quaternion.LookRotation(desiredMove);
@@ -77,27 +173,39 @@ public partial class Player : MonoBehaviour
 
     private void HandlePlayerJump()
     {
-        // Aplica gravidade e reseta o contador de pulos ao tocar o ch�o
+        // Aplica gravidade e reseta o contador de pulos ao tocar o chão
         if (controller.isGrounded)
         {
             if (verticalVelocity < 0)
+            {
                 verticalVelocity = 0f;
+            }
             jumpCount = 0;
             isGliding = false;
         }
         else
         {
-            // Se estiver planando, aplica gravidade reduzida
-            if (isGliding)
-            {
-                verticalVelocity += glideGravity * Time.deltaTime;
-            }
-            else
-            {
-                verticalVelocity += gravity * Time.deltaTime;
-            }
+            verticalVelocity += gravity * Time.deltaTime;
+        }
+
+        HandlePlayerDoubleJump();
+        HandlePlayerGlide();
+    }
+
+    private void HandlePlayerDoubleJump()
+    {
+        // TO-DO:
+        // Implementar: efeitos visuais, sons, etc
+    }
+
+    private void HandlePlayerGlide()
+    {
+        // Se estiver planando, aplica gravidade reduzida
+        if (isGliding && !controller.isGrounded)
+        {
+            verticalVelocity += glideGravity * Time.deltaTime;
         }
     }
 
-    #endregion Player Movement
+    #endregion Movement Methods
 }
