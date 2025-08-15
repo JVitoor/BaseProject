@@ -380,8 +380,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21658352, y: 1.5848014e-16, z: -3.515871e-17, w: 0.9762641}
-  m_LocalPosition: {x: 100, y: 6.5, z: 92.5}
+  m_LocalRotation: {x: 0.22799514, y: 0.0000000818564, z: -0.000000019167693, w: 0.9736623}
+  m_LocalPosition: {x: 100, y: 7.644159, z: 90.62721}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -883,9 +883,10 @@ MonoBehaviour:
   _moveSpeed: 10
   jumpForce: 15
   verticalVelocity: 0
-  gravity: -20
+  gravity: -30
   maxJumps: 2
-  glideGravity: 10
+  glideGravity: 25
+  maxRollAngle: 90
   mainCamera: {fileID: 1753387293}
   planador: {fileID: 244354812}
 --- !u!143 &640842010
@@ -1571,8 +1572,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753387293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21658352, y: 1.64429e-16, z: -6.19736e-17, w: 0.9762641}
-  m_LocalPosition: {x: 100, y: 6.5, z: 92.5}
+  m_LocalRotation: {x: 0.22799513, y: 0.00000008185639, z: -0.000000019167693, w: 0.9736623}
+  m_LocalPosition: {x: 100, y: 7.644159, z: 90.62721}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1705,13 +1706,13 @@ MonoBehaviour:
   Radius: 10
   Orbits:
     Top:
-      Radius: 5
+      Radius: 7.5
       Height: 5
     Center:
-      Radius: 7.5
+      Radius: 10
       Height: 3.5
     Bottom:
-      Radius: 5
+      Radius: 7.5
       Height: 0.1
     SplineCurvature: 0.5
   RecenteringTarget: 2
@@ -1726,7 +1727,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: 17.5
+    Value: 30
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
