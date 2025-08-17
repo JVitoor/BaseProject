@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     public float verticalVelocity;
 
     public float gravity = -20f;
-    private int jumpCount = 0;
+    public int jumpCount = 0;
     public int maxJumps = 2;
     private bool isGliding = false;
     public float glideGravity = -3f;
@@ -217,7 +217,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            // Quando não estiver planando, reseta a inclinação (mantém apenas yaw/pitch)
+            // Quando não estiver planando, reseta a inclinação
             Quaternion resetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, resetRotation, Time.deltaTime * 5f);
         }
