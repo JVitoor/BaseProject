@@ -1,11 +1,105 @@
+ï»¿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public partial class Player : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    #region Unity Methods
+    #region Properties
+
+    #region Movement Properties
+
+    [Header(" â””â”€ Movement")]
+    public Vector2 moveInput;
+
+    protected CharacterController controller;
+
+    protected Vector3 move;
+    protected Quaternion rotation;
+    public float rotateSpeed = 10.0f;
+    public float _moveSpeed = 10.0f;
+
+    public float moveSpeed
+    {
+        get { return _moveSpeed; }
+        set { _moveSpeed = value; }
+    }
+
+    [Header(" â””â”€ Jump")]
+    public float jumpForce = 7f;
+
+    public float verticalVelocity;
+
+    public float gravity = -20f;
+    public int jumpCount = 0;
+    public int maxJumps = 2;
+    private bool isGliding = false;
+    public float glideGravity = -3f;
+
+    public float maxRollAngle = 30f; // Ã‚ngulo mÃ¡ximo de inclinaÃ§Ã£o ao planar
+
+    #endregion Movement Properties
+
+    #region Data Properties
+
+    [Header(" â””â”€ Data")]
+    protected new string name;
+
+    public string _name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    #endregion Data Properties
+
+    #region Skills Properties
+
+    [Header(" â””â”€ Skills")]
+    protected List<string> skills = new List<string>();
+
+    public List<string> Skills
+    {
+        get { return skills; }
+        set { skills = value; }
+    }
+
+    #endregion Skills Properties
+
+    #region Health Properties
+
+    [Header(" â””â”€ Health")]
+    protected int life;
+
+    public int _life
+    {
+        get { return life; }
+        set { life = value; }
+    }
+
+    protected int maxLife;
+
+    public int MaxLife
+    {
+        get { return maxLife; }
+        set { maxLife = value; }
+    }
+
+    #endregion Health Properties
+
+    #region Unity Tools Properties
+
+    [Header(" â””â”€ Camera")]
+    public GameObject mainCamera;
 
     private CameraController cameraController;
-    public GameObject mainCamera;
+
+    public GameObject planador;
+
+    #endregion Unity Tools Properties
+
+    #endregion Properties
+
+    #region Unity Methods
 
     private void Start()
     {
@@ -13,50 +107,121 @@ public partial class Player : MonoBehaviour
         cameraController = mainCamera.GetComponent<CameraController>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        HandleInputs();
-        HandleMove();
+        HandlePlayerMovement();
+        HandlePlayerJump();
     }
 
     #endregion Unity Methods
 
-    #region Player Movement
+    #region Input Methods
 
-    private void HandleInputs()
+    public void OnMoveInput(InputAction.CallbackContext context)
     {
-        // Captura o input do jogador para os eixos horizontal e vertical
-        moveInput.x = Input.GetAxis("Horizontal");
-        moveInput.z = Input.GetAxis("Vertical");
+        // LÃª o valor do input do sistema de entrada
+        moveInput = context.ReadValue<Vector2>();
+    }
 
-        // Se houver movimento, calcula a direção desejada baseada na orientação da câmera
+    public void OnJumpInput(InputAction.CallbackContext context)
+    {
+        // Permite pular se pressionou o botÃ£o e nÃ£o excedeu o nÃºmero mÃ¡ximo de pulos
+        if (context.performed && jumpCount < maxJumps)
+        {
+            verticalVelocity = jumpForce;
+            jumpCount++;
+        }
+        // Ativa o glide se estiver no ar, jÃ¡ usou o double jump e a tecla de pulo estÃ¡ pressionada
+        else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding)
+        {
+            isGliding = true;
+            planador.SetActive(true);
+        }
+        // Desativa o glide ao soltar a tecla de pulo ou ao tocar o chÃ£o
+        else if (context.canceled || controller.isGrounded)
+        {
+            isGliding = false;
+            planador.SetActive(false);
+        }
+    }
+
+    #endregion Input Methods
+
+    #region Movement Methods
+
+    private void HandlePlayerMovement()
+    {
+        // Calcula o vetor de movimento relativo Ã  cÃ¢mera
+        Vector3 desiredMove = (cameraController.camForward * moveInput.y) + (cameraController.camRight * moveInput.x);
+
+        // Normaliza o vetor de movimento e multiplica pela velocidade mÃ¡xima
+        move = desiredMove.normalized * moveSpeed;
+
+        // Aplica movimento vertical (pulo, gravidade e glide)
+        move.y = verticalVelocity;
+
+        // Move o player usando o CharacterController
+        controller.Move(move * Time.deltaTime);
+
+        // Rotaciona o player para a direÃ§Ã£o do movimento, se houver input
         if (moveInput.magnitude > 0)
         {
-            // Calcula o vetor de movimento relativo à câmera
-            Vector3 desiredMove = (cameraController.camForward * moveInput.z) + (cameraController.camRight * moveInput.x);
-
-            // Calcula a rotação desejada para o player olhar na direção do movimento
-            rot = Quaternion.LookRotation(desiredMove);
-
-            // Suaviza a rotação do player para a direção desejada
-            transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * rotateSpeed);
+            rotation = Quaternion.LookRotation(desiredMove);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotateSpeed);
         }
 
-        // Atualiza os vetores de direção da câmera
         cameraController.HandleCamera();
     }
 
-    private void HandleMove()
+    private void HandlePlayerJump()
     {
-        // Calcula o vetor de movimento relativo à câmera
-        Vector3 desiredMove = (cameraController.camForward * moveInput.z) + (cameraController.camRight * moveInput.x);
+        // Aplica gravidade e reseta o contador de pulos ao tocar o chÃ£o
+        if (controller.isGrounded)
+        {
+            if (verticalVelocity < 0)
+            {
+                verticalVelocity = 0f;
+            }
+            jumpCount = 0;
+            isGliding = false;
+        }
+        else
+        {
+            verticalVelocity += gravity * Time.deltaTime;
+        }
 
-        // Normaliza o vetor de movimento e multiplica pela velocidade máxima
-        move = desiredMove.normalized * moveSpeed;
-
-        // Move o player usando o CharacterController
-        controller.SimpleMove(move);
+        HandlePlayerDoubleJump();
+        HandlePlayerGlide();
     }
 
-    #endregion Player Movement
+    private void HandlePlayerDoubleJump()
+    {
+        // TO-DO:
+        // Implementar: efeitos visuais, sons, etc
+    }
+
+    private void HandlePlayerGlide()
+    {
+        // TO-DO
+        // Se espaÃ§o estiver pressionado, o modo planagem continua ativo mesmo tocando o chÃ£o
+
+        // Se estiver planando, aplica gravidade reduzida e inclina o player
+        if (isGliding && !controller.isGrounded)
+        {
+            verticalVelocity += glideGravity * Time.deltaTime;
+
+            // Inclina o player para o lado do movimento
+            float roll = maxRollAngle * moveInput.x;
+            Quaternion glideRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, -roll);
+            transform.rotation = Quaternion.Lerp(transform.rotation, glideRotation, Time.deltaTime * 5f);
+        }
+        else
+        {
+            // Quando nÃ£o estiver planando, reseta a inclinaÃ§Ã£o
+            Quaternion resetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, resetRotation, Time.deltaTime * 5f);
+        }
+    }
+
+    #endregion Movement Methods
 }
