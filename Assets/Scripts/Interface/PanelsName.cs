@@ -1,16 +1,15 @@
-using UnityEngine;
-
-public class PanelsName : MonoBehaviour
+public enum PanelsName
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    MainMenu,
+    Settings,
+    KeyBinds,
+    Loading,
+}
 
-    // Update is called once per frame
-    void Update()
+public static class PanelsNameExtensions
+{
+    public static string GetPanelName(this PanelsName name)
     {
-        
+        return $"{name} Panel";
     }
 }
