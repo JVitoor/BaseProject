@@ -2,33 +2,40 @@ using UnityEngine;
 
 public class SwitchCamera : MonoBehaviour
 {
-    public GameObject Camera_1;
-    public GameObject Camera_2;
+    #region Properties
+    public GameObject CameraThirdPerson;
+    public GameObject CameraTopView;
     public int Manager;
 
+    #endregion Properties
+
+    #region Methods
     public void ManagerCamera()
     {
         if (Manager == 0)
         {
-            Cam_2();
+            SwitchToCameraTopView();
             Manager = 1;
         }
         else 
         {
-            Cam_1();
+            SwitchToThirdPersonCamera();
             Manager = 0;
         }
     }
 
-    void Cam_1()
+
+    void SwitchToThirdPersonCamera()
     {
-        Camera_1.SetActive(true); 
-        Camera_2.SetActive(false);
+        CameraThirdPerson.SetActive(true); 
+        CameraTopView.SetActive(false);
     }
 
-    void Cam_2 ()
+    void SwitchToCameraTopView ()
     {
-        Camera_1.SetActive(false);
-        Camera_2.SetActive(true);
+        CameraThirdPerson.SetActive(false);
+        CameraTopView.SetActive(true);
     }
+
+    #endregion
 }
