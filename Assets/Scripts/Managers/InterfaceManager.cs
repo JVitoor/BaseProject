@@ -69,31 +69,31 @@ public class InterfaceManager : MonoBehaviour
         //}
         //SetDefaultVolume();
 
-        InitializeUIDictionary();
+        //InitializeUIDictionary();
     }
 
     // Preenche o dicionário privado que relaciona o enum PanelsName com o GameObject do painel
     // O nome do painel é o nome do enum + " Panel", obtido pela extensão de PanelsName
-    private void InitializeUIDictionary()
-    {
-        foreach (PanelsName name in Enum.GetValues(typeof(PanelsName)))
-        {
-            string panelName = name.GetPanelName();
-            GameObject panel = GameObject.Find(panelName);
+    //private void InitializeUIDictionary()
+    //{
+    //    foreach (PanelsName name in Enum.GetValues(typeof(PanelsName)))
+    //    {
+    //        string panelName = name.GetPanelName();
+    //        GameObject panel = GameObject.Find(panelName);
 
-            if (panel != null)
-            {
-                Debug.Log($"[InterfaceManager] Painel '{panelName}' encontrado e registrado.");
-                uiDictionary[name] = panel;
-                panel.SetActive(false); // Desativa o painel por padrão
-            }
-            else
-            {
-                Debug.LogWarning($"[InterfaceManager] Painel '{panelName}' não encontrado na cena.");
-            }
-        }
-        ShowPanel(PanelsName.MainMenu); // Exibe o menu principal por padrão
-    }
+    //        if (panel != null)
+    //        {
+    //            Debug.Log($"[InterfaceManager] Painel '{panelName}' encontrado e registrado.");
+    //            uiDictionary[name] = panel;
+    //            panel.SetActive(false); // Desativa o painel por padrão
+    //        }
+    //        else
+    //        {
+    //            Debug.LogWarning($"[InterfaceManager] Painel '{panelName}' não encontrado na cena.");
+    //        }
+    //    }
+    //    ShowPanel(PanelsName.MainMenu); // Exibe o menu principal por padrão
+    //}
 
     #endregion Initialization Routines
 
