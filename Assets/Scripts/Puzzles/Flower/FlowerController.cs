@@ -11,9 +11,19 @@ public class FlowerController : MonoBehaviour
     private int round = 0;
     private bool playerTurn = false;
 
+    public SwitchCamera switchCamera;
+
     private void Start()
     {
         StartCoroutine(StartRound());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            switchCamera.ManagerCamera(0); // Troca para visão por cima
+        }
     }
 
     private IEnumerator StartRound()

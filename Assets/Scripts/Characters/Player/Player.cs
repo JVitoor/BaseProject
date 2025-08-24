@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
     public Vector2 moveInput;
 
     protected CharacterController controller;
-
     protected Vector3 move;
+    protected Vector3 desiredMove;
     protected Quaternion rotation;
     public float rotateSpeed = 10.0f;
     public float _moveSpeed = 10.0f;
@@ -99,6 +99,8 @@ public class Player : MonoBehaviour
 
     #endregion Properties
 
+    #region Methods
+
     #region Unity Methods
 
     private void Start()
@@ -107,7 +109,7 @@ public class Player : MonoBehaviour
         cameraController = mainCamera.GetComponent<CameraController>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         HandlePlayerMovement();
         HandlePlayerJump();
@@ -151,8 +153,20 @@ public class Player : MonoBehaviour
 
     private void HandlePlayerMovement()
     {
-        // Calcula o vetor de movimento relativo à câmera
-        Vector3 desiredMove = (cameraController.camForward * moveInput.y) + (cameraController.camRight * moveInput.x);
+        switch (cameraController.name)
+        {
+            case "CameraThirdPerson":
+                desiredMove = (cameraController.camForward * moveInput.y) + (cameraController.camRight * moveInput.x);
+                break;
+
+            case "CameraTopDown":
+                desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
+                break;
+
+            default:
+                desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
+                break;
+        }
 
         // Normaliza o vetor de movimento e multiplica pela velocidade máxima
         move = desiredMove.normalized * moveSpeed;
@@ -224,4 +238,6 @@ public class Player : MonoBehaviour
     }
 
     #endregion Movement Methods
+
+    #endregion Methods
 }
