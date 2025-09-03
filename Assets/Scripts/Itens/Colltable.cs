@@ -3,13 +3,17 @@ using UnityEngine;
 public class Colltable : MonoBehaviour
 {
     #region Properties
-    public int valor = 1; 
-    public ItemScreen itemScreen; // referência ao script da tela
 
     #endregion
 
     #region Methods
-    private void OnTriggerEnter(Collider other)
+
+    public virtual void OnInteract()
+    {
+        Debug.Log("Interact with: " + gameObject.name);
+        Destroy(gameObject);
+    }
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -23,6 +27,10 @@ public class Colltable : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
-    #endregion
+    }*/
+
+
+   
+        #endregion
+    
 }

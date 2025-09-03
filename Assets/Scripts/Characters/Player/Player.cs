@@ -97,6 +97,13 @@ public class Player : MonoBehaviour
 
     #endregion Unity Tools Properties
 
+    #region Item Properties
+
+    public int valor = 1;
+    public ItemScreen itemScreen; // referência ao script da tela
+
+    #endregion
+
     #endregion Properties
 
     #region Methods
@@ -113,6 +120,7 @@ public class Player : MonoBehaviour
     {
         HandlePlayerMovement();
         HandlePlayerJump();
+        HandleInteractable();
     }
 
     #endregion Unity Methods
@@ -234,6 +242,23 @@ public class Player : MonoBehaviour
             // Quando não estiver planando, reseta a inclinação
             Quaternion resetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, resetRotation, Time.deltaTime * 5f);
+        }
+    }
+
+    private void HandleInteractable()
+    {   //coletar a noz
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
+            {
+                if (hit.transform.TryGetComponent<Colltable>(out Colltable i))
+                {
+                    i.OnInteract();
+                    //if (itemScreen != null)
+                   // itemScreen.Mostrar("+" + valor);
+
+                }
+            }
         }
     }
 
