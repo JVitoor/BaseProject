@@ -15,9 +15,9 @@ public class InterfaceManager : MonoBehaviour
     private Dictionary<PanelsName, GameObject> uiDictionary = new Dictionary<PanelsName, GameObject>();
     public GameObject gameInterface;
 
-    //[SerializeField] private Slider masterSlider;
-    //[SerializeField] private Slider musicSlider;
-    //[SerializeField] private Slider sfxSlider;
+    [SerializeField] private Slider masterSlider;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
 
     #endregion Properties
 
@@ -58,42 +58,42 @@ public class InterfaceManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        // Toca a música padrão ao iniciar a interface
-        //if (AudioManager.instance.musics != null && AudioManager.instance.musics.Length > 0)
-        //{
-        //    AudioManager.instance.SwitchMusic(AudioManager.instance.musics[0]);
-        //}
-        //else
-        //{
-        //    Debug.LogWarning("[InterfaceManager] Nenhuma música definida em AudioManager.");
-        //}
-        //SetDefaultVolume();
 
-        //InitializeUIDictionary();
+        if (AudioManager.instance.musics != null && AudioManager.instance.musics.Length > 0)
+        {
+            AudioManager.instance.SwitchMusic(AudioManager.instance.musics[0]);
+        }
+        else
+        {
+            Debug.LogWarning("[InterfaceManager] Nenhuma música definida em AudioManager.");
+        }
+        SetDefaultVolume();
+
+        InitializeUIDictionary();
     }
 
     // Preenche o dicionário privado que relaciona o enum PanelsName com o GameObject do painel
     // O nome do painel é o nome do enum + " Panel", obtido pela extensão de PanelsName
-    //private void InitializeUIDictionary()
-    //{
-    //    foreach (PanelsName name in Enum.GetValues(typeof(PanelsName)))
-    //    {
-    //        string panelName = name.GetPanelName();
-    //        GameObject panel = GameObject.Find(panelName);
+    private void InitializeUIDictionary()
+    {
+        foreach (PanelsName name in Enum.GetValues(typeof(PanelsName)))
+        {
+            string panelName = name.GetPanelName();
+            GameObject panel = GameObject.Find(panelName);
 
-    //        if (panel != null)
-    //        {
-    //            Debug.Log($"[InterfaceManager] Painel '{panelName}' encontrado e registrado.");
-    //            uiDictionary[name] = panel;
-    //            panel.SetActive(false); // Desativa o painel por padrão
-    //        }
-    //        else
-    //        {
-    //            Debug.LogWarning($"[InterfaceManager] Painel '{panelName}' não encontrado na cena.");
-    //        }
-    //    }
-    //    ShowPanel(PanelsName.MainMenu); // Exibe o menu principal por padrão
-    //}
+            if (panel != null)
+            {
+                Debug.Log($"[InterfaceManager] Painel '{panelName}' encontrado e registrado.");
+                uiDictionary[name] = panel;
+                panel.SetActive(false); // Desativa o painel por padrão
+            }
+            else
+            {
+                Debug.LogWarning($"[InterfaceManager] Painel '{panelName}' não encontrado na cena.");
+            }
+        }
+        ShowPanel(PanelsName.MainMenu); // Exibe o menu principal por padrão
+    }
 
     #endregion Initialization Routines
 
@@ -158,47 +158,47 @@ public class InterfaceManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    // Altera o volume master
-    //public void ChangeMasterVolume()
-    //{
-    //    AudioManager.instance.ChangeMasterVolume(masterSlider.value);
-    //}
+    //Altera o volume master
+    public void ChangeMasterVolume()
+    {
+        AudioManager.instance.ChangeMasterVolume(masterSlider.value);
+    }
 
-    //// Altera o volume da música
-    //public void ChangeMusicVolume()
-    //{
-    //    AudioManager.instance.ChangeMusicVolume(musicSlider.value);
-    //}
+    // Altera o volume da música
+    public void ChangeMusicVolume()
+    {
+        AudioManager.instance.ChangeMusicVolume(musicSlider.value);
+    }
 
-    //// Altera o volume dos efeitos sonoros
-    //public void ChangeSFXVolume()
-    //{
-    //    AudioManager.instance.ChangeSFXVolume(sfxSlider.value);
-    //}
+    // Altera o volume dos efeitos sonoros
+    public void ChangeSFXVolume()
+    {
+        AudioManager.instance.ChangeSFXVolume(sfxSlider.value);
+    }
 
-    //public void SetDefaultVolume()
-    //{
-    //    AudioManager.instance.mixer.GetFloat("MasterVol", out float aux1);
+    public void SetDefaultVolume()
+    {
+        AudioManager.instance.mixer.GetFloat("MasterVol", out float aux1);
 
-    //    if (masterSlider != null)
-    //    {
-    //        masterSlider.value = aux1;
-    //    }
+        if (masterSlider != null)
+        {
+            masterSlider.value = aux1;
+        }
 
-    //    AudioManager.instance.mixer.GetFloat("MusicVol", out float aux2);
+        AudioManager.instance.mixer.GetFloat("MusicVol", out float aux2);
 
-    //    if (musicSlider != null)
-    //    {
-    //        musicSlider.value = aux2;
-    //    }
+        if (musicSlider != null)
+        {
+            musicSlider.value = aux2;
+        }
 
-    //    AudioManager.instance.mixer.GetFloat("SFXVol", out float aux3);
+        AudioManager.instance.mixer.GetFloat("SFXVol", out float aux3);
 
-    //    if (sfxSlider != null)
-    //    {
-    //        sfxSlider.value = aux3;
-    //    }
-    //}
+        if (sfxSlider != null)
+        {
+            sfxSlider.value = aux3;
+        }
+    }
 
     public void QuitGame()
     {
