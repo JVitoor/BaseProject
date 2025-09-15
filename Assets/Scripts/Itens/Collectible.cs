@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+    [Header("Collectible Settings")]
+    public int count = 0;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
