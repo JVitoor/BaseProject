@@ -21,7 +21,7 @@ public class InterfaceManager : MonoBehaviour
 
     #endregion Properties
 
-    #region Initialization Routines
+    #region Unity Methods
 
     private void Awake()
     {
@@ -72,6 +72,10 @@ public class InterfaceManager : MonoBehaviour
         InitializeUIDictionary();
     }
 
+    #endregion Unity Methods
+
+    #region Auxiliar Methods
+
     // Preenche o dicionário privado que relaciona o enum PanelsName com o GameObject do painel
     // O nome do painel é o nome do enum + " Panel", obtido pela extensão de PanelsName
     private void InitializeUIDictionary()
@@ -95,9 +99,6 @@ public class InterfaceManager : MonoBehaviour
         ShowPanel(PanelsName.MainMenu); // Exibe o menu principal por padrão
     }
 
-    #endregion Initialization Routines
-
-    #region Auxiliar Methods
 
     public void ShowPanel(PanelsName name)
     {
@@ -136,20 +137,6 @@ public class InterfaceManager : MonoBehaviour
         //ShowPanel(PanelsName.Loading);
         SceneManager.LoadScene(1); // Carrega a cena do jogo
         Time.timeScale = 1f; // Garante que o jogo rode na velocidade normal
-    }
-
-    private void Update()
-    {
-        //if (UserInputManager.instance.isUsingGamepad)
-        //{
-        //    Cursor.lockState = CursorLockMode.Locked;
-        //    Cursor.visible = false;
-        //}
-        //else
-        //{
-        //    Cursor.lockState = CursorLockMode.None;
-        //    Cursor.visible = true;
-        //}
     }
 
     public void LoadCreditsScene()

@@ -1516,7 +1516,7 @@ GameObject:
   - component: {fileID: 322163878}
   - component: {fileID: 322163879}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: Audio (Manager)
   m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,7 +1544,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322163877}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 373f438ffa9e7d44887d1bf49a8971dc, type: 3}
   m_Name: 
@@ -3686,7 +3686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &857800585
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3926,7 +3926,7 @@ GameObject:
   - component: {fileID: 1045437098}
   - component: {fileID: 1045437099}
   m_Layer: 0
-  m_Name: Interface_Manager
+  m_Name: Interface (Manager)
   m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3961,7 +3961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameInterface: {fileID: 787213047}
   masterSlider: {fileID: 1196816583}
-  musicSlider: {fileID: 0}
+  musicSlider: {fileID: 957056559}
   sfxSlider: {fileID: 647826106}
 --- !u!1 &1047824265
 GameObject:
@@ -4954,7 +4954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1275187419}
   m_Layer: 0
-  m_Name: Game_Manager
+  m_Name: Game (Manager)
   m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

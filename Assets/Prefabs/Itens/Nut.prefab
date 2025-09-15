@@ -11,12 +11,14 @@ GameObject:
   - component: {fileID: 2520899933962189333}
   - component: {fileID: 343799710031934979}
   - component: {fileID: 333902930797268961}
+  - component: {fileID: -5974645383206736868}
+  - component: {fileID: 4905317789683936557}
   m_Layer: 0
-  m_Name: Noz
-  m_TagString: Untagged
+  m_Name: Nut
+  m_TagString: Nut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2520899933962189333
 Transform:
@@ -28,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 100.628, y: 3.317, z: 99.997}
-  m_LocalScale: {x: 14.464423, y: 14.464423, z: 14.464423}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,3 +88,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-5974645383206736868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5255508272761559232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff119a3b5cb93bf479cf2cf4642394d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &4905317789683936557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5255508272761559232}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.016928187, y: 0.016928183, z: 0.021012709}
+  m_Center: {x: 0, y: 0, z: -0.0001238058}
