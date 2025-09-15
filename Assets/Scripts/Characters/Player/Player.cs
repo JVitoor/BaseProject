@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Player : MonoBehaviour
 {
@@ -120,7 +121,7 @@ public class Player : MonoBehaviour
     {
         HandlePlayerMovement();
         HandlePlayerJump();
-        HandleInteractable();
+        
     }
 
     #endregion Unity Methods
@@ -245,21 +246,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void HandleInteractable()
-    {   //coletar a noz
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
-            {
-                if (hit.transform.TryGetComponent<Colltable>(out Colltable i))
-                {
-                    i.OnInteract();
-                    //if (itemScreen != null)
-                   // itemScreen.Mostrar("+" + valor);
-
-                }
-            }
-        }
+    public void HandleColletable(int value)
+    {
+        ItemScreen.Instance.AddCollectibles(value);    
     }
 
     #endregion Movement Methods

@@ -4,23 +4,36 @@ using TMPro;
 public class ItemScreen : MonoBehaviour
 {
     #region Properties
-    public TextMeshProUGUI texto;
-    public float tempoDeExibicao = 5f;
+    [SerializeField]
+    public static ItemScreen Instance;
+    int collectiblesCount = 0;
+    public TextMeshProUGUI collectiblesText;
 
     #endregion
 
     #region Methods
-    public void Mostrar(string mensagem)
+    private void Awake()
     {
-        texto.text = mensagem;
-        gameObject.SetActive(true);
-        CancelInvoke();
-        Invoke(nameof(Esconder), tempoDeExibicao);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void Esconder()
+    public void AddCollectibles(int value)
     {
-        gameObject.SetActive(false);
+        collectiblesCount += value;
+        UpdateUI();
+    }
+
+    void UpdateUI()
+    {
+        collectiblesText.text = "Coletáveis = " + collectiblesCount;
     }
     #endregion
 }

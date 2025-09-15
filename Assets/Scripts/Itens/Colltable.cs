@@ -4,30 +4,22 @@ public class Colltable : MonoBehaviour
 {
     #region Properties
 
+    public int value = 1;
+
     #endregion
 
     #region Methods
 
-    public virtual void OnInteract()
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Interact with: " + gameObject.name);
-        Destroy(gameObject);
-    }
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        Player player = other.GetComponent<Player>();
+        if (player != null)
         {
-
-            if (other.CompareTag("Player"))
-            {
-                if (itemScreen != null)
-                    itemScreen.Mostrar("+" + valor);
-
-                // destruir o item coletado
-                Destroy(gameObject);
-            }
+            player.HandleColletable(value);
+            Destroy(gameObject);
         }
-    }*/
+    }
+
 
 
    
