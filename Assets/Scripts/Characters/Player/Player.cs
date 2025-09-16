@@ -192,6 +192,7 @@ public class Player : MonoBehaviour
             isGliding = true;
             if (planador != null)
             {
+                PlayGlideSoundSafely();
                 planador.SetActive(true);
             }
             else
@@ -223,8 +224,26 @@ public class Player : MonoBehaviour
         
         if (audioManager != null)
         {
-            Debug.Log("[Player] AudioManager encontrado, reproduzindo som...");
+            //Debug.Log("[Player] AudioManager encontrado, reproduzindo som...");
             audioManager.PlayJumpSound();
+        }
+        else
+        {
+             //Debug.LogWarning("[Player] AudioManager não disponível - som de pulo ignorado!");
+        }
+    }
+
+    private void PlayGlideSoundSafely()
+    {
+        Debug.Log("[Player] Tentando reproduzir som de pulo...");
+
+        // Usa o método estático mais seguro
+        AudioManager audioManager = AudioManager.GetInstance();
+
+        if (audioManager != null)
+        {
+            Debug.Log("[Player] AudioManager encontrado, reproduzindo som...");
+            audioManager.PlayGlideSound();
         }
         else
         {

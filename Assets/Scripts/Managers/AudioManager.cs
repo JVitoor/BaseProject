@@ -24,6 +24,9 @@ public class AudioManager : BaseManager
     [Tooltip("Array de sons de pulo - será sorteado aleatoriamente")]
     public AudioClip[] jumpSFX; // Array de sons de pulo para variação
 
+    [Header(" └─ Planar SFX")]
+    public AudioClip glideSFX;
+
     [Header(" └─ Tools")]
     public AudioMixer mixer;
 
@@ -185,6 +188,23 @@ public class AudioManager : BaseManager
         {
             Debug.Log($"[AudioManager] Reproduzindo som de pulo: {selectedSound.name}");
             PlaySFX(selectedSound);
+        }
+        else
+        {
+            Debug.LogWarning("[AudioManager] Nenhum som de pulo válido disponível!");
+        }
+    }
+
+    public void PlayGlideSound()
+    {
+        Debug.Log("[AudioManager] PlayJumpSound() chamado!");
+
+        AudioClip selectedSound = glideSFX;
+
+        if (selectedSound != null)
+        {
+            Debug.Log($"[AudioManager] Reproduzindo som de pulo: {selectedSound.name}");
+            PlayLoopedSFX(selectedSound);
         }
         else
         {
