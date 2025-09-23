@@ -113,8 +113,58 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("[Player] Start() chamado!");
+        
+        // Inicializa CharacterController
         controller = GetComponent<CharacterController>();
-        cameraController = mainCamera.GetComponent<CameraController>();
+        if (controller == null)
+        {
+            Debug.LogError("[Player] CharacterController não encontrado!");
+        }
+
+        // Inicializa CameraController com verificação de segurança
+        if (mainCamera != null)
+        {
+            cameraController = mainCamera.GetComponent<CameraController>();
+            if (cameraController == null)
+            {
+                Debug.LogError("[Player] CameraController não encontrado no GameObject mainCamera!");
+            }
+        }
+        else
+        {
+            Debug.LogError("[Player] MainCamera não está atribuído no Inspector!");
+        }
+        
+        // Verifica se AudioManager está disponível no Start
+        CheckAudioManagerAvailability();
+    }
+
+    private void CheckAudioManagerAvailability()
+    {
+        if (AudioManager.IsAvailable())
+        {
+            Debug.Log("[Player] AudioManager está disponível!");
+        }
+        else
+        {
+            Debug.LogWarning("[Player] AudioManager não está disponível no Start!");
+            
+            // Tenta novamente após um frame
+            Invoke(nameof(DelayedAudioManagerCheck), 0.1f);
+        }
+    }
+
+    private void DelayedAudioManagerCheck()
+    {
+        if (AudioManager.IsAvailable())
+        {
+            Debug.Log("[Player] AudioManager encontrado após delay!");
+        }
+        else
+        {
+            Debug.LogError("[Player] AudioManager ainda não está disponível após delay!");
+        }
     }
 
     private void Update()
@@ -141,40 +191,84 @@ public class Player : MonoBehaviour
         {
             verticalVelocity = jumpForce;
             jumpCount++;
+            
+            // Reproduz o som do pulo usando método mais seguro
+            PlayJumpSoundSafely();
         }
         // Ativa o glide se estiver no ar, já usou o double jump e a tecla de pulo está pressionada
         else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding)
         {
             isGliding = true;
-            planador.SetActive(true);
+            if (planador != null)
+            {
+                planador.SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("[Player] GameObject planador não está atribuído!");
+            }
         }
         // Desativa o glide ao soltar a tecla de pulo ou ao tocar o chão
         else if (context.canceled || controller.isGrounded)
         {
             isGliding = false;
-            planador.SetActive(false);
+            if (planador != null)
+            {
+                planador.SetActive(false);
+            }
         }
     }
 
     #endregion Input Methods
 
+    #region Audio Methods
+
+    private void PlayJumpSoundSafely()
+    {
+        Debug.Log("[Player] Tentando reproduzir som de pulo...");
+        
+        // Usa o método estático mais seguro
+        AudioManager audioManager = AudioManager.GetInstance();
+        
+        if (audioManager != null)
+        {
+            Debug.Log("[Player] AudioManager encontrado, reproduzindo som...");
+            audioManager.PlayJumpSound();
+        }
+        else
+        {
+            Debug.LogWarning("[Player] AudioManager não disponível - som de pulo ignorado!");
+        }
+    }
+
+    #endregion Audio Methods
+
     #region Movement Methods
 
     private void HandlePlayerMovement()
     {
-        switch (cameraController.name)
+        // Verifica se o cameraController existe antes de usar
+        if (cameraController == null)
         {
-            case "CameraThirdPerson":
-                desiredMove = (cameraController.camForward * moveInput.y) + (cameraController.camRight * moveInput.x);
-                break;
+            // Usa movimento padrão se não houver camera controller
+            desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
+        }
+        else
+        {
+            switch (cameraController.name)
+            {
+                case "CameraThirdPerson":
+                    desiredMove = (cameraController.camForward * moveInput.y) + (cameraController.camRight * moveInput.x);
+                    break;
 
-            case "CameraTopDown":
-                desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
-                break;
+                case "CameraTopDown":
+                    desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
+                    break;
 
-            default:
-                desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
-                break;
+                default:
+                    desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
+                    break;
+            }
         }
 
         // Normaliza o vetor de movimento e multiplica pela velocidade máxima
@@ -184,7 +278,10 @@ public class Player : MonoBehaviour
         move.y = verticalVelocity;
 
         // Move o player usando o CharacterController
-        controller.Move(move * Time.deltaTime);
+        if (controller != null)
+        {
+            controller.Move(move * Time.deltaTime);
+        }
 
         // Rotaciona o player para a direção do movimento, se houver input
         if (moveInput.magnitude > 0)
@@ -193,11 +290,18 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotateSpeed);
         }
 
-        cameraController.HandleCamera();
+        // Chama o método da câmera se existir
+        if (cameraController != null)
+        {
+            cameraController.HandleCamera();
+        }
     }
 
     private void HandlePlayerJump()
     {
+        // Verifica se o controller existe antes de usar
+        if (controller == null) return;
+
         // Aplica gravidade e reseta o contador de pulos ao tocar o chão
         if (controller.isGrounded)
         {
@@ -229,7 +333,7 @@ public class Player : MonoBehaviour
         // Se espaço estiver pressionado, o modo planagem continua ativo mesmo tocando o chão
 
         // Se estiver planando, aplica gravidade reduzida e inclina o player
-        if (isGliding && !controller.isGrounded)
+        if (isGliding && controller != null && !controller.isGrounded)
         {
             verticalVelocity += glideGravity * Time.deltaTime;
 
