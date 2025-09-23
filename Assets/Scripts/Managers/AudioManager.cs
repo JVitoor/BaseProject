@@ -11,7 +11,7 @@ public class AudioManager : BaseManager
 
     [Header(" └─ Music")]
     public AudioClip[] musics;
-
+    public AudioClip mainMenuMusic;
     public AudioSource musicSource;
 
     [Header(" └─ SFX")]
@@ -24,6 +24,9 @@ public class AudioManager : BaseManager
     [Tooltip("Array de sons de pulo - será sorteado aleatoriamente")]
     public AudioClip[] jumpSFX; // Array de sons de pulo para variação
 
+    [Header(" └─ Planar SFX")]
+    public AudioClip glideSFX;
+
     [Header(" └─ Tools")]
     public AudioMixer mixer;
 
@@ -34,7 +37,7 @@ public class AudioManager : BaseManager
     private void Awake()
     {
         Debug.Log("[AudioManager] Awake() chamado!");
-        
+
         if (instance == null)
         {
             instance = this;
@@ -53,30 +56,7 @@ public class AudioManager : BaseManager
 
     private void Start()
     {
-        Debug.Log("[AudioManager] Start() chamado!");
-        
-        // Validação dos componentes necessários
-        ValidateAudioSources();
-    }
-
-    private void ValidateAudioSources()
-    {
-        if (musicSource == null)
-            Debug.LogWarning("[AudioManager] Music Source não está atribuído!");
-        
-        if (sfxSource == null)
-            Debug.LogWarning("[AudioManager] SFX Source não está atribuído!");
-        
-        if (sfxSourceLooped == null)
-            Debug.LogWarning("[AudioManager] SFX Source Looped não está atribuído!");
-        
-        if (mixer == null)
-            Debug.LogWarning("[AudioManager] Audio Mixer não está atribuído!");
-        
-        if (jumpSFX == null || jumpSFX.Length == 0)
-            Debug.LogWarning("[AudioManager] Jump SFX array está vazio!");
-        
-        Debug.Log($"[AudioManager] Validação concluída. Instance ativo: {instance != null}");
+        PlayMusic(mainMenuMusic);
     }
 
     #endregion Unity Methods
@@ -90,7 +70,7 @@ public class AudioManager : BaseManager
             Debug.LogError("[AudioManager] Music Source não está configurado!");
             return;
         }
-        
+
         Debug.Log("Tocando música: " + musicClip.name);
         musicSource.clip = musicClip;
         musicSource.Play();
@@ -103,7 +83,7 @@ public class AudioManager : BaseManager
             Debug.LogError("[AudioManager] Music Source não está configurado!");
             return;
         }
-        
+
         if (musicSource.isPlaying)
         {
             Debug.Log("Parando música: " + musicSource.name);
@@ -148,7 +128,7 @@ public class AudioManager : BaseManager
             Debug.LogError("[AudioManager] SFX Source Looped não está configurado!");
             return;
         }
-        
+
         sfxSourceLooped.Stop();
     }
 
@@ -178,13 +158,30 @@ public class AudioManager : BaseManager
     public void PlayJumpSound()
     {
         Debug.Log("[AudioManager] PlayJumpSound() chamado!");
-        
+
         AudioClip selectedSound = GetRandomJumpSound();
-        
+
         if (selectedSound != null)
         {
             Debug.Log($"[AudioManager] Reproduzindo som de pulo: {selectedSound.name}");
             PlaySFX(selectedSound);
+        }
+        else
+        {
+            Debug.LogWarning("[AudioManager] Nenhum som de pulo válido disponível!");
+        }
+    }
+
+    public void PlayGlideSound()
+    {
+        Debug.Log("[AudioManager] PlayJumpSound() chamado!");
+
+        AudioClip selectedSound = glideSFX;
+
+        if (selectedSound != null)
+        {
+            Debug.Log($"[AudioManager] Reproduzindo som de pulo: {selectedSound.name}");
+            PlayLoopedSFX(selectedSound);
         }
         else
         {
@@ -212,7 +209,7 @@ public class AudioManager : BaseManager
         if (instance == null)
         {
             Debug.LogError("[AudioManager] Tentando acessar instance que é null!");
-            
+
             // Tenta encontrar o AudioManager na cena
             AudioManager found = FindObjectOfType<AudioManager>();
             if (found != null)
@@ -225,7 +222,7 @@ public class AudioManager : BaseManager
                 Debug.LogError("[AudioManager] Nenhum AudioManager encontrado na cena!");
             }
         }
-        
+
         return instance;
     }
 
@@ -294,7 +291,7 @@ public class AudioManager : BaseManager
             Debug.LogError("[AudioManager] Audio Mixer não está configurado!");
             return;
         }
-        
+
         mixer.SetFloat(parameter, volume > minLimit ? volume : -80);
     }
 

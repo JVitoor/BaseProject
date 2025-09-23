@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Debug.Log("[Player] Start() chamado!");
-        
+
         // Inicializa CharacterController
         controller = GetComponent<CharacterController>();
         if (controller == null)
@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
         {
             Debug.LogError("[Player] MainCamera não está atribuído no Inspector!");
         }
-        
+
         // Verifica se AudioManager está disponível no Start
         CheckAudioManagerAvailability();
     }
@@ -141,7 +141,7 @@ public class Player : MonoBehaviour
         else
         {
             Debug.LogWarning("[Player] AudioManager não está disponível no Start!");
-            
+
             // Tenta novamente após um frame
             Invoke(nameof(DelayedAudioManagerCheck), 0.1f);
         }
@@ -182,9 +182,9 @@ public class Player : MonoBehaviour
         {
             verticalVelocity = jumpForce;
             jumpCount++;
-            
+
             // Reproduz o som do pulo usando método mais seguro
-            PlayJumpSoundSafely();
+            PlayJumpSound();
         }
         // Ativa o glide se estiver no ar, já usou o double jump e a tecla de pulo está pressionada
         else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding)
@@ -192,6 +192,7 @@ public class Player : MonoBehaviour
             isGliding = true;
             if (planador != null)
             {
+                PlayGlideSound();
                 planador.SetActive(true);
             }
             else
@@ -214,17 +215,33 @@ public class Player : MonoBehaviour
 
     #region Audio Methods
 
-    private void PlayJumpSoundSafely()
+    private void PlayJumpSound()
     {
         Debug.Log("[Player] Tentando reproduzir som de pulo...");
-        
+
         // Usa o método estático mais seguro
         AudioManager audioManager = AudioManager.GetInstance();
-        
+
+        if (audioManager != null)
+        {
+            //Debug.Log("[Player] AudioManager encontrado, reproduzindo som...");
+            audioManager.PlayJumpSound();
+        }
+        else
+        {
+            //Debug.LogWarning("[Player] AudioManager não disponível - som de pulo ignorado!");
+        }
+    }
+
+    private void PlayGlideSound()
+    {
+        // Usa o método estático mais seguro
+        AudioManager audioManager = AudioManager.GetInstance();
+
         if (audioManager != null)
         {
             Debug.Log("[Player] AudioManager encontrado, reproduzindo som...");
-            audioManager.PlayJumpSound();
+            audioManager.PlayGlideSound();
         }
         else
         {
