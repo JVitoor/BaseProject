@@ -1010,7 +1010,7 @@ Camera:
   far clip plane: 5000
   field of view: 70
   orthographic: 0
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1034,8 +1034,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.109540045, y: 0.0011240698, z: -0.00012387616, w: 0.9939818}
-  m_LocalPosition: {x: 112.724625, y: 3.5177991, z: 109.627945}
+  m_LocalRotation: {x: 0.077635, y: 0.0028736712, z: -0.00022377375, w: 0.9969777}
+  m_LocalPosition: {x: 112.724625, y: 4.112462, z: 109.4906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3909,8 +3909,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753387293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.109540015, y: 0.0011240694, z: -0.00012387607, w: 0.9939818}
-  m_LocalPosition: {x: 112.724625, y: 3.5177991, z: 109.627945}
+  m_LocalRotation: {x: 0.07763499, y: 0.002873671, z: -0.0002237737, w: 0.99697775}
+  m_LocalPosition: {x: 112.724625, y: 4.112462, z: 109.4906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4044,13 +4044,13 @@ MonoBehaviour:
   Orbits:
     Top:
       Radius: 2.75
-      Height: 1.5
+      Height: 3
     Center:
       Radius: 3
-      Height: 1.2
+      Height: 1
     Bottom:
-      Radius: 2.75
-      Height: 0.5
+      Radius: 1.5
+      Height: 0.1
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
@@ -4108,11 +4108,11 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 70
-    OrthographicSize: 10
+    OrthographicSize: 5
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
-    ModeOverride: 0
+    ModeOverride: 1
     PhysicalProperties:
       GateFit: 2
       SensorSize: {x: 21.946, y: 16.002}
@@ -4619,6 +4619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1924570981}
   - component: {fileID: 1924570982}
+  - component: {fileID: 1924570983}
   m_Layer: 0
   m_Name: Game (Manager)
   m_TagString: Manager
@@ -4655,6 +4656,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nutsCollected: 0
   nutsCounterText: {fileID: 54346640}
+--- !u!114 &1924570983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924570980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91bd2ff2b34d7c24386690a075408a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleKey: 27
+  lockStartOn: 1
 --- !u!1 &1942484455
 GameObject:
   m_ObjectHideFlags: 0
@@ -5042,9 +5057,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 244070562}
     m_Modifications:
     - target: {fileID: 1572950265071250341, guid: 6100f9517c0816e41956ddac02b27853, type: 3}
+      propertyPath: lockMouse
+      value: 
+      objectReference: {fileID: 1924570983}
+    - target: {fileID: 1572950265071250341, guid: 6100f9517c0816e41956ddac02b27853, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1753387293}
+    - target: {fileID: 1572950265071250341, guid: 6100f9517c0816e41956ddac02b27853, type: 3}
+      propertyPath: keyCodeMouse
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 1759579345379615625, guid: 6100f9517c0816e41956ddac02b27853, type: 3}
       propertyPath: m_Name
       value: Player
