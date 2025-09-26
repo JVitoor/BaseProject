@@ -95,12 +95,6 @@ public class Player : MonoBehaviour
 
     public GameObject planador;
 
-    [Header(" └─ LockMouse")]
-
-    public LockMouse lockMouse;
-
-    public KeyCode keyCodeMouse;
-
     #endregion Unity Tools Properties
 
     #endregion Properties
@@ -137,19 +131,6 @@ public class Player : MonoBehaviour
         // Verifica se AudioManager está disponível no Start
         CheckAudioManagerAvailability();
 
-        // Inicializa o LockMouse com verificação de segurança
-        if (lockMouse != null)
-        {
-            lockMouse = FindAnyObjectByType<LockMouse>();
-            if(lockMouse == null)
-            {
-                Debug.LogError("[Player] LockMouse não encontrado no GameObject Game(Manager)");
-            }
-        }
-        else
-        {
-            Debug.LogError("[Player] GameManager(LockMouse) não esta no Inspector!");
-        }
     }
 
     private void CheckAudioManagerAvailability()
@@ -184,6 +165,7 @@ public class Player : MonoBehaviour
         HandlePlayerMovement();
         HandlePlayerJump();
         
+
     }
 
     #endregion Unity Methods
@@ -348,7 +330,7 @@ public class Player : MonoBehaviour
 
         HandlePlayerDoubleJump();
         HandlePlayerGlide();
-        HeadleToggleMouse();
+        
     }
 
     private void HandlePlayerDoubleJump()
@@ -381,16 +363,6 @@ public class Player : MonoBehaviour
     }
 
     #endregion Movement Methods
-
-    #region Mouse Methods
-
-    private void HeadleToggleMouse()
-    {
-        if (Input.GetKeyDown(keyCodeMouse) && lockMouse != null)
-            lockMouse.ToggleCursor();
-    }
-
-    #endregion
 
     #endregion Methods
 }
