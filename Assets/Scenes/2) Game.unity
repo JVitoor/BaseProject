@@ -496,7 +496,19 @@ MonoBehaviour:
     m_ActionId: f1ba0d36-48eb-4cd5-b651-1c94a6531f70
     m_ActionName: 'Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 919132148136638768}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 641cd816-40e6-41b4-8c3d-04687c349290
     m_ActionName: 'Player/Sprint[/Keyboard/leftShift,/XInputControllerWindows/leftStickPress]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -519,6 +531,9 @@ MonoBehaviour:
   moveInput: {x: 0, y: 0}
   rotateSpeed: 5
   _moveSpeed: 5
+  acceleration: 15
+  deceleration: 20
+  currentSpeed: 0
   jumpForce: 10
   verticalVelocity: 0
   gravity: -30
@@ -5710,6 +5725,7 @@ GameObject:
   - component: {fileID: 33284967}
   - component: {fileID: 33284965}
   - component: {fileID: 33284964}
+  - component: {fileID: 5866666020782930417}
   m_Layer: 0
   m_Name: Donatella
   m_TagString: Player
@@ -7632,6 +7648,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5866666020782930417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148136638768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28e975a422d0474297d0a552d25c1cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 15
+  dashDuration: 0.2
+  dashCooldown: 1
 --- !u!4 &6168017113063642000
 Transform:
   m_ObjectHideFlags: 0
