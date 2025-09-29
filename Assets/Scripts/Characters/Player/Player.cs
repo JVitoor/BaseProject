@@ -42,6 +42,14 @@ public class Player : MonoBehaviour
 
     public float maxRollAngle = 30f; // Ângulo máximo de inclinação ao planar
 
+    // TRABALHO DE PDJ - EMPURRAR:
+    private Pushable pushableTarget; // Pega o target que pode ser empurrado
+    public float pushForce = 10f; // Força aplicada ao empurrar
+
+    // TRABALHO DE PDJ - PUXAR:
+    private Pullable pullTarget; // Pega o target que pode ser puxado
+    private Transform pullPoint; // Ponto de ancoragem para o objeto puxado
+
     #endregion Movement Properties
 
     #region Data Properties
@@ -136,6 +144,11 @@ public class Player : MonoBehaviour
         // Verifica se AudioManager está disponível no Start
         CheckAudioManagerAvailability();
 
+        // TRABALHO DE PDJ - PUXAR
+
+        pullPoint = new GameObject("PullPoint").transform; // Cria um novo GameObject vazio para ser o ponto de pull
+        pullPoint.SetParent(transform); // Define o player como pai do ponto de pull
+        pullPoint.localPosition = new Vector3(0, 1f, 1.5f); // Posiciona o ponto de pull na frente do player
     }
 
     private void CheckAudioManagerAvailability()
@@ -169,8 +182,6 @@ public class Player : MonoBehaviour
     {
         HandlePlayerMovement();
         HandlePlayerJump();
-        
-
     }
 
     #endregion Unity Methods
@@ -216,6 +227,48 @@ public class Player : MonoBehaviour
             {
                 planador.SetActive(false);
             }
+        }
+    }
+
+    // TRABALHO DE PDJ - EMPURRAR:
+    public void OnPushInput(InputAction.CallbackContext context) // Método chamado ao pressionar "E"
+    {
+        if (context.performed && pushableTarget != null) // Verifica se o botão foi pressionado e se há um objeto para empurrar
+        {
+            float distance = Vector3.Distance(transform.position, pushableTarget.transform.position); // Calcula a distância entre o player e o objeto
+
+            if (distance <= 2f) // Verifica se está dentro do alcance para empurrar
+            {
+                Vector3 pushDir = transform.forward; // Direção do empurrão (para frente do player)
+                pushableTarget.Push(pushDir, pushForce); // Chama o método Push no objeto pushable
+            }
+            else // Se estiver fora do alcance
+            {
+                pushableTarget = null; // Reseta o pushableTarget
+            }
+        }
+    }
+
+    // TRABALHO DE PDJ - PUXAR:
+    public void OnPullInput(InputAction.CallbackContext context) // Método chamado pelo Input System ao pressionar o botão de puxar
+    {
+        if (pullTarget == null) return; // Se não houver objeto para puxar, sai do método
+
+        if (context.performed) // Se o botão foi pressionado
+        {
+            pullTarget.SetKinematic(true); // Define o objeto como kinematic para evitar física indesejada
+
+            pullTarget.transform.SetParent(pullPoint); // Define o ponto de pull como pai do objeto puxado
+
+            pullTarget.transform.localPosition = Vector3.zero; // Posiciona o objeto puxado no ponto de pull
+        }
+        else if (context.canceled) // Se o botão foi solto
+        {
+            pullTarget.SetKinematic(false); // Reseta o objeto para não ser mais kinematic
+
+            pullTarget.transform.SetParent(null); // Remove o pai do objeto puxado
+
+            pullTarget = null; // Reseta o pullTarget
         }
     }
 
@@ -338,7 +391,7 @@ public class Player : MonoBehaviour
 
         HandlePlayerDoubleJump();
         HandlePlayerGlide();
-        
+
     }
 
     private void HandlePlayerDoubleJump()
@@ -381,6 +434,28 @@ public class Player : MonoBehaviour
         else
         {
             currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.deltaTime);
+        }
+    }
+
+    // TRABALHO DE PDJ - EMPURRAR/PUXAR:
+    private void OnControllerColliderHit(ControllerColliderHit hit) // Detecta colisões com o CharacterController
+    {
+        // EMPURRAR:
+
+        Pushable pushable = hit.collider.GetComponent<Pushable>(); // Verifica se o objeto colidido tem o script Pushable
+
+        if (pushable != null) // Se for um objeto empurrável
+        {
+            pushableTarget = pushable; // Define o pushableTarget como o objeto colidido
+        }
+
+        // PUXAR:
+
+        Pullable pullable = hit.collider.GetComponent<Pullable>(); // Verifica se o objeto colidido tem o componente Pullable
+
+        if (pullable != null) // Se for um objeto puxável
+        {
+            pullTarget = pullable; // Define o pullTarget como o objeto colidido
         }
     }
 
