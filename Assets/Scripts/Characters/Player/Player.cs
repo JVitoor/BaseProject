@@ -29,6 +29,10 @@ public class Player : MonoBehaviour
     public float deceleration = 20.0f; // Velocidade de desaceleração
     public float currentSpeed = 0f; // Velocidade atual do player
 
+    [Header(" └─ Ground pound")]
+    private bool isGroundPounding = false;
+    public float groundPoundVelocityModifier = 5f;
+
     [Header(" └─ Jump")]
     public float jumpForce = 7f;
 
@@ -185,6 +189,8 @@ public class Player : MonoBehaviour
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
+        if (isGroundPounding) return;
+
         // Permite pular se pressionou o botão e não excedeu o número máximo de pulos
         if (context.performed && jumpCount < maxJumps)
         {
@@ -216,6 +222,16 @@ public class Player : MonoBehaviour
             {
                 planador.SetActive(false);
             }
+        }
+    }
+
+    public void OnGroundPoundInput(InputAction.CallbackContext context)
+    {
+        if (context.performed && !controller.isGrounded)
+        {
+            //Debug.Log("Ground Pounding");
+
+            isGroundPounding = true;
         }
     }
 
@@ -295,6 +311,16 @@ public class Player : MonoBehaviour
 
         // Aplica movimento vertical (pulo, gravidade e glide)
         move.y = verticalVelocity;
+
+        if (controller.isGrounded && isGroundPounding) 
+            isGroundPounding = false;
+
+        //Reseta o vetor de movimento em x e z e multiplica a velocidade em y por groundPoundVelocityModifier
+        if (isGroundPounding)
+        {
+            move = new Vector3(0f, verticalVelocity * groundPoundVelocityModifier, 0f);
+        }
+
 
         // Move o player usando o CharacterController
         if (controller != null)
