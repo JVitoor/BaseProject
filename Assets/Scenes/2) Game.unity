@@ -497,13 +497,13 @@ MonoBehaviour:
     m_ActionName: 'Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 919132148136638768}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 5866666020782930417}
+        m_TargetAssemblyTypeName: Dash, Assembly-CSharp
+        m_MethodName: OnDashInput
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3884,6 +3884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggleKey: 9
   lockOnStart: 1
+  dashReference: {fileID: 0}
 --- !u!4 &1548116834 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7451318618249335043, guid: 33700a4d837b23b4e8081969674e0496, type: 3}

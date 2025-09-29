@@ -4,9 +4,9 @@ using UnityEngine.InputSystem;
 public class Dash : MonoBehaviour
 {
     [Header(" └─ Dash Settings")]
-    public float dashSpeed = 15f;       // velocidade do dash
-    public float dashDuration = 0.2f;   // quanto tempo dura
-    public float dashCooldown = 1f;     // tempo até poder usar de novo
+    public float dashSpeed = 15f;// Velocidade do dash
+    public float dashDuration = 0.2f;// Quanto tempo dura
+    public float dashCooldown = 1f;// Tempo até poder usar de novo
 
     private CharacterController controller; // Referência ao CharacterController
     private bool isDashing = false; // Indica se o player está usando o dash
