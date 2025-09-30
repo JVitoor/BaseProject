@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 308163675642467927}
   - component: {fileID: 4714945438691385054}
   - component: {fileID: 8859031218505761619}
-  - component: {fileID: 4311273639595194296}
+  - component: {fileID: 3678231883257796696}
+  - component: {fileID: 7895352105775282521}
   m_Layer: 0
-  m_Name: CogumeloLado
+  m_Name: CogumeloPulo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,8 +88,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4311273639595194296
-MeshCollider:
+--- !u!65 &3678231883257796696
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,7 +106,19 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8204540842396848168, guid: 67586d85c580307499dabe69dd88a9ab, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.024526324, y: 0.028537396, z: 0.005315219}
+  m_Center: {x: -0.004215898, y: -0.0000069616217, z: 0.01290684}
+--- !u!114 &7895352105775282521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298449952861119714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c16398676a25e4d890ff6d5a2fd7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpBoost: 30
