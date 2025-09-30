@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class JumpBoostController : MonoBehaviour
 {
-    public float jumpBoost = 30f; // Altura extra do trampolim
+    public float jumpBoost = 17f; // Altura extra do trampolim
 
     private void OnTriggerEnter(Collider other)
     {
