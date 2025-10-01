@@ -24,6 +24,11 @@ public class Player : MonoBehaviour
         set { _moveSpeed = value; }
     }
 
+    [Header(" └─ Acceleration")]
+    public float acceleration = 15.0f; // Velocidade de aceleração
+    public float deceleration = 20.0f; // Velocidade de desaceleração
+    public float currentSpeed = 0f; // Velocidade atual do player
+
     [Header(" └─ Jump")]
     public float jumpForce = 7f;
 
@@ -130,6 +135,7 @@ public class Player : MonoBehaviour
 
         // Verifica se AudioManager está disponível no Start
         CheckAudioManagerAvailability();
+
     }
 
     private void CheckAudioManagerAvailability()
@@ -163,6 +169,8 @@ public class Player : MonoBehaviour
     {
         HandlePlayerMovement();
         HandlePlayerJump();
+        
+
     }
 
     #endregion Unity Methods
@@ -279,8 +287,11 @@ public class Player : MonoBehaviour
             }
         }
 
-        // Normaliza o vetor de movimento e multiplica pela velocidade máxima
-        move = desiredMove.normalized * moveSpeed;
+        // Sistema de aceleração
+        HandleAcceleration();
+
+        // Normaliza o vetor de movimento e multiplica pela velocidade atual (com aceleração)
+        move = desiredMove.normalized * currentSpeed;
 
         // Aplica movimento vertical (pulo, gravidade e glide)
         move.y = verticalVelocity;
@@ -327,6 +338,7 @@ public class Player : MonoBehaviour
 
         HandlePlayerDoubleJump();
         HandlePlayerGlide();
+        
     }
 
     private void HandlePlayerDoubleJump()
@@ -355,6 +367,20 @@ public class Player : MonoBehaviour
             // Quando não estiver planando, reseta a inclinação
             Quaternion resetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, resetRotation, Time.deltaTime * 5f);
+        }
+    }
+
+    private void HandleAcceleration()
+    {
+        // Se há input de movimento, acelera até a velocidade máxima
+        if (moveInput.magnitude > 0.1f)
+        {
+            currentSpeed = Mathf.MoveTowards(currentSpeed, moveSpeed, acceleration * Time.deltaTime);
+        }
+        // Se não há input, desacelera até parar
+        else
+        {
+            currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.deltaTime);
         }
     }
 
