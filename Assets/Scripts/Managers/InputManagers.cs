@@ -11,10 +11,9 @@ public class InputManagers : BaseManager
     public bool lockOnStart = true;
 
     public bool IsLocked { get; private set; }
-    
-    [Header("Dash Input")]
-    [Tooltip("Referência para o componente Dash")]
-    public Dash dashReference;
+
+    public GameObject pausePanel;
+    private bool isPaused = false;
 
     void Start()
     {
@@ -22,39 +21,35 @@ public class InputManagers : BaseManager
             LockCursor();
         else
             UnlockCursor();
-
-        // Tenta encontrar o componente Dash automaticamente se não estiver atribuído
-        if (dashReference == null)
-        {
-            dashReference = FindFirstObjectByType<Dash>();
-            if (dashReference == null)
-            {
-                Debug.LogWarning("[InputManager] Componente Dash não encontrado na cena!");
-            }
-            else
-            {
-                Debug.Log("[InputManager] Componente Dash encontrado automaticamente!");
-            }
-        }
     }
 
     void Update()
     {
         if (Input.GetKeyDown(toggleKey))
             ToggleCursor();
-    }
 
-    #region Dash Input Methods
-
-    public void OnDashInput(InputAction.CallbackContext context)
-    {
-        if (dashReference != null && context.performed)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            dashReference.StartDash();
+            if (isPaused)
+                ResumeGame();
+            else
+                PauseGame();
         }
     }
 
-    #endregion
+    public void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        Time.timeScale = 0f; // congela o jogo
+        isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f; // volta o tempo ao normal
+        isPaused = false;
+    }
 
     #region Methods Cursor
     public void LockCursor()
