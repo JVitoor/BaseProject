@@ -1,15 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputManagers : BaseManager
 {
     [Header("Configuração do Mouse")]
     [Tooltip("Tecla para alternar o lock do mouse")]
-    public KeyCode toggleKey;
+    public KeyCode toggleCursorKey;
+    public KeyCode togglePauseKey;
 
     [Tooltip("Bloquear o mouse ao iniciar o jogo?")]
     public bool lockOnStart = true;
 
     public bool IsLocked { get; private set; }
+
+    public GameObject pausePanel; 
 
     void Start()
     {
@@ -21,8 +25,23 @@ public class InputManagers : BaseManager
 
     void Update()
     {
-        if (Input.GetKeyDown(toggleKey))
+        if (Input.GetKeyDown(toggleCursorKey))
             ToggleCursor();
+
+        if (Input.GetKeyDown(togglePauseKey))
+            TogglePausePanel();
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            ChangeScene(1);
+        
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            ChangeScene(2);
+        
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            ChangeScene(3);
+       
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+            ChangeScene(4);
     }
 
     #region Methods Cursor
@@ -45,5 +64,17 @@ public class InputManagers : BaseManager
         if (IsLocked) UnlockCursor();
         else LockCursor();
     }
+
+    public void TogglePausePanel()
+    {
+        Time.timeScale = pausePanel.activeSelf ? 1f : 0f;
+        pausePanel.SetActive(!pausePanel.activeSelf);
+    }
+
+    public void ChangeScene(int level)
+    {
+        GameManager.Instance.LoadLevel(level);
+    }
+
     #endregion
 }

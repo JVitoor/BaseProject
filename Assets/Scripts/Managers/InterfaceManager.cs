@@ -145,46 +145,45 @@ public class InterfaceManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    //Altera o volume master
     public void ChangeMasterVolume()
     {
-        AudioManager.instance.ChangeMasterVolume(masterSlider.value);
+        float volume = masterSlider.value;
+        AudioManager.instance.ChangeMasterVolume(volume);
+        PlayerPrefs.SetFloat("MasterVol", volume); // Salva
     }
 
-    // Altera o volume da música
+    // Altera o volume da msica
     public void ChangeMusicVolume()
     {
-        AudioManager.instance.ChangeMusicVolume(musicSlider.value);
+        float volume = musicSlider.value;
+        AudioManager.instance.ChangeMusicVolume(volume);
+        PlayerPrefs.SetFloat("MusicVol", volume); // Salva
     }
 
     // Altera o volume dos efeitos sonoros
     public void ChangeSFXVolume()
     {
-        AudioManager.instance.ChangeSFXVolume(sfxSlider.value);
-    }
+        float volume = sfxSlider.value;
+        AudioManager.instance.ChangeSFXVolume(volume);
+        PlayerPrefs.SetFloat("SFXVol", volume); // Salva
+    }
 
     public void SetDefaultVolume()
     {
-        AudioManager.instance.mixer.GetFloat("MasterVol", out float aux1);
+        // Carrega o valor salvo, ou usa 0 como padrão se não houver nada salvo
+        float masterVol = PlayerPrefs.GetFloat("MasterVol", 0);
+        float musicVol = PlayerPrefs.GetFloat("MusicVol", 0);
+        float sfxVol = PlayerPrefs.GetFloat("SFXVol", 0);
 
-        if (masterSlider != null)
-        {
-            masterSlider.value = aux1;
-        }
+        // Ajusta os sliders para o valor carregado
+        if (masterSlider != null) masterSlider.value = masterVol;
+        if (musicSlider != null) musicSlider.value = musicVol;
+        if (sfxSlider != null) sfxSlider.value = sfxVol;
 
-        AudioManager.instance.mixer.GetFloat("MusicVol", out float aux2);
-
-        if (musicSlider != null)
-        {
-            musicSlider.value = aux2;
-        }
-
-        AudioManager.instance.mixer.GetFloat("SFXVol", out float aux3);
-
-        if (sfxSlider != null)
-        {
-            sfxSlider.value = aux3;
-        }
+        // Aplica os valores carregados ao mixer imediatamente
+        AudioManager.instance.ChangeMasterVolume(masterVol);
+        AudioManager.instance.ChangeMusicVolume(musicVol);
+        AudioManager.instance.ChangeSFXVolume(sfxVol);
     }
 
     public void QuitGame()
