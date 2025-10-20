@@ -65,7 +65,7 @@ public class InterfaceManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("[InterfaceManager] Nenhuma música definida em AudioManager.");
+            Debug.LogWarning("[InterfaceManager] Nenhuma mï¿½sica definida em AudioManager.");
         }
         SetDefaultVolume();
 
@@ -76,8 +76,8 @@ public class InterfaceManager : MonoBehaviour
 
     #region Auxiliar Methods
 
-    // Preenche o dicionário privado que relaciona o enum PanelsName com o GameObject do painel
-    // O nome do painel é o nome do enum + " Panel", obtido pela extensão de PanelsName
+    // Preenche o dicionï¿½rio privado que relaciona o enum PanelsName com o GameObject do painel
+    // O nome do painel ï¿½ o nome do enum + " Panel", obtido pela extensï¿½o de PanelsName
     private void InitializeUIDictionary()
     {
         foreach (PanelsName name in Enum.GetValues(typeof(PanelsName)))
@@ -89,14 +89,14 @@ public class InterfaceManager : MonoBehaviour
             {
                 Debug.Log($"[InterfaceManager] Painel '{panelName}' encontrado e registrado.");
                 uiDictionary[name] = panel;
-                panel.SetActive(false); // Desativa o painel por padrão
+                panel.SetActive(false); // Desativa o painel por padrï¿½o
             }
             else
             {
-                Debug.LogWarning($"[InterfaceManager] Painel '{panelName}' não encontrado na cena.");
+                Debug.LogWarning($"[InterfaceManager] Painel '{panelName}' nï¿½o encontrado na cena.");
             }
         }
-        ShowPanel(PanelsName.MainMenu); // Exibe o menu principal por padrão
+        ShowPanel(PanelsName.MainMenu); // Exibe o menu principal por padrï¿½o
     }
 
 
@@ -108,7 +108,7 @@ public class InterfaceManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"[InterfaceManager] Painel '{name.GetPanelName()}' não está registrado.");
+            Debug.LogError($"[InterfaceManager] Painel '{name.GetPanelName()}' nï¿½o estï¿½ registrado.");
         }
     }
 
@@ -120,7 +120,7 @@ public class InterfaceManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"[InterfaceManager] Painel '{name.GetPanelName()}' não está registrado.");
+            Debug.LogError($"[InterfaceManager] Painel '{name.GetPanelName()}' nï¿½o estï¿½ registrado.");
         }
     }
 
@@ -165,12 +165,12 @@ public class InterfaceManager : MonoBehaviour
     {
         float volume = sfxSlider.value;
         AudioManager.instance.ChangeSFXVolume(volume);
-        PlayerPrefs.SetFloat("SFXVol", volume); // Salva
-    }
+        PlayerPrefs.SetFloat("SFXVol", volume); // Salva
+    }
 
     public void SetDefaultVolume()
     {
-        // Carrega o valor salvo, ou usa 0 como padrão se não houver nada salvo
+        // Carrega o valor salvo, ou usa 0 como padrï¿½o se nï¿½o houver nada salvo
         float masterVol = PlayerPrefs.GetFloat("MasterVol", 0);
         float musicVol = PlayerPrefs.GetFloat("MusicVol", 0);
         float sfxVol = PlayerPrefs.GetFloat("SFXVol", 0);

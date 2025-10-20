@@ -148,6 +148,7 @@ public class AudioManager : BaseManager
 
         Debug.Log("Tocando efeito sonoro em loop: " + clip.name);
         sfxSourceLooped.clip = clip;
+        sfxSourceLooped.loop = true;
         sfxSourceLooped.Play();
     }
 
@@ -174,19 +175,25 @@ public class AudioManager : BaseManager
 
     public void PlayGlideSound()
     {
-        Debug.Log("[AudioManager] PlayJumpSound() chamado!");
+        Debug.Log("[AudioManager] PlayGlideSound() chamado!");
 
         AudioClip selectedSound = glideSFX;
 
         if (selectedSound != null)
         {
-            Debug.Log($"[AudioManager] Reproduzindo som de pulo: {selectedSound.name}");
-            PlayLoopedSFX(selectedSound);
+           Debug.Log($"[AudioManager] Reproduzindo som de planar: {selectedSound.name}"); 
+           PlayLoopedSFX(selectedSound);
         }
         else
         {
-            Debug.LogWarning("[AudioManager] Nenhum som de pulo válido disponível!");
+           Debug.LogWarning("[AudioManager] Nenhum som de planar válido disponível!");
         }
+    }
+
+    public void StopGlideSound()
+    {
+        Debug.Log("[AudioManager] StopGlideSound() chamado!");
+        StopLoopedSFX(); // Apenas chama o método que já existe para parar o loop
     }
 
     #endregion Player Specific SFX Methods

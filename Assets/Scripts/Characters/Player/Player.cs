@@ -183,7 +183,8 @@ public class Player : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
     }
 
-    public void OnJumpInput(InputAction.CallbackContext context)
+    // TESTE DO DANDAN
+    /*public void OnJumpInput(InputAction.CallbackContext context)
     {
         // Permite pular se pressionou o botão e não excedeu o número máximo de pulos
         if (context.performed && jumpCount < maxJumps)
@@ -215,6 +216,44 @@ public class Player : MonoBehaviour
             if (planador != null)
             {
                 planador.SetActive(false);
+            }
+        }
+    }*/
+
+    public void OnJumpInput(InputAction.CallbackContext context)
+    {
+        // Permite pular se pressionou o botão e não excedeu o número máximo de pulos
+        if (context.performed && jumpCount < maxJumps)
+        {
+            verticalVelocity = jumpForce;
+            jumpCount++;
+            PlayJumpSound();
+        }
+        // Ativa o glide se estiver no ar, já usou o double jump e a tecla de pulo está pressionada
+        else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding)
+        {
+            isGliding = true;
+            if (planador != null)
+            {
+                PlayGlideSound(); // INICIA O SOM
+                planador.SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("[Player] GameObject planador não está atribuído!");
+            }
+        }
+        // Desativa o glide AO SOLTAR a tecla de pulo
+        else if (context.canceled) // <<< REMOVIDO O '|| controller.isGrounded' DAQUI
+        {
+            if (isGliding) // Só executa se estava planando
+            {
+                isGliding = false;
+                StopGlideSound(); // PARA O SOM
+                if (planador != null)
+                {
+                    planador.SetActive(false);
+                }
             }
         }
     }
@@ -254,6 +293,20 @@ public class Player : MonoBehaviour
         else
         {
             Debug.LogWarning("[Player] AudioManager não disponível - som de pulo ignorado!");
+        }
+    }
+
+    private void StopGlideSound()
+    {
+        AudioManager audioManager = AudioManager.GetInstance();
+
+        if (audioManager != null)
+        {
+            audioManager.StopGlideSound();
+        }
+        else
+        {
+            Debug.LogWarning("[Player] AudioManager não disponível - não foi possível parar o som de glide!");
         }
     }
 
@@ -316,7 +369,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void HandlePlayerJump()
+    //TESTE DO DANDAN
+    /*private void HandlePlayerJump()
     {
         // Verifica se o controller existe antes de usar
         if (controller == null) return;
@@ -339,6 +393,42 @@ public class Player : MonoBehaviour
         HandlePlayerDoubleJump();
         HandlePlayerGlide();
         
+    }*/
+
+    private void HandlePlayerJump()
+    {
+        // Verifica se o controller existe antes de usar
+        if (controller == null) return;
+
+        // Aplica gravidade e reseta o contador de pulos ao tocar o chão
+        if (controller.isGrounded)
+        {
+            if (verticalVelocity < 0)
+            {
+                verticalVelocity = 0f;
+            }
+            jumpCount = 0;
+
+            // *** ADICIONE ESTA VERIFICAÇÃO ***
+            // Se o player estava planando quando tocou o chão, pare o planeio
+            if (isGliding)
+            {
+                isGliding = false;
+                StopGlideSound(); // PARA O SOM
+                if (planador != null)
+                {
+                    planador.SetActive(false); // Esconde o planador
+                }
+            }
+            // *** FIM DA ADIÇÃO ***
+        }
+        else
+        {
+            verticalVelocity += gravity * Time.deltaTime;
+        }
+
+        HandlePlayerDoubleJump();
+        HandlePlayerGlide();
     }
 
     private void HandlePlayerDoubleJump()
