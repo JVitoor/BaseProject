@@ -8,11 +8,16 @@ public class GameManager : BaseManager
     
     [Header("Collectibles")]
     public int nutsCollected = 0;
-    public Text nutsCounterText; // Refer�ncia para o texto UI
-    
+    public Text nutsCounterText; // Refer�ncia para o texto UI
+
     [Header("Level Management")]
     public int currentLevel = 1;
     
+    [Header("Player Respawn")]
+    private Player player; // Referência ao script do player
+    private Vector3 initialSpawnPoint;
+    public Vector3 lastCheckpointPosition { get; private set; }
+        
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -23,11 +28,25 @@ public class GameManager : BaseManager
         
         Instance = this;
         
-        // Tenta encontrar o texto do contador se n�o foi atribu�do
+        // Tenta encontrar o texto do contador se não foi atribuído
         if (nutsCounterText == null)
         {
             nutsCounterText = GameObject.Find("NutsCounter")?.GetComponent<Text>();
         }
+
+        // --- LÓGICA DE SPAWN/CHECKPOINT ---
+        player = FindObjectOfType<Player>(); // Encontra o player na cena
+        if (player != null)
+        {
+            // Define o ponto de spawn inicial baseado na posição inicial do player
+            initialSpawnPoint = player.transform.position;
+            lastCheckpointPosition = initialSpawnPoint;
+        }
+        else
+        {
+            Debug.LogError("[GameManager] Player não encontrado na cena!");
+        }
+        // --- FIM DA LÓGICA ---
     }
     
     private void Start()
@@ -50,7 +69,7 @@ public class GameManager : BaseManager
         }
         else
         {
-            Debug.LogWarning("[GameManager] Texto do contador de nozes n�o encontrado!");
+            Debug.LogWarning("[GameManager] Texto do contador de nozes n�o encontrado!");
         }
     }
     
@@ -71,7 +90,7 @@ public class GameManager : BaseManager
     public void LoadNextLevel()
     {
         int nextLevel = currentLevel + 1;
-        Debug.Log($"[GameManager] Carregando pr�xima fase: {nextLevel}");
+        Debug.Log($"[GameManager] Carregando pr�xima fase: {nextLevel}");
         LoadLevel(nextLevel);
     }
     
@@ -80,17 +99,41 @@ public class GameManager : BaseManager
         Debug.Log($"[GameManager] Reiniciando fase atual: {currentLevel}");
         LoadLevel(currentLevel);
     }
-    
+
     public void LoadMainMenu()
     {
         Debug.Log("[GameManager] Voltando ao menu principal...");
-        
+
         // Garante que o tempo esteja normal
         Time.timeScale = 1f;
-        
-        // Carrega a cena do menu principal (assumindo que seja o �ndice 0)
+
+        // Carrega a cena do menu principal (assumindo que seja o �ndice 0)
         SceneManager.LoadScene(0);
     }
     
+    public void SetCheckpoint(Vector3 newPosition)
+{
+    Debug.Log($"[GameManager] Novo checkpoint definido em: {newPosition}");
+    // Armazena a posição do checkpoint, elevando-a ligeiramente
+    // para evitar que o player caia através do chão ao respawnar.
+    lastCheckpointPosition = newPosition + Vector3.up * 2f; 
+}
+
+    public void RespawnPlayer()
+    {
+        Debug.Log("[GameManager] Recebida ordem de respawn...");
+        if (player != null)
+        {
+            // Chama o método de respawn no script do Player
+            player.Respawn(lastCheckpointPosition);
+        }
+        else
+        {
+            Debug.LogError("[GameManager] Referência do Player perdida! Não é possível respawnar.");
+            // Como último recurso, recarrega a cena
+            RestartCurrentLevel();
+        }
+    }
+
     #endregion Level Loading Methods
 }

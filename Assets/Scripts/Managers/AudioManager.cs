@@ -118,6 +118,7 @@ public class AudioManager : BaseManager
 
         Debug.Log("Tocando efeito sonoro: " + clip.name);
         sfxSource.clip = clip;
+        sfxSource.loop = false;
         sfxSource.Play();
     }
 
@@ -130,6 +131,7 @@ public class AudioManager : BaseManager
         }
 
         sfxSourceLooped.Stop();
+        sfxSourceLooped.loop = false;
     }
 
     public void PlayLoopedSFX(AudioClip clip)

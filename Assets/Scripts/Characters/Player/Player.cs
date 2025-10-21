@@ -89,6 +89,11 @@ public class Player : MonoBehaviour
         set { maxLife = value; }
     }
 
+    [Header("Player Respawn")]
+    private Player player; // Referência ao script do player
+    private Vector3 initialSpawnPoint;
+    public Vector3 lastCheckpointPosition { get; private set; }
+
     #endregion Health Properties
 
     #region Unity Tools Properties
@@ -107,6 +112,7 @@ public class Player : MonoBehaviour
     #region Methods
 
     #region Unity Methods
+
 
     private void Start()
     {
@@ -473,6 +479,48 @@ public class Player : MonoBehaviour
             currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.deltaTime);
         }
     }
+
+    public void Respawn(Vector3 respawnPosition)
+    {
+        Debug.Log($"[Player] Respawnando em {respawnPosition}");
+
+        if (controller == null)
+        {
+            controller = GetComponent<CharacterController>();
+        }
+
+        // 1. Desabilita o CharacterController para permitir o teleporte
+        controller.enabled = false;
+
+        // 2. Define a nova posição
+        transform.position = respawnPosition;
+
+        // 3. Reabilita o CharacterController
+        controller.enabled = true;
+
+        // --- Resetar o Estado do Player ---
+
+        // Reseta todas as velocidades e inputs
+        verticalVelocity = 0f;
+        currentSpeed = 0f;
+        moveInput = Vector2.zero;
+        jumpCount = 0;
+
+        // Garante que o planador seja desativado se o player morrer planando
+        if (isGliding)
+        {
+            isGliding = false;
+            StopGlideSound();
+            if (planador != null)
+            {
+                planador.SetActive(false);
+            }
+        }
+
+        // Reseta a rotação para evitar que o player respawne inclinado
+        transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+    }
+
 
     #endregion Movement Methods
 
