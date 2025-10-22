@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [Header(" └─ Movement")]
     public Vector2 moveInput;
 
-    protected CharacterController controller;
+    public CharacterController controller;
     protected Vector3 move;
     protected Vector3 desiredMove;
     protected Quaternion rotation;

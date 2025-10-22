@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &891638707320380054
+--- !u!1 &2727215278747597852
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1454535786979589992}
-  - component: {fileID: 8163224071553939679}
-  - component: {fileID: 3945325485150358703}
-  - component: {fileID: 4917179719277947175}
-  - component: {fileID: 8321534385155593289}
+  - component: {fileID: 7213512805277980504}
+  - component: {fileID: 1799572783672534710}
+  - component: {fileID: 4484902639661480504}
+  - component: {fileID: 288217057929331644}
   m_Layer: 0
-  m_Name: TroncoCortado
-  m_TagString: Log
+  m_Name: BoatFloor
+  m_TagString: Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1454535786979589992
+--- !u!4 &7213512805277980504
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891638707320380054}
+  m_GameObject: {fileID: 2727215278747597852}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 1.279003e-23, z: -1.5700928e-16, w: 0.7071067}
-  m_LocalPosition: {x: 2.8433642, y: 19.70017, z: 12.813332}
-  m_LocalScale: {x: 2.8482533, y: 2.8482533, z: 2.8482533}
+  m_LocalRotation: {x: -0, y: 0.67647415, z: -0, w: 0.73646647}
+  m_LocalPosition: {x: -8.2, y: 23.2, z: -6.6}
+  m_LocalScale: {x: 81.107346, y: 1.8093, z: 74.861664}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8163224071553939679
+  m_LocalEulerAnglesHint: {x: 0, y: 85.137, z: 0}
+--- !u!33 &1799572783672534710
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891638707320380054}
-  m_Mesh: {fileID: 7979805910468701385, guid: accd8f00b11078f44a025127987aa054, type: 3}
---- !u!23 &3945325485150358703
+  m_GameObject: {fileID: 2727215278747597852}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4484902639661480504
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891638707320380054}
+  m_GameObject: {fileID: 2727215278747597852}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -66,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e1cfda2cb2cfdfb47a3d6b95d2d5c68d, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,13 +87,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4917179719277947175
+--- !u!65 &288217057929331644
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891638707320380054}
+  m_GameObject: {fileID: 2727215278747597852}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -103,24 +102,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5910628, y: 6.414093, z: 0.7955314}
-  m_Center: {x: -0.00000017881393, y: 0.00000095367415, z: 0.046612747}
---- !u!114 &8321534385155593289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891638707320380054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624df4d32d7d3b84684c99aac581cde4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirection: {x: 0, y: 0, z: 0}
-  moveSpeed: 0
-  destroyPoint: {fileID: 0}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
