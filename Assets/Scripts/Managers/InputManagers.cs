@@ -77,4 +77,9 @@ public class InputManagers : BaseManager
     }
 
     #endregion
+
+    public void Unpause()
+    {
+        Time.timeScale = 1;
+    }
 }
