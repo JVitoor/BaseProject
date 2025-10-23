@@ -5,13 +5,13 @@ public class LogSpawner : MonoBehaviour
     [Header("Configurações do Tronco")]
     public GameObject logPrefab;
     public Transform spawnPoint;
-    public Transform destroyPoint;
+
     public Vector3 baseMoveDirection = Vector3.right;
     public float moveSpeed = 6f;
     public float spawnInterval = 5f;
     public int maxLogs = 5; 
 
-    private float spawnTimer = 0f;
+    private float spawnTimer = 4f;
     private int spawnedLogsCount = 0;
     private bool canSpawn = true;
 
@@ -37,7 +37,7 @@ public class LogSpawner : MonoBehaviour
 
     public void SpawnLog()
     {
-        if (logPrefab != null && spawnPoint != null && destroyPoint != null)
+        if (logPrefab != null && spawnPoint != null)
         {
             Vector3 randomOffset = new Vector3(Random.Range(-8, 8), 0, 0);
             

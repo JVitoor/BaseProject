@@ -22,14 +22,4 @@ public class LogMovement : MonoBehaviour
             }
         }
     }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("DestroyPoint"))
-        {
-            Destroy(other.gameObject);
-            logSpawner.SpawnLog();
-        }
-    }
 }
