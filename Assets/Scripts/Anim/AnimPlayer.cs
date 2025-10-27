@@ -34,7 +34,7 @@ public class AnimPlayer : MonoBehaviour
     private int lastJumpCount = 0;
     #endregion
 
-    #region Unity Lifecycle
+    #region Unity Methods
 
     private void Awake()
     {
