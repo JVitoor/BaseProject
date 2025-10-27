@@ -7,7 +7,7 @@ public class GameManager : BaseManager
     public static GameManager Instance { get; private set; }
 
     [Header("Game Mechanics")]
-    private VeraoQuente veraoQuente;
+    public VeraoQuente veraoQuente;
     [Header("Collectibles")]
     public int nutsCollected = 0;
     public Text nutsCounterText; // Refer�ncia para o texto UI
@@ -49,11 +49,11 @@ public class GameManager : BaseManager
             Debug.LogError("[GameManager] Player não encontrado na cena!");
         }
 
-        veraoQuente = FindObjectOfType<VeraoQuente>();
+        /*veraoQuente = FindObjectOfType<VeraoQuente>();
         if (veraoQuente == null)
         {
             Debug.LogWarning("[GameManager] Script VeraoQuente não encontrado na cena.");
-        }
+        }*/
     }
     
     private void Start()

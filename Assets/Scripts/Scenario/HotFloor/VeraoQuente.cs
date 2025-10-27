@@ -53,25 +53,28 @@ public class VeraoQuente : MonoBehaviour
 
     void Update()
     {
-        if (playerEstaNoChaoQuente)
+        if (GameManager.Instance.veraoQuente == this)
         {
-            temperaturaAtual -= taxaDeDano * Time.deltaTime;
-        }
-        else
-        {
-            temperaturaAtual += taxaDeRecuperacao * Time.deltaTime;
-        }
-
-        temperaturaAtual = Mathf.Clamp(temperaturaAtual, 0f, temperaturaMaxima);
-
-        // A atualização do slider continua funcionando normalmente
-        sliderTemperatura.value = temperaturaAtual;
-
-        if (temperaturaAtual <= 0)
-        {
-            if (GameManager.Instance != null)
+            if (playerEstaNoChaoQuente)
             {
-                GameManager.Instance.RespawnPlayer();
+                temperaturaAtual -= taxaDeDano * Time.deltaTime;
+            }
+            else
+            {
+                temperaturaAtual += taxaDeRecuperacao * Time.deltaTime;
+            }
+
+            temperaturaAtual = Mathf.Clamp(temperaturaAtual, 0f, temperaturaMaxima);
+
+            // A atualização do slider continua funcionando normalmente
+            sliderTemperatura.value = temperaturaAtual;
+
+            if (temperaturaAtual <= 0)
+            {
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.RespawnPlayer();
+                }
             }
         }
     }
@@ -82,6 +85,7 @@ public class VeraoQuente : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerEstaNoChaoQuente = true;
+            GameManager.Instance.veraoQuente = this;
         }
     }
 
