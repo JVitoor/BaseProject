@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : BaseManager
 {
     public static GameManager Instance { get; private set; }
-    
+
+    [Header("Game Mechanics")]
+    private VeraoQuente veraoQuente;
     [Header("Collectibles")]
     public int nutsCollected = 0;
     public Text nutsCounterText; // Refer�ncia para o texto UI
@@ -46,7 +48,12 @@ public class GameManager : BaseManager
         {
             Debug.LogError("[GameManager] Player não encontrado na cena!");
         }
-        // --- FIM DA LÓGICA ---
+
+        veraoQuente = FindObjectOfType<VeraoQuente>();
+        if (veraoQuente == null)
+        {
+            Debug.LogWarning("[GameManager] Script VeraoQuente não encontrado na cena.");
+        }
     }
     
     private void Start()
@@ -126,6 +133,10 @@ public class GameManager : BaseManager
         {
             // Chama o método de respawn no script do Player
             player.Respawn(lastCheckpointPosition);
+            if (veraoQuente != null)
+            {
+                veraoQuente.ResetarTemperatura();
+            }
         }
         else
         {

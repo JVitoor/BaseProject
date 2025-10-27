@@ -19,6 +19,8 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
 
+    public Slider sliderTemperatura;
+
     #endregion Properties
 
     #region Unity Methods
@@ -32,6 +34,13 @@ public class InterfaceManager : MonoBehaviour
         }
 
         Instance = this;
+
+        if (sliderTemperatura == null)
+        {
+            Debug.LogWarning("[InterfaceManager] O Slider de Temperatura não foi atribuído no Inspector.");
+        }
+
+        
 
         if (gameInterface == null)
         {
