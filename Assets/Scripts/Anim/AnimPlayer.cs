@@ -23,6 +23,7 @@ public class AnimPlayer : MonoBehaviour
 
     #region Idle Settings
     [Header("Idle Settings")]
+    [Tooltip("Tempo em segundos para alternar entre as animações de idle")]
     public float idleSwapTime = 5f;
     private float idleTimer;
     private int currentIdleState = 0;
@@ -32,6 +33,9 @@ public class AnimPlayer : MonoBehaviour
     [Header("Jump Settings")]
     private bool wasGrounded = true;
     private int lastJumpCount = 0;
+    #endregion
+
+    #region Movement Animation
     #endregion
 
     #region Unity Methods
@@ -105,14 +109,9 @@ public class AnimPlayer : MonoBehaviour
 
         float speed = player.currentSpeed;
         
-        if (speed > 0.1f)
-        {
-            animator.SetInteger(movementParam, 1);
-        }
-        else
-        {
-            animator.SetInteger(movementParam, 0);
-        }
+        // Define Movement como 1 (em movimento) ou 0 (parado)
+        int movementValue = speed > 0.1f ? 1 : 0;
+        animator.SetInteger(movementParam, movementValue);
     }
 
     #endregion
@@ -153,7 +152,8 @@ public class AnimPlayer : MonoBehaviour
 
     private void UpdateIdleBlend()
     {
-        bool isIdle = controller.velocity.magnitude <= 0.1f && controller.isGrounded;
+        // Verifica se está no chão E parado (sem velocidade)
+        bool isIdle = controller.isGrounded && player != null && player.currentSpeed <= 0.1f;
 
         if (isIdle)
         {
