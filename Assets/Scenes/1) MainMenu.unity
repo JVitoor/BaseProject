@@ -1396,7 +1396,7 @@ GameObject:
   - component: {fileID: 1045437098}
   - component: {fileID: 1045437099}
   m_Layer: 0
-  m_Name: Interface (Manager)
+  m_Name: UI (Manager)
   m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1433,6 +1433,7 @@ MonoBehaviour:
   masterSlider: {fileID: 8039403099821470158}
   musicSlider: {fileID: 4838153722568708052}
   sfxSlider: {fileID: 8863979868068288261}
+  sliderTemperatura: {fileID: 0}
 --- !u!1 &1117520313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,6 +1716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3badbb188165b74cb3cfca006d408b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  veraoQuente: {fileID: 0}
   nutsCollected: 0
   nutsCounterText: {fileID: 0}
   currentLevel: 1
