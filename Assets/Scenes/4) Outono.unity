@@ -9664,6 +9664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3badbb188165b74cb3cfca006d408b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  veraoQuente: {fileID: 0}
   nutsCollected: 0
   nutsCounterText: {fileID: 0}
   currentLevel: 1
@@ -15044,8 +15045,6 @@ MonoBehaviour:
   controller: {fileID: 5446369294823641136}
   rotateSpeed: 5
   _moveSpeed: 5
-  acceleration: 2.5
-  deceleration: 2.5
   currentSpeed: 0
   jumpForce: 10
   verticalVelocity: 0
@@ -15334,7 +15333,7 @@ GameObject:
   - component: {fileID: 7694607655894482251}
   m_Layer: 0
   m_Name: FolhaCanada
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20562,7 +20561,7 @@ GameObject:
   - component: {fileID: 4946507511964006472}
   m_Layer: 0
   m_Name: FolhaCanada (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20581,7 +20580,7 @@ GameObject:
   - component: {fileID: 4946507511886658613}
   m_Layer: 0
   m_Name: FolhaCanada (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20600,7 +20599,7 @@ GameObject:
   - component: {fileID: 4946507511887350141}
   m_Layer: 0
   m_Name: FolhaCanada (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20619,7 +20618,7 @@ GameObject:
   - component: {fileID: 4946507511904321837}
   m_Layer: 0
   m_Name: FolhaCanada (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20638,7 +20637,7 @@ GameObject:
   - component: {fileID: 4946507511923648301}
   m_Layer: 0
   m_Name: FolhaCanada (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20657,7 +20656,7 @@ GameObject:
   - component: {fileID: 4946507511925944121}
   m_Layer: 0
   m_Name: FolhaCanada (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20676,7 +20675,7 @@ GameObject:
   - component: {fileID: 4946507511823760489}
   m_Layer: 0
   m_Name: FolhaCanada (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20714,7 +20713,7 @@ GameObject:
   - component: {fileID: 4946507511858998145}
   m_Layer: 0
   m_Name: FolhaCanada (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20733,7 +20732,7 @@ GameObject:
   - component: {fileID: 4946507511870578923}
   m_Layer: 0
   m_Name: FolhaCanada (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20752,7 +20751,7 @@ GameObject:
   - component: {fileID: 4946507511684422286}
   m_Layer: 0
   m_Name: FolhaCanada (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20771,7 +20770,7 @@ GameObject:
   - component: {fileID: 4946507511726469109}
   m_Layer: 0
   m_Name: FolhaCanada (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20790,7 +20789,7 @@ GameObject:
   - component: {fileID: 4946507511738513015}
   m_Layer: 0
   m_Name: FolhaCanada (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20809,7 +20808,7 @@ GameObject:
   - component: {fileID: 4946507511626754958}
   m_Layer: 0
   m_Name: FolhaCanada (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20828,7 +20827,7 @@ GameObject:
   - component: {fileID: 4946507511644728654}
   m_Layer: 0
   m_Name: FolhaCanada (18)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20866,7 +20865,7 @@ GameObject:
   - component: {fileID: 4946507512558466805}
   m_Layer: 0
   m_Name: FolhaCanada (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20885,7 +20884,7 @@ GameObject:
   - component: {fileID: 4946507512553212247}
   m_Layer: 0
   m_Name: FolhaCanada (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20904,7 +20903,7 @@ GameObject:
   - component: {fileID: 4946507512594577684}
   m_Layer: 0
   m_Name: FolhaCanada (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20942,7 +20941,7 @@ GameObject:
   - component: {fileID: 4946507512504313668}
   m_Layer: 0
   m_Name: FolhaCanada
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20961,7 +20960,7 @@ GameObject:
   - component: {fileID: 4946507512504599584}
   m_Layer: 0
   m_Name: FolhaCanada (20)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20980,7 +20979,7 @@ GameObject:
   - component: {fileID: 4946507512529175543}
   m_Layer: 0
   m_Name: FolhaCanada (18)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20999,7 +20998,7 @@ GameObject:
   - component: {fileID: 4946507512438071346}
   m_Layer: 0
   m_Name: FolhaCanada (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21018,7 +21017,7 @@ GameObject:
   - component: {fileID: 4946507512472326801}
   m_Layer: 0
   m_Name: FolhaCanada (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21037,7 +21036,7 @@ GameObject:
   - component: {fileID: 4946507512355264059}
   m_Layer: 0
   m_Name: FolhaCanada (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21056,7 +21055,7 @@ GameObject:
   - component: {fileID: 4946507512283422220}
   m_Layer: 0
   m_Name: FolhaCanada (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21075,7 +21074,7 @@ GameObject:
   - component: {fileID: 4946507512305371728}
   m_Layer: 0
   m_Name: FolhaCanada (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21094,7 +21093,7 @@ GameObject:
   - component: {fileID: 4946507512333755422}
   m_Layer: 0
   m_Name: FolhaCanada (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21113,7 +21112,7 @@ GameObject:
   - component: {fileID: 4946507512342512154}
   m_Layer: 0
   m_Name: FolhaCanada (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21132,7 +21131,7 @@ GameObject:
   - component: {fileID: 4946507512335746065}
   m_Layer: 0
   m_Name: FolhaCanada
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21170,7 +21169,7 @@ GameObject:
   - component: {fileID: 4946507512078689258}
   m_Layer: 0
   m_Name: FolhaCanada (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21189,7 +21188,7 @@ GameObject:
   - component: {fileID: 4946507512097415312}
   m_Layer: 0
   m_Name: FolhaCanada (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21208,7 +21207,7 @@ GameObject:
   - component: {fileID: 4946507512095242857}
   m_Layer: 0
   m_Name: FolhaCanada (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21227,7 +21226,7 @@ GameObject:
   - component: {fileID: 4946507512122388610}
   m_Layer: 0
   m_Name: FolhaCanada (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21246,7 +21245,7 @@ GameObject:
   - component: {fileID: 4946507510937085531}
   m_Layer: 0
   m_Name: FolhaCanada (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21265,7 +21264,7 @@ GameObject:
   - component: {fileID: 4946507510948733556}
   m_Layer: 0
   m_Name: FolhaCanada (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21284,7 +21283,7 @@ GameObject:
   - component: {fileID: 4946507510945834444}
   m_Layer: 0
   m_Name: FolhaCanada (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21303,7 +21302,7 @@ GameObject:
   - component: {fileID: 4946507510980568120}
   m_Layer: 0
   m_Name: FolhaCanada (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21322,7 +21321,7 @@ GameObject:
   - component: {fileID: 4946507510985730952}
   m_Layer: 0
   m_Name: FolhaCanada (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21360,7 +21359,7 @@ GameObject:
   - component: {fileID: 4946507510906512410}
   m_Layer: 0
   m_Name: FolhaCanada (19)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21379,7 +21378,7 @@ GameObject:
   - component: {fileID: 4946507510762725038}
   m_Layer: 0
   m_Name: FolhaCanada (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21398,7 +21397,7 @@ GameObject:
   - component: {fileID: 4946507510793464408}
   m_Layer: 0
   m_Name: FolhaCanada (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21417,7 +21416,7 @@ GameObject:
   - component: {fileID: 4946507510685890893}
   m_Layer: 0
   m_Name: FolhaCanada (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21455,7 +21454,7 @@ GameObject:
   - component: {fileID: 4946507510645020620}
   m_Layer: 0
   m_Name: FolhaCanada (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21474,7 +21473,7 @@ GameObject:
   - component: {fileID: 4946507510545183347}
   m_Layer: 0
   m_Name: FolhaCanada (22)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21493,7 +21492,7 @@ GameObject:
   - component: {fileID: 4946507510546296057}
   m_Layer: 0
   m_Name: FolhaCanada (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21512,7 +21511,7 @@ GameObject:
   - component: {fileID: 4946507510547841596}
   m_Layer: 0
   m_Name: FolhaCanada (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21550,7 +21549,7 @@ GameObject:
   - component: {fileID: 4946507510527025568}
   m_Layer: 0
   m_Name: FolhaCanada
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21569,7 +21568,7 @@ GameObject:
   - component: {fileID: 4946507511491624796}
   m_Layer: 0
   m_Name: FolhaCanada (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21588,7 +21587,7 @@ GameObject:
   - component: {fileID: 4946507511496514812}
   m_Layer: 0
   m_Name: FolhaCanada (19)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21607,7 +21606,7 @@ GameObject:
   - component: {fileID: 4946507511458304130}
   m_Layer: 0
   m_Name: FolhaCanada
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21626,7 +21625,7 @@ GameObject:
   - component: {fileID: 4946507511337016688}
   m_Layer: 0
   m_Name: FolhaCanada (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21645,7 +21644,7 @@ GameObject:
   - component: {fileID: 4946507511356960882}
   m_Layer: 0
   m_Name: FolhaCanada (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21664,7 +21663,7 @@ GameObject:
   - component: {fileID: 4946507511291305982}
   m_Layer: 0
   m_Name: FolhaCanada (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21683,7 +21682,7 @@ GameObject:
   - component: {fileID: 4946507511311036224}
   m_Layer: 0
   m_Name: FolhaCanada (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21702,7 +21701,7 @@ GameObject:
   - component: {fileID: 4946507511313750862}
   m_Layer: 0
   m_Name: FolhaCanada (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21721,7 +21720,7 @@ GameObject:
   - component: {fileID: 4946507511202528954}
   m_Layer: 0
   m_Name: FolhaCanada (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21740,7 +21739,7 @@ GameObject:
   - component: {fileID: 4946507511180795772}
   m_Layer: 0
   m_Name: FolhaCanada (21)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21759,7 +21758,7 @@ GameObject:
   - component: {fileID: 4946507511189600677}
   m_Layer: 0
   m_Name: FolhaCanada (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21797,7 +21796,7 @@ GameObject:
   - component: {fileID: 4946507511113227297}
   m_Layer: 0
   m_Name: FolhaCanada (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21816,7 +21815,7 @@ GameObject:
   - component: {fileID: 4946507511046851146}
   m_Layer: 0
   m_Name: FolhaCanada (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21835,7 +21834,7 @@ GameObject:
   - component: {fileID: 4946507511053584923}
   m_Layer: 0
   m_Name: FolhaCanada (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22065,12 +22064,17 @@ MonoBehaviour:
   animator: {fileID: 2765937085240888157}
   controller: {fileID: 5446369294823641136}
   movementParam: Movement
-  idleBlendParam: Blend
+  idleBlendParam: IdleBlend
   jumpTrigger: Jump
   doubleJumpTrigger: DoubleJump
   isGroundedParam: IsGrounded
   velocityYParam: VelocityY
   idleSwapTime: 3
+  groundCheckDistance: 0.2
+  groundCheckOffset: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!4 &2842035440859182751
 Transform:
   m_ObjectHideFlags: 0
@@ -23212,7 +23216,7 @@ GameObject:
   - component: {fileID: 2751941139925120852}
   m_Layer: 0
   m_Name: FolhaSimples
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31302,7 +31306,7 @@ GameObject:
   - component: {fileID: 8912787067293208239}
   m_Layer: 0
   m_Name: FolhaSimples (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31321,7 +31325,7 @@ GameObject:
   - component: {fileID: 8912787067321660892}
   m_Layer: 0
   m_Name: FolhaSimples (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31340,7 +31344,7 @@ GameObject:
   - component: {fileID: 8912787067375911183}
   m_Layer: 0
   m_Name: FolhaSimples (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31359,7 +31363,7 @@ GameObject:
   - component: {fileID: 8912787067390973828}
   m_Layer: 0
   m_Name: FolhaSimples (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31378,7 +31382,7 @@ GameObject:
   - component: {fileID: 8912787067429488330}
   m_Layer: 0
   m_Name: FolhaSimples (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31397,7 +31401,7 @@ GameObject:
   - component: {fileID: 8912787067442336688}
   m_Layer: 0
   m_Name: FolhaSimples (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31416,7 +31420,7 @@ GameObject:
   - component: {fileID: 8912787067438928377}
   m_Layer: 0
   m_Name: FolhaSimples (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31435,7 +31439,7 @@ GameObject:
   - component: {fileID: 8912787067454462728}
   m_Layer: 0
   m_Name: FolhaSimples (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31454,7 +31458,7 @@ GameObject:
   - component: {fileID: 8912787067513791474}
   m_Layer: 0
   m_Name: FolhaSimples (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31473,7 +31477,7 @@ GameObject:
   - component: {fileID: 8912787067546800299}
   m_Layer: 0
   m_Name: FolhaSimples
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31492,7 +31496,7 @@ GameObject:
   - component: {fileID: 8912787067635709014}
   m_Layer: 0
   m_Name: FolhaSimples (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31511,7 +31515,7 @@ GameObject:
   - component: {fileID: 8912787067662920369}
   m_Layer: 0
   m_Name: FolhaSimples (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31530,7 +31534,7 @@ GameObject:
   - component: {fileID: 8912787067658873889}
   m_Layer: 0
   m_Name: FolhaSimples (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31549,7 +31553,7 @@ GameObject:
   - component: {fileID: 8912787067692111684}
   m_Layer: 0
   m_Name: FolhaSimples (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31568,7 +31572,7 @@ GameObject:
   - component: {fileID: 8912787067731881019}
   m_Layer: 0
   m_Name: FolhaSimples (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31587,7 +31591,7 @@ GameObject:
   - component: {fileID: 8912787067724758841}
   m_Layer: 0
   m_Name: FolhaSimples (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31606,7 +31610,7 @@ GameObject:
   - component: {fileID: 8912787067760534362}
   m_Layer: 0
   m_Name: FolhaSimples (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31625,7 +31629,7 @@ GameObject:
   - component: {fileID: 8912787067770602691}
   m_Layer: 0
   m_Name: FolhaSimples (24)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31644,7 +31648,7 @@ GameObject:
   - component: {fileID: 8912787066779465378}
   m_Layer: 0
   m_Name: FolhaSimples (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31663,7 +31667,7 @@ GameObject:
   - component: {fileID: 8912787066806272073}
   m_Layer: 0
   m_Name: FolhaSimples (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31682,7 +31686,7 @@ GameObject:
   - component: {fileID: 8912787066802193884}
   m_Layer: 0
   m_Name: FolhaSimples (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31701,7 +31705,7 @@ GameObject:
   - component: {fileID: 8912787066872848271}
   m_Layer: 0
   m_Name: FolhaSimples (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31720,7 +31724,7 @@ GameObject:
   - component: {fileID: 8912787066915743395}
   m_Layer: 0
   m_Name: FolhaSimples (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31739,7 +31743,7 @@ GameObject:
   - component: {fileID: 8912787066918855953}
   m_Layer: 0
   m_Name: FolhaSimples (21)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31758,7 +31762,7 @@ GameObject:
   - component: {fileID: 8912787066936152712}
   m_Layer: 0
   m_Name: FolhaSimples (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31777,7 +31781,7 @@ GameObject:
   - component: {fileID: 8912787067001344193}
   m_Layer: 0
   m_Name: FolhaSimples (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31796,7 +31800,7 @@ GameObject:
   - component: {fileID: 8912787067027776258}
   m_Layer: 0
   m_Name: FolhaSimples (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31815,7 +31819,7 @@ GameObject:
   - component: {fileID: 8912787067048054976}
   m_Layer: 0
   m_Name: FolhaSimples (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31834,7 +31838,7 @@ GameObject:
   - component: {fileID: 8912787067117631514}
   m_Layer: 0
   m_Name: FolhaSimples (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31853,7 +31857,7 @@ GameObject:
   - component: {fileID: 8912787067181377791}
   m_Layer: 0
   m_Name: FolhaSimples (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31872,7 +31876,7 @@ GameObject:
   - component: {fileID: 8912787067211734568}
   m_Layer: 0
   m_Name: FolhaSimples (23)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31891,7 +31895,7 @@ GameObject:
   - component: {fileID: 8912787067205176274}
   m_Layer: 0
   m_Name: FolhaSimples (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31910,7 +31914,7 @@ GameObject:
   - component: {fileID: 8912787067217806383}
   m_Layer: 0
   m_Name: FolhaSimples (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31929,7 +31933,7 @@ GameObject:
   - component: {fileID: 8912787067221034105}
   m_Layer: 0
   m_Name: FolhaSimples
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31948,7 +31952,7 @@ GameObject:
   - component: {fileID: 8912787067275942314}
   m_Layer: 0
   m_Name: FolhaSimples (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31967,7 +31971,7 @@ GameObject:
   - component: {fileID: 8912787068368637358}
   m_Layer: 0
   m_Name: FolhaSimples (20)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31986,7 +31990,7 @@ GameObject:
   - component: {fileID: 8912787068399772551}
   m_Layer: 0
   m_Name: FolhaSimples (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32005,7 +32009,7 @@ GameObject:
   - component: {fileID: 8912787068471985339}
   m_Layer: 0
   m_Name: FolhaSimples (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32024,7 +32028,7 @@ GameObject:
   - component: {fileID: 8912787068501689397}
   m_Layer: 0
   m_Name: FolhaSimples (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32043,7 +32047,7 @@ GameObject:
   - component: {fileID: 8912787068520509258}
   m_Layer: 0
   m_Name: FolhaSimples (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32062,7 +32066,7 @@ GameObject:
   - component: {fileID: 8912787068527030335}
   m_Layer: 0
   m_Name: FolhaSimples (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32081,7 +32085,7 @@ GameObject:
   - component: {fileID: 8912787068526919404}
   m_Layer: 0
   m_Name: FolhaSimples (19)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32100,7 +32104,7 @@ GameObject:
   - component: {fileID: 8912787068547821783}
   m_Layer: 0
   m_Name: FolhaSimples (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32119,7 +32123,7 @@ GameObject:
   - component: {fileID: 8912787068635794589}
   m_Layer: 0
   m_Name: FolhaSimples (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32138,7 +32142,7 @@ GameObject:
   - component: {fileID: 8912787068624096656}
   m_Layer: 0
   m_Name: FolhaSimples (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32157,7 +32161,7 @@ GameObject:
   - component: {fileID: 8912787068644744551}
   m_Layer: 0
   m_Name: FolhaSimples (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32176,7 +32180,7 @@ GameObject:
   - component: {fileID: 8912787068657680891}
   m_Layer: 0
   m_Name: FolhaSimples (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32195,7 +32199,7 @@ GameObject:
   - component: {fileID: 8912787068695417793}
   m_Layer: 0
   m_Name: FolhaSimples (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32214,7 +32218,7 @@ GameObject:
   - component: {fileID: 8912787068719091602}
   m_Layer: 0
   m_Name: FolhaSimples (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32233,7 +32237,7 @@ GameObject:
   - component: {fileID: 8912787068752615741}
   m_Layer: 0
   m_Name: FolhaSimples (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32252,7 +32256,7 @@ GameObject:
   - component: {fileID: 8912787068749693814}
   m_Layer: 0
   m_Name: FolhaSimples (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32271,7 +32275,7 @@ GameObject:
   - component: {fileID: 8912787068787542701}
   m_Layer: 0
   m_Name: FolhaSimples
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32290,7 +32294,7 @@ GameObject:
   - component: {fileID: 8912787068802931735}
   m_Layer: 0
   m_Name: FolhaSimples (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32309,7 +32313,7 @@ GameObject:
   - component: {fileID: 8912787068809917670}
   m_Layer: 0
   m_Name: FolhaSimples (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32328,7 +32332,7 @@ GameObject:
   - component: {fileID: 8912787068864779105}
   m_Layer: 0
   m_Name: FolhaSimples (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32347,7 +32351,7 @@ GameObject:
   - component: {fileID: 8912787068863328193}
   m_Layer: 0
   m_Name: FolhaSimples (22)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32366,7 +32370,7 @@ GameObject:
   - component: {fileID: 8912787067833689829}
   m_Layer: 0
   m_Name: FolhaSimples (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32385,7 +32389,7 @@ GameObject:
   - component: {fileID: 8912787067880323285}
   m_Layer: 0
   m_Name: FolhaSimples (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32404,7 +32408,7 @@ GameObject:
   - component: {fileID: 8912787067883088377}
   m_Layer: 0
   m_Name: FolhaSimples (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32423,7 +32427,7 @@ GameObject:
   - component: {fileID: 8912787068116228506}
   m_Layer: 0
   m_Name: FolhaSimples
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32442,7 +32446,7 @@ GameObject:
   - component: {fileID: 8912787068157912109}
   m_Layer: 0
   m_Name: FolhaSimples (18)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32461,7 +32465,7 @@ GameObject:
   - component: {fileID: 8912787068333709078}
   m_Layer: 0
   m_Name: FolhaSimples (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
