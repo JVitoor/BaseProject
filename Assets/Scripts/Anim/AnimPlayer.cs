@@ -35,7 +35,18 @@ public class AnimPlayer : MonoBehaviour
     private int lastJumpCount = 0;
     #endregion
 
-    #region Movement Animation
+    #region Ground Check Settings
+    [Header("Ground Check Settings")]
+    [Tooltip("Distância do raycast para verificar o chão")]
+    public float groundCheckDistance = 0.2f;
+    
+    [Tooltip("Offset do ponto de origem do raycast (relativo ao centro do CharacterController)")]
+    public float groundCheckOffset = 0.1f;
+    
+    [Tooltip("Layer do chão para detecção")]
+    public LayerMask groundLayer = ~0; // Por padrão, todos os layers
+    
+    private bool isGroundedByRaycast = false;
     #endregion
 
     #region Unity Methods
@@ -54,6 +65,7 @@ public class AnimPlayer : MonoBehaviour
     {
         if (!ValidateReferences()) return;
 
+        CheckGroundWithRaycast();
         UpdateMovementAnimation();
         UpdateJumpAnimation();
         UpdateIdleBlend();
@@ -101,6 +113,30 @@ public class AnimPlayer : MonoBehaviour
 
     #endregion
 
+    #region Ground Check
+
+    private void CheckGroundWithRaycast()
+    {
+        if (controller == null) return;
+
+        // Calcula o ponto de origem do raycast (centro do controller + offset para baixo)
+        Vector3 rayOrigin = transform.position + Vector3.up * groundCheckOffset;
+        
+        // Lança o raycast para baixo
+        isGroundedByRaycast = Physics.Raycast(
+            rayOrigin, 
+            Vector3.down, 
+            groundCheckDistance + groundCheckOffset, 
+            groundLayer
+        );
+
+        // Debug visual (opcional - remova em produção se desejar)
+        Debug.DrawRay(rayOrigin, Vector3.down * (groundCheckDistance + groundCheckOffset), 
+            isGroundedByRaycast ? Color.green : Color.red);
+    }
+
+    #endregion
+
     #region Movement Animation
 
     private void UpdateMovementAnimation()
@@ -122,7 +158,8 @@ public class AnimPlayer : MonoBehaviour
     {
         if (player == null) return;
 
-        bool isGrounded = controller.isGrounded;
+        // Usa o raycast para verificar se está no chão
+        bool isGrounded = isGroundedByRaycast;
         int currentJumpCount = player.jumpCount;
 
         if (!isGrounded && wasGrounded && currentJumpCount == 1)
@@ -152,8 +189,8 @@ public class AnimPlayer : MonoBehaviour
 
     private void UpdateIdleBlend()
     {
-        // Verifica se está no chão E parado (sem velocidade)
-        bool isIdle = controller.isGrounded && player != null && player.currentSpeed <= 0.1f;
+        // Verifica se está no chão (usando raycast) E parado (sem velocidade)
+        bool isIdle = isGroundedByRaycast && player != null && player.currentSpeed <= 0.1f;
 
         if (isIdle)
         {
@@ -185,7 +222,8 @@ public class AnimPlayer : MonoBehaviour
     {
         if (player == null) return;
 
-        animator.SetBool(isGroundedParam, controller.isGrounded);
+        // Usa o raycast para definir o parâmetro IsGrounded
+        animator.SetBool(isGroundedParam, isGroundedByRaycast);
         animator.SetFloat(velocityYParam, player.verticalVelocity);
     }
 
