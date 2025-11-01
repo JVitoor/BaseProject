@@ -24,9 +24,6 @@ public class Player : MonoBehaviour
         set { _moveSpeed = value; }
     }
 
-    [Header(" └─ Acceleration")]
-    public float acceleration = 15.0f; // Velocidade de aceleração
-    public float deceleration = 20.0f; // Velocidade de desaceleração
     public float currentSpeed = 0f; // Velocidade atual do player
 
     [Header(" └─ Jump")]
@@ -346,10 +343,17 @@ public class Player : MonoBehaviour
             }
         }
 
-        // Sistema de aceleração
-        HandleAcceleration();
+        // Velocidade constante - se há input, usa velocidade máxima, senão é 0
+        if (moveInput.magnitude > 0.1f)
+        {
+            currentSpeed = moveSpeed;
+        }
+        else
+        {
+            currentSpeed = 0f;
+        }
 
-        // Normaliza o vetor de movimento e multiplica pela velocidade atual (com aceleração)
+        // Normaliza o vetor de movimento e multiplica pela velocidade
         move = desiredMove.normalized * currentSpeed;
 
         // Aplica movimento vertical (pulo, gravidade e glide)
@@ -463,20 +467,6 @@ public class Player : MonoBehaviour
             // Quando não estiver planando, reseta a inclinação
             Quaternion resetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, resetRotation, Time.deltaTime * 5f);
-        }
-    }
-
-    private void HandleAcceleration()
-    {
-        // Se há input de movimento, acelera até a velocidade máxima
-        if (moveInput.magnitude > 0.1f)
-        {
-            currentSpeed = Mathf.MoveTowards(currentSpeed, moveSpeed, acceleration * Time.deltaTime);
-        }
-        // Se não há input, desacelera até parar
-        else
-        {
-            currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.deltaTime);
         }
     }
 

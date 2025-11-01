@@ -4,82 +4,249 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class AnimPlayer : MonoBehaviour
 {
-    [Header("Referências")]
+    #region Components
+    [Header("Components")]
     public Animator animator;
     public CharacterController controller;
+    private Player player;
+    #endregion
 
-    [Header("Parâmetros do Animator")]
-    public string walkParam = "Walk";
-    public string jumpParam = "Jump";          
-    public string doubleJumpParam = "DoubleJump"; 
-    public string glideParam = "Glide";         
-    public string idleBlendParam = "IdleBlend"; // Float (0 = Idle1, 1 = Idle2)
+    #region Animation Parameters
+    [Header("Animation Parameters")]
+    public string movementParam = "Movement";
+    public string idleBlendParam = "IdleBlend";
+    public string jumpTrigger = "Jump";
+    public string doubleJumpTrigger = "DoubleJump";
+    public string isGroundedParam = "IsGrounded";
+    public string velocityYParam = "VelocityY";
+    #endregion
 
-    [Header("Configurações")]
-    public float moveSpeedThreshold = 0.1f;   // Velocidade mínima para Walk
-    public float idleSwitchInterval = 5f;     // Segundos para alternar idle
+    #region Idle Settings
+    [Header("Idle Settings")]
+    [Tooltip("Tempo em segundos para alternar entre as animações de idle")]
+    public float idleSwapTime = 5f;
+    private float idleTimer;
+    private int currentIdleState = 0;
+    #endregion
 
-    private bool isGrounded;
-    private bool canDoubleJump;
-    private float idleTimer = 0f;
-    private float currentIdleBlend = 0f;
-    private bool idleDirection = true; 
+    #region Jump Settings
+    [Header("Jump Settings")]
+    private bool wasGrounded = true;
+    private int lastJumpCount = 0;
+    #endregion
 
-    void Update()
+    #region Ground Check Settings
+    [Header("Ground Check Settings")]
+    [Tooltip("Distância do raycast para verificar o chão")]
+    public float groundCheckDistance = 0.2f;
+    
+    [Tooltip("Offset do ponto de origem do raycast (relativo ao centro do CharacterController)")]
+    public float groundCheckOffset = 0.1f;
+    
+    [Tooltip("Layer do chão para detecção")]
+    public LayerMask groundLayer = ~0; // Por padrão, todos os layers
+    
+    private bool isGroundedByRaycast = false;
+    #endregion
+
+    #region Unity Methods
+
+    private void Awake()
     {
-        UpdateMovement();
-        UpdateJump();
-        UpdateGlide();
+        InitializeComponents();
+    }
+
+    private void Start()
+    {
+        ValidateComponents();
+    }
+
+    private void Update()
+    {
+        if (!ValidateReferences()) return;
+
+        CheckGroundWithRaycast();
+        UpdateMovementAnimation();
+        UpdateJumpAnimation();
         UpdateIdleBlend();
+        UpdateAnimatorParameters();
     }
 
-    void UpdateMovement()
-    {
-        Vector3 horizontalVelocity = new Vector3(controller.velocity.x, 0, controller.velocity.z);
-        float speed = horizontalVelocity.magnitude;
+    #endregion
 
-        if (animator != null)
-            animator.SetBool(walkParam, speed > moveSpeedThreshold);
+    #region Initialization
+
+    private void InitializeComponents()
+    {
+        if (!controller) 
+            controller = GetComponent<CharacterController>();
+        
+        if (!animator) 
+            animator = GetComponentInChildren<Animator>();
+        
+        if (!player) 
+            player = GetComponent<Player>();
     }
 
-    void UpdateJump()
+    private void ValidateComponents()
     {
-        isGrounded = controller.isGrounded;
-
-        if (isGrounded)
-            canDoubleJump = true;
-
-        if (Input.GetButtonDown("Jump"))
+        if (!controller)
         {
-            if (isGrounded)
-                animator.SetTrigger(jumpParam);
-            else if (canDoubleJump)
-            {
-                animator.SetTrigger(doubleJumpParam);
-                canDoubleJump = false;
-            }
+            Debug.LogError($"[AnimPlayer] CharacterController não encontrado em {gameObject.name}!");
+        }
+
+        if (!animator)
+        {
+            Debug.LogError($"[AnimPlayer] Animator não encontrado em {gameObject.name}!");
+        }
+
+        if (!player)
+        {
+            Debug.LogWarning($"[AnimPlayer] Player script não encontrado em {gameObject.name}. Algumas funcionalidades podem não funcionar.");
         }
     }
 
-    void UpdateGlide()
+    private bool ValidateReferences()
     {
-        bool isGliding = !isGrounded && Input.GetButton("Fire3");
-        animator.SetBool(glideParam, isGliding);
+        return controller != null && animator != null;
     }
 
-    void UpdateIdleBlend()
+    #endregion
+
+    #region Ground Check
+
+    private void CheckGroundWithRaycast()
     {
-        if (controller.velocity.magnitude < moveSpeedThreshold && isGrounded)
+        if (controller == null) return;
+
+        // Calcula o ponto de origem do raycast (centro do controller + offset para baixo)
+        Vector3 rayOrigin = transform.position + Vector3.up * groundCheckOffset;
+        
+        // Lança o raycast para baixo
+        isGroundedByRaycast = Physics.Raycast(
+            rayOrigin, 
+            Vector3.down, 
+            groundCheckDistance + groundCheckOffset, 
+            groundLayer
+        );
+
+        // Debug visual (opcional - remova em produção se desejar)
+        Debug.DrawRay(rayOrigin, Vector3.down * (groundCheckDistance + groundCheckOffset), 
+            isGroundedByRaycast ? Color.green : Color.red);
+    }
+
+    #endregion
+
+    #region Movement Animation
+
+    private void UpdateMovementAnimation()
+    {
+        if (player == null) return;
+
+        float speed = player.currentSpeed;
+        
+        // Define Movement como 1 (em movimento) ou 0 (parado)
+        int movementValue = speed > 0.1f ? 1 : 0;
+        animator.SetInteger(movementParam, movementValue);
+    }
+
+    #endregion
+
+    #region Jump Animation
+
+    private void UpdateJumpAnimation()
+    {
+        if (player == null) return;
+
+        // Usa o raycast para verificar se está no chão
+        bool isGrounded = isGroundedByRaycast;
+        int currentJumpCount = player.jumpCount;
+
+        if (!isGrounded && wasGrounded && currentJumpCount == 1)
+        {
+            animator.SetTrigger(jumpTrigger);
+            lastJumpCount = 1;
+        }
+        else if (!isGrounded && currentJumpCount == 2 && lastJumpCount < 2)
+        {
+            animator.SetTrigger(doubleJumpTrigger);
+            lastJumpCount = 2;
+        }
+
+        if (isGrounded && !wasGrounded)
+        {
+            animator.ResetTrigger(jumpTrigger);
+            animator.ResetTrigger(doubleJumpTrigger);
+            lastJumpCount = 0;
+        }
+
+        wasGrounded = isGrounded;
+    }
+
+    #endregion
+
+    #region Idle Animation
+
+    private void UpdateIdleBlend()
+    {
+        // Verifica se está no chão (usando raycast) E parado (sem velocidade)
+        bool isIdle = isGroundedByRaycast && player != null && player.currentSpeed <= 0.1f;
+
+        if (isIdle)
         {
             idleTimer += Time.deltaTime;
-            if (idleTimer >= idleSwitchInterval)
+
+            if (idleTimer >= idleSwapTime)
             {
-                idleDirection = !idleDirection; // alterna entre Idle1 e Idle2
+                currentIdleState = currentIdleState == 0 ? 1 : 0;
+                animator.SetFloat(idleBlendParam, currentIdleState);
                 idleTimer = 0f;
             }
-
-            currentIdleBlend = idleDirection ? 0f : 1f;
-            animator.SetFloat(idleBlendParam, currentIdleBlend);
+        }
+        else
+        {
+            idleTimer = 0f;
+            if (currentIdleState != 0)
+            {
+                currentIdleState = 0;
+                animator.SetFloat(idleBlendParam, 0f);
+            }
         }
     }
+
+    #endregion
+
+    #region Animator Parameters
+
+    private void UpdateAnimatorParameters()
+    {
+        if (player == null) return;
+
+        // Usa o raycast para definir o parâmetro IsGrounded
+        animator.SetBool(isGroundedParam, isGroundedByRaycast);
+        animator.SetFloat(velocityYParam, player.verticalVelocity);
+    }
+
+    #endregion
+
+    #region Public Methods
+
+    public void ForceJumpAnimation()
+    {
+        animator.SetTrigger(jumpTrigger);
+    }
+
+    public void ForceDoubleJumpAnimation()
+    {
+        animator.SetTrigger(doubleJumpTrigger);
+    }
+
+    public void ResetIdleBlend()
+    {
+        currentIdleState = 0;
+        idleTimer = 0f;
+        animator.SetFloat(idleBlendParam, 0f);
+    }
+
+    #endregion
 }

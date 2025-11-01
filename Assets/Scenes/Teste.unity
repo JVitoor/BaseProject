@@ -3739,6 +3739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveInput: {x: 0, y: 0}
+  controller: {fileID: 0}
   rotateSpeed: 5
   _moveSpeed: 5
   acceleration: 2.5
@@ -9297,6 +9298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nutsCollected: 0
   nutsCounterText: {fileID: 54346640}
+  currentLevel: 1
 --- !u!1 &1942484455
 GameObject:
   m_ObjectHideFlags: 0
