@@ -150,8 +150,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0018459319, y: 0.0019180301, z: 0.010579514}
-  m_Center: {x: -0.00024013527, y: -0.000002132207, z: 0.005289751}
+  m_Size: {x: 0.0022602074, y: 0.0019180301, z: 0.014308266}
+  m_Center: {x: -0.0004472736, y: -0.000002132207, z: 0.0071541355}
 --- !u!1 &5472679548269379796
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 7451318618249335043}
   - component: {fileID: 2938071110303541047}
   - component: {fileID: 1333242768435225569}
-  - component: {fileID: 4837223571667726259}
   m_Layer: 0
   m_Name: CostelaDeAdao
   m_TagString: Obstaculo
@@ -240,24 +239,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4837223571667726259
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5472679548269379796}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.012829868, y: 0.014707496, z: 0.0034324462}
-  m_Center: {x: -0.009042345, y: 0.0010511405, z: 0.023985038}
