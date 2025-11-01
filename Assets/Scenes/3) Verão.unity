@@ -697,6 +697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlorFechando (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      propertyPath: m_TagString
+      value: FlowerTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 8391406497551527578, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.6531446
@@ -740,13 +744,64 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 142683896}
+    - targetCorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 142683897}
   m_SourcePrefab: {fileID: 100100000, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
 --- !u!4 &142683894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8391406497551527578, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
   m_PrefabInstance: {fileID: 142683893}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &142683895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+  m_PrefabInstance: {fileID: 142683893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &142683896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142683895}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.2}
+  m_Center: {x: 0, y: 2.85, z: 0.85}
+--- !u!114 &142683897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142683895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea95158b4995d94d9f2f0814c2c639c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  openFlowerModel: {fileID: 0}
+  closedFlowerModel: {fileID: 0}
+  openDuration: 2
+  closedDuration: 3
+  hitColor: {r: 0, g: 1, b: 0, a: 1}
+  hitFeedbackDuration: 0.3
 --- !u!1 &143438567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,6 +1248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 251207211}
+  - component: {fileID: 251207212}
   m_Layer: 0
   m_Name: Puzzle
   m_TagString: Untagged
@@ -1220,6 +1276,28 @@ Transform:
   - {fileID: 1832255647}
   m_Father: {fileID: 977587729}
   m_LocalEulerAnglesHint: {x: 0, y: 1.637, z: 0}
+--- !u!114 &251207212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251207210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0bd586bab209d4bad008298e68c9b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowers: []
+  flowersToWin: 5
+  startDelay: 2
+  cycleCooldown: 1
+  minFlowersPerCycle: 1
+  maxFlowersPerCycle: 3
+  randomPattern: 1
+  flowersHit: 0
+  totalAttempts: 0
+  gameActive: 0
 --- !u!1 &270051200
 GameObject:
   m_ObjectHideFlags: 0
@@ -7584,6 +7662,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlorFechando (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      propertyPath: m_TagString
+      value: FlowerTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 8391406497551527578, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.0758097
@@ -7627,13 +7709,64 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1397687999}
+    - targetCorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1397688000}
   m_SourcePrefab: {fileID: 100100000, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
 --- !u!4 &1397687997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8391406497551527578, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
   m_PrefabInstance: {fileID: 1397687996}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1397687998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+  m_PrefabInstance: {fileID: 1397687996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1397687999
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397687998}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.2}
+  m_Center: {x: 0, y: 2.85, z: 0.85}
+--- !u!114 &1397688000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397687998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea95158b4995d94d9f2f0814c2c639c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  openFlowerModel: {fileID: 0}
+  closedFlowerModel: {fileID: 0}
+  openDuration: 2
+  closedDuration: 3
+  hitColor: {r: 0, g: 1, b: 0, a: 1}
+  hitFeedbackDuration: 0.3
 --- !u!1001 &1400227080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8903,6 +9036,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlorFechando (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      propertyPath: m_TagString
+      value: FlowerTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 8391406497551527578, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.9852786
@@ -8946,13 +9083,64 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1645951543}
+    - targetCorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1645951544}
   m_SourcePrefab: {fileID: 100100000, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
 --- !u!4 &1645951541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8391406497551527578, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
   m_PrefabInstance: {fileID: 1645951540}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645951542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+  m_PrefabInstance: {fileID: 1645951540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1645951543
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645951542}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.2}
+  m_Center: {x: 0, y: 2.85, z: 0.85}
+--- !u!114 &1645951544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645951542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea95158b4995d94d9f2f0814c2c639c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  openFlowerModel: {fileID: 0}
+  closedFlowerModel: {fileID: 0}
+  openDuration: 2
+  closedDuration: 3
+  hitColor: {r: 0, g: 1, b: 0, a: 1}
+  hitFeedbackDuration: 0.3
 --- !u!1 &1660757595
 GameObject:
   m_ObjectHideFlags: 0
@@ -10075,6 +10263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlorFechando (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      propertyPath: m_TagString
+      value: FlowerTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 8391406497551527578, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.25632435
@@ -10118,13 +10310,64 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1832255649}
+    - targetCorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1832255650}
   m_SourcePrefab: {fileID: 100100000, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
 --- !u!4 &1832255647 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8391406497551527578, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
   m_PrefabInstance: {fileID: 1832255646}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1832255648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+  m_PrefabInstance: {fileID: 1832255646}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1832255649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832255648}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.2}
+  m_Center: {x: 0, y: 2.85, z: 0.85}
+--- !u!114 &1832255650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832255648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea95158b4995d94d9f2f0814c2c639c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  openFlowerModel: {fileID: 0}
+  closedFlowerModel: {fileID: 0}
+  openDuration: 2
+  closedDuration: 3
+  hitColor: {r: 0, g: 1, b: 0, a: 1}
+  hitFeedbackDuration: 0.3
 --- !u!1 &1847116440
 GameObject:
   m_ObjectHideFlags: 0
@@ -11201,6 +11444,8 @@ GameObject:
   - component: {fileID: 1971024372}
   - component: {fileID: 1971024371}
   - component: {fileID: 1971024370}
+  - component: {fileID: 1971024374}
+  - component: {fileID: 1971024375}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -11223,7 +11468,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -11291,12 +11536,51 @@ Transform:
   m_GameObject: {fileID: 1971024369}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.56, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 236977119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1971024374
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971024369}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &1971024375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971024369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339ee99ea8f5c404caa0750aa071d774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1972893626
 GameObject:
   m_ObjectHideFlags: 0
@@ -11731,6 +12015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlorFechando
       objectReference: {fileID: 0}
+    - target: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      propertyPath: m_TagString
+      value: FlowerTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 8391406497551527578, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.532841
@@ -11774,8 +12062,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1998177966961727617}
+    - targetCorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1998177966961727618}
   m_SourcePrefab: {fileID: 100100000, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+--- !u!1 &323073855264684483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3820072848754086888, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
+  m_PrefabInstance: {fileID: 323073855264684482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &329713242629276835
 GameObject:
   m_ObjectHideFlags: 0
@@ -22538,6 +22837,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8391406497551527578, guid: 72fb0367eb6039e4d8d75ddc9b521dd9, type: 3}
   m_PrefabInstance: {fileID: 323073855264684482}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1998177966961727617
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323073855264684483}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.2}
+  m_Center: {x: 0, y: 2.85, z: 0.85}
+--- !u!114 &1998177966961727618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323073855264684483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea95158b4995d94d9f2f0814c2c639c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  openFlowerModel: {fileID: 0}
+  closedFlowerModel: {fileID: 0}
+  openDuration: 2
+  closedDuration: 3
+  hitColor: {r: 0, g: 1, b: 0, a: 1}
+  hitFeedbackDuration: 0.3
 --- !u!4 &2009768693113299050
 Transform:
   m_ObjectHideFlags: 0
