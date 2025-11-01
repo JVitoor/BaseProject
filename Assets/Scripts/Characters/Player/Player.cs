@@ -172,7 +172,7 @@ public class Player : MonoBehaviour
     {
         HandlePlayerMovement();
         HandlePlayerJump();
-        
+
 
     }
 
@@ -513,6 +513,27 @@ public class Player : MonoBehaviour
 
 
     #endregion Movement Methods
+
+    #region Puzzle Detection Methods
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // Detecta colisão com o centro da flor (FlowerController)
+        FlowerController flowerController = hit.gameObject.GetComponent<FlowerController>();
+        if (flowerController != null)
+        {
+            flowerController.OnPlayerEnterCenter();
+        }
+
+        // Detecta colisão com as pétalas
+        PetalController petalController = hit.gameObject.GetComponent<PetalController>();
+        if (petalController != null)
+        {
+            petalController.OnPlayerEnter();
+        }
+    }
+
+    #endregion Puzzle Detection Methods
 
     #endregion Methods
 }

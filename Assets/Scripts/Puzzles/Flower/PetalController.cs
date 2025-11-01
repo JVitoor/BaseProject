@@ -2,29 +2,77 @@ using UnityEngine;
 
 public class PetalController : MonoBehaviour
 {
+    [Header("Configuração")]
     public int petalIndex;
     public FlowerController flowerController;
     public Renderer petalRenderer;
 
-    public void SetColor(Color color)
+    [Header("Cores")]
+    public Color normalColor = Color.white;
+    public Color highlightColor = Color.yellow;
+    public Color activeColor = Color.black; // Cor quando player está em cima
+
+    private bool playerOnPetal = false;
+    private Color currentColor;
+
+    private void Start()
     {
-        petalRenderer.material.color = color;
+        currentColor = normalColor;
+        SetColor(normalColor);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void SetColor(Color color)
     {
-        if (other.CompareTag("Player"))
+        if (petalRenderer != null)
         {
-            flowerController.OnPetalStepped(petalIndex);
-            SetColor(Color.black);
+            currentColor = color;
+            petalRenderer.material.color = color;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public void ResetColor()
     {
-        if (other.CompareTag("Player"))
+        SetColor(playerOnPetal ? activeColor : normalColor);
+    }
+
+    public void Highlight()
+    {
+        SetColor(highlightColor);
+    }
+
+    public void OnPlayerEnter()
+    {
+        if (!playerOnPetal)
         {
-            SetColor(Color.white);
+            playerOnPetal = true;
+            SetColor(activeColor);
+
+            // Notifica o FlowerController que o player pisou nesta pétala
+            if (flowerController != null)
+            {
+                flowerController.OnPetalStepped(petalIndex);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        // Verifica se o player ainda está sobre a pétala
+        if (playerOnPetal)
+        {
+            // Procura pelo player na cena
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                float distance = Vector3.Distance(transform.position, player.transform.position);
+
+                // Se o player saiu da pétala (distância maior que um threshold)
+                if (distance > 2f) // Ajuste este valor conforme necessário
+                {
+                    playerOnPetal = false;
+                    ResetColor();
+                }
+            }
         }
     }
 }
