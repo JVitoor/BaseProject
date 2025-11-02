@@ -28,9 +28,22 @@ public class ShooterController : MonoBehaviour
 
     public float defaultMouseDistance = 100f;
 
+    [Header("Performance")]
+    [SerializeField] private bool cacheProjectileComponent = true;
+
     private float nextFireTime = 0f;
 
     private Camera mainCamera;
+    private bool hasCachedCamera = false;
+    private Transform cachedTransform;
+    private Vector3 cachedFirePointPosition;
+    private bool hasFirePoint;
+
+    void Awake()
+    {
+        // Cache transform reference
+        cachedTransform = transform;
+    }
 
     void Start()
     {
@@ -39,13 +52,22 @@ public class ShooterController : MonoBehaviour
             Debug.LogWarning("[ShooterController] Prefab do projétil não atribuído!");
         }
 
-        if (firePoint == null)
+        hasFirePoint = firePoint != null;
+        
+        if (!hasFirePoint)
         {
             Debug.LogWarning("[ShooterController] FirePoint não atribuído, usando posição do próprio objeto.");
         }
 
+        CacheMainCamera();
+    }
+
+    private void CacheMainCamera()
+    {
         mainCamera = Camera.main;
-        if (mainCamera == null)
+        hasCachedCamera = mainCamera != null;
+        
+        if (!hasCachedCamera)
         {
             Debug.LogError("[ShooterController] Câmera principal não encontrada!");
         }
@@ -53,41 +75,46 @@ public class ShooterController : MonoBehaviour
 
     void Update()
     {
-        if (autoFire)
+        // Check if we need to re-cache camera (in case it changes)
+        if (!hasCachedCamera || mainCamera == null)
         {
-            if (Time.time >= nextFireTime)
-            {
-                Fire();
-                nextFireTime = Time.time + fireRate;
-            }
+            CacheMainCamera();
         }
 
+        bool shouldFire = false;
+
+        if (autoFire)
+        {
+            shouldFire = Time.time >= nextFireTime;
+        }
         else if (Input.GetKeyDown(fireKey))
         {
-            if (Time.time >= nextFireTime)
-            {
-                Fire();
-                nextFireTime = Time.time + fireRate;
-            }
+            shouldFire = Time.time >= nextFireTime;
+        }
+
+        if (shouldFire)
+        {
+            Fire();
+            nextFireTime = Time.time + fireRate;
         }
     }
 
     private Vector3 GetMouseDirection()
     {
-        if (mainCamera == null)
+        if (!hasCachedCamera || mainCamera == null)
         {
             Debug.LogWarning("[ShooterController] Câmera não disponível, usando direção padrão.");
             return fireDirection.normalized;
         }
 
-        Vector3 shootFrom = firePoint != null ? firePoint.position : transform.position;
+        Vector3 shootFrom = hasFirePoint ? firePoint.position : cachedTransform.position;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         Vector3 targetPoint;
 
+        // Optimize raycast by checking layer mask first
         if (mouseRaycastLayer != 0)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, mouseRaycastLayer))
+            if (Physics.Raycast(ray, out RaycastHit hit, defaultMouseDistance, mouseRaycastLayer))
             {
                 targetPoint = hit.point;
             }
@@ -98,8 +125,7 @@ public class ShooterController : MonoBehaviour
         }
         else
         {
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (Physics.Raycast(ray, out RaycastHit hit, defaultMouseDistance))
             {
                 targetPoint = hit.point;
             }
@@ -109,9 +135,7 @@ public class ShooterController : MonoBehaviour
             }
         }
 
-        Vector3 direction = (targetPoint - shootFrom).normalized;
-
-        return direction;
+        return (targetPoint - shootFrom).normalized;
     }
 
     public void Fire()
@@ -122,7 +146,7 @@ public class ShooterController : MonoBehaviour
             return;
         }
 
-        Vector3 spawnPosition = firePoint != null ? firePoint.position : transform.position;
+        Vector3 spawnPosition = hasFirePoint ? firePoint.position : cachedTransform.position;
 
         Vector3 shootDirection = shootTowardsMouse ? GetMouseDirection() : fireDirection.normalized;
 
@@ -130,15 +154,31 @@ public class ShooterController : MonoBehaviour
 
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, spawnRotation);
 
-        Projectile projectileScript = projectile.GetComponent<Projectile>();
-        if (projectileScript == null)
+        // Optimize: Try to get cached component from prefab or add one
+        Projectile projectileScript;
+        
+        if (cacheProjectileComponent)
         {
-            projectileScript = projectile.AddComponent<Projectile>();
+            projectileScript = projectile.GetComponent<Projectile>();
+            if (projectileScript == null)
+            {
+                projectileScript = projectile.AddComponent<Projectile>();
+            }
+        }
+        else
+        {
+            projectileScript = projectile.GetComponent<Projectile>();
+            if (projectileScript == null)
+            {
+                projectileScript = projectile.AddComponent<Projectile>();
+            }
         }
 
         projectileScript.Initialize(shootDirection, projectileSpeed, projectileLifetime);
 
+        #if UNITY_EDITOR
         Debug.Log("[ShooterController] Projétil disparado na direção: " + shootDirection);
+        #endif
     }
 
     public void TriggerFire()
@@ -148,5 +188,12 @@ public class ShooterController : MonoBehaviour
             Fire();
             nextFireTime = Time.time + fireRate;
         }
+    }
+
+    // Public method to update camera reference (useful if camera changes)
+    public void UpdateCameraReference(Camera newCamera)
+    {
+        mainCamera = newCamera;
+        hasCachedCamera = mainCamera != null;
     }
 }

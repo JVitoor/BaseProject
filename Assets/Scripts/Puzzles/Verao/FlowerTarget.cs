@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using NUnit.Framework.Internal;
+using System.Collections;
 using UnityEngine;
 
 public class FlowerTarget : MonoBehaviour
@@ -24,12 +25,41 @@ public class FlowerTarget : MonoBehaviour
     public Color hitColor = Color.green;
     public float hitFeedbackDuration = 0.3f;
 
+    [Header("Performance")]
+    [SerializeField] private bool useMaterialPropertyBlock = true;
+
     private TargetController targetController;
     private bool wasHit = false;
     private Renderer flowerRenderer;
     private Color originalColor;
+    private MaterialPropertyBlock propertyBlock;
+    private static readonly int ColorPropertyID = Shader.PropertyToID("_Color");
+    private Material cachedMaterial;
+    private Coroutine hitFeedbackCoroutine;
+    private int openParameterHash;
+    private int openTriggerHash;
+    private int closeTriggerHash;
 
     void Start()
+    {
+        CacheAnimationHashes();
+        InitializeComponents();
+        SetFlowerState(false);
+    }
+
+    private void CacheAnimationHashes()
+    {
+        if (!string.IsNullOrEmpty(openParameterName))
+            openParameterHash = Animator.StringToHash(openParameterName);
+        
+        if (!string.IsNullOrEmpty(openTriggerName))
+            openTriggerHash = Animator.StringToHash(openTriggerName);
+        
+        if (!string.IsNullOrEmpty(closeTriggerName))
+            closeTriggerHash = Animator.StringToHash(closeTriggerName);
+    }
+
+    private void InitializeComponents()
     {
         targetController = GetComponentInParent<TargetController>();
 
@@ -56,10 +86,29 @@ public class FlowerTarget : MonoBehaviour
         flowerRenderer = GetComponentInChildren<Renderer>();
         if (flowerRenderer != null)
         {
-            originalColor = flowerRenderer.material.color;
+            if (useMaterialPropertyBlock)
+            {
+                // Use MaterialPropertyBlock to avoid creating material instances
+                propertyBlock = new MaterialPropertyBlock();
+                flowerRenderer.GetPropertyBlock(propertyBlock);
+                
+                // Get original color from the property block or material
+                if (propertyBlock.isEmpty)
+                {
+                    originalColor = flowerRenderer.sharedMaterial.GetColor(ColorPropertyID);
+                }
+                else
+                {
+                    originalColor = propertyBlock.GetColor(ColorPropertyID);
+                }
+            }
+            else
+            {
+                // Cache material instance (creates one instance per flower)
+                cachedMaterial = flowerRenderer.material;
+                originalColor = cachedMaterial.color;
+            }
         }
-
-        SetFlowerState(false);
     }
 
     public void SetFlowerState(bool open)
@@ -68,18 +117,18 @@ public class FlowerTarget : MonoBehaviour
 
         if (flowerAnimator != null)
         {
-            if (!string.IsNullOrEmpty(openParameterName))
+            if (openParameterHash != 0)
             {
-                flowerAnimator.SetBool(openParameterName, open);
+                flowerAnimator.SetBool(openParameterHash, open);
             }
 
-            if (open && !string.IsNullOrEmpty(openTriggerName))
+            if (open && openTriggerHash != 0)
             {
-                flowerAnimator.SetTrigger(openTriggerName);
+                flowerAnimator.SetTrigger(openTriggerHash);
             }
-            else if (!open && !string.IsNullOrEmpty(closeTriggerName))
+            else if (!open && closeTriggerHash != 0)
             {
-                flowerAnimator.SetTrigger(closeTriggerName);
+                flowerAnimator.SetTrigger(closeTriggerHash);
             }
         }
 
@@ -118,7 +167,12 @@ public class FlowerTarget : MonoBehaviour
         wasHit = true;
         Debug.Log("[FlowerTarget] ✓ " + gameObject.name + " foi ACERTADA!");
 
-        StartCoroutine(HitFeedback());
+        // Stop previous feedback coroutine if running
+        if (hitFeedbackCoroutine != null)
+        {
+            StopCoroutine(hitFeedbackCoroutine);
+        }
+        hitFeedbackCoroutine = StartCoroutine(HitFeedback());
 
         if (targetController != null)
         {
@@ -130,18 +184,74 @@ public class FlowerTarget : MonoBehaviour
     {
         if (flowerRenderer != null)
         {
-            flowerRenderer.material.color = hitColor;
-            yield return new WaitForSeconds(hitFeedbackDuration);
-            flowerRenderer.material.color = originalColor;
+            if (useMaterialPropertyBlock)
+            {
+                // Use MaterialPropertyBlock - more efficient, no material instances created
+                propertyBlock.SetColor(ColorPropertyID, hitColor);
+                flowerRenderer.SetPropertyBlock(propertyBlock);
+                
+                yield return new WaitForSeconds(hitFeedbackDuration);
+                
+                propertyBlock.SetColor(ColorPropertyID, originalColor);
+                flowerRenderer.SetPropertyBlock(propertyBlock);
+            }
+            else
+            {
+                // Use cached material instance
+                if (cachedMaterial != null)
+                {
+                    cachedMaterial.color = hitColor;
+                    yield return new WaitForSeconds(hitFeedbackDuration);
+                    cachedMaterial.color = originalColor;
+                }
+            }
         }
+
+        hitFeedbackCoroutine = null;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        // Cache GetComponent call result
         Projectile projectile = other.GetComponent<Projectile>();
         if (projectile != null)
         {
             OnHit();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // Clean up material instance if we created one
+        if (!useMaterialPropertyBlock && cachedMaterial != null)
+        {
+            Destroy(cachedMaterial);
+        }
+    }
+
+    // Public method to reset flower state (useful for object pooling)
+    public void ResetFlower()
+    {
+        wasHit = false;
+        isOpen = false;
+        
+        if (hitFeedbackCoroutine != null)
+        {
+            StopCoroutine(hitFeedbackCoroutine);
+            hitFeedbackCoroutine = null;
+        }
+
+        if (flowerRenderer != null)
+        {
+            if (useMaterialPropertyBlock)
+            {
+                propertyBlock.SetColor(ColorPropertyID, originalColor);
+                flowerRenderer.SetPropertyBlock(propertyBlock);
+            }
+            else if (cachedMaterial != null)
+            {
+                cachedMaterial.color = originalColor;
+            }
         }
     }
 }
