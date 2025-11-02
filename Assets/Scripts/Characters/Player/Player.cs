@@ -176,6 +176,17 @@ public class Player : MonoBehaviour
 
     }
 
+    // Detecta colisões com objetos durante o movimento do CharacterController
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // Verifica se colidiu com uma folha que pode cair
+        FallingLeaf leaf = hit.gameObject.GetComponent<FallingLeaf>();
+        if (leaf != null)
+        {
+            leaf.AtivarQueda();
+        }
+    }
+
     #endregion Unity Methods
 
     #region Input Methods

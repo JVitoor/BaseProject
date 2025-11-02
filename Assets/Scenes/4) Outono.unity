@@ -1413,8 +1413,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23115377, y: -0.0003606938, z: 0.00008569662, w: 0.9729172}
-  m_LocalPosition: {x: -69.281395, y: 2.6512458, z: -85.46373}
+  m_LocalRotation: {x: 0.2022655, y: 0.001843486, z: -0.000380744, w: 0.97932893}
+  m_LocalPosition: {x: 26.5, y: 10.6291485, z: -68.67124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5455,7 +5455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8403137454515896986, guid: 5e5705432bd2ad2489f8271e93eabc36, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00018310547
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 8403137454515896986, guid: 5e5705432bd2ad2489f8271e93eabc36, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8297,8 +8297,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753387293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23115383, y: -0.00036069378, z: 0.00008569665, w: 0.97291714}
-  m_LocalPosition: {x: -69.29, y: 2.8591483, z: -86.04124}
+  m_LocalRotation: {x: 0.20226549, y: 0.0018434859, z: -0.00038074394, w: 0.97932893}
+  m_LocalPosition: {x: 26.5, y: 10.6291485, z: -68.67124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20767,6 +20767,7 @@ GameObject:
   - component: {fileID: 4541091837567200296}
   - component: {fileID: 202885627960675658}
   - component: {fileID: 4946507511857313270}
+  - component: {fileID: 4946507511857313271}
   m_Layer: 0
   m_Name: FolhaCanada
   m_TagString: Untagged
@@ -21223,6 +21224,7 @@ GameObject:
   - component: {fileID: 4541091837164786243}
   - component: {fileID: 202885628094624545}
   - component: {fileID: 4946507512262298525}
+  - component: {fileID: 4946507512262298526}
   m_Layer: 0
   m_Name: FolhaCanada (2)
   m_TagString: Untagged
@@ -21413,6 +21415,7 @@ GameObject:
   - component: {fileID: 4541091836317940953}
   - component: {fileID: 202885626777214395}
   - component: {fileID: 4946507510895355143}
+  - component: {fileID: 4946507510895355144}
   m_Layer: 0
   m_Name: FolhaCanada (7)
   m_TagString: Untagged
@@ -21850,6 +21853,7 @@ GameObject:
   - component: {fileID: 4541091836170338620}
   - component: {fileID: 202885627235180638}
   - component: {fileID: 4946507511114766562}
+  - component: {fileID: 4946507511114766563}
   m_Layer: 0
   m_Name: FolhaCanada (1)
   m_TagString: Untagged
@@ -25799,12 +25803,27 @@ MeshCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 934073775164488036, guid: 01dbc04b2e3644141ad05f8a296c9f67, type: 3}
+--- !u!114 &4946507510895355144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615943437320247439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9576e0e778bae8146a736ebc0fb2a5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayAntesDeCair: 0.35
+  gravidade: 9.81
+  velocidadeRotacao: 100
 --- !u!64 &4946507510906512410
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26025,6 +26044,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 934073775164488036, guid: 01dbc04b2e3644141ad05f8a296c9f67, type: 3}
+--- !u!114 &4946507511114766563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615943438201841002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9576e0e778bae8146a736ebc0fb2a5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayAntesDeCair: 0.25
+  gravidade: 9.81
+  velocidadeRotacao: 100
 --- !u!64 &4946507511180795772
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26443,6 +26477,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 934073775164488036, guid: 01dbc04b2e3644141ad05f8a296c9f67, type: 3}
+--- !u!114 &4946507511857313271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615943436402591870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9576e0e778bae8146a736ebc0fb2a5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayAntesDeCair: 0.1
+  gravidade: 9.81
+  velocidadeRotacao: 100
 --- !u!64 &4946507511858998145
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26729,6 +26778,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 934073775164488036, guid: 01dbc04b2e3644141ad05f8a296c9f67, type: 3}
+--- !u!114 &4946507512262298526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615943437076592149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9576e0e778bae8146a736ebc0fb2a5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayAntesDeCair: 0.25
+  gravidade: 9.81
+  velocidadeRotacao: 100
 --- !u!64 &4946507512283422220
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32984,7 +33048,7 @@ Transform:
   m_GameObject: {fileID: 8919776431359216541}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -69.29, y: 0.73, z: -83.17}
+  m_LocalPosition: {x: 26.5, y: 8.5, z: -65.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
