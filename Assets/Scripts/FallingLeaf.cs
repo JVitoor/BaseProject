@@ -5,7 +5,7 @@ public class FallingLeaf : MonoBehaviour
 {
     [Header("Configurações de Queda")]
     [SerializeField] private float delayAntesDeCair = 0.5f; // Meio segundo de delay
-       private float gravidade = 20f;
+    [SerializeField] private float gravidade = 20f;
     [SerializeField] private float velocidadeRotacao = 100f; // Rotação enquanto cai
     
     private bool estaCaindo = false;
