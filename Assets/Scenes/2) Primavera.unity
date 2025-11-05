@@ -8798,6 +8798,7 @@ GameObject:
   - component: {fileID: 1433885637}
   - component: {fileID: 1433885636}
   - component: {fileID: 1433885639}
+  - component: {fileID: 1433885640}
   m_Layer: 0
   m_Name: Lago
   m_TagString: Boat
@@ -8894,6 +8895,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 26.058617, y: 13.666943, z: 27.137981}
   m_Center: {x: -1.807498, y: 4.794964, z: -2.423352}
+--- !u!114 &1433885640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433885634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f99fa27d568a040a8153f3ba0086fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1439929654
 PrefabInstance:
   m_ObjectHideFlags: 0
