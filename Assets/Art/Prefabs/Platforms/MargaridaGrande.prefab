@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1666423324203787780
 Transform:
@@ -128,5 +128,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0022099658, y: 0.0023219355, z: 0.011560833}
-  m_Center: {x: -0.0005689655, y: -0.00000034544618, z: 0.005760996}
+  m_Size: {x: 0.0022099658, y: 0.0023219355, z: 0.02872346}
+  m_Center: {x: -0.0005689655, y: -0.00000034548344, z: 0.014342308}
