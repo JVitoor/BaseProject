@@ -39,6 +39,10 @@ public class Player : MonoBehaviour
 
     public float maxRollAngle = 30f; // Ângulo máximo de inclinação ao planar
 
+    // Controle de tempo de planagem
+    public float maxGlideTime = 5f; // Tempo máximo de planagem em segundos
+    private float currentGlideTime = 0f; // Tempo atual de planagem
+
     #endregion Movement Properties
 
     #region Data Properties
@@ -103,6 +107,16 @@ public class Player : MonoBehaviour
     public GameObject planador;
 
     #endregion Unity Tools Properties
+
+    #region Platform Movement Properties
+
+    [Header(" └─ Moving Platform")]
+    private Transform currentPlatform; // Plataforma atual que o player está pisando
+    private Vector3 lastPlatformPosition; // Última posição da plataforma
+    private bool isOnPlatform = false; // Se o player está sobre uma plataforma
+    private PlataformaMover platformScript; // Referência ao script da plataforma
+
+    #endregion Platform Movement Properties
 
     #endregion Properties
 
@@ -170,9 +184,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        HandlePlatformMovement(); // Deve ser chamado ANTES do movimento do player
         HandlePlayerMovement();
         HandlePlayerJump();
-        
+
 
     }
 
@@ -189,7 +204,7 @@ public class Player : MonoBehaviour
     // TESTE DO DANDAN
     /*public void OnJumpInput(InputAction.CallbackContext context)
     {
-        // Permite pular se pressionou o botão e não excedeu o número máximo de pulos
+        // Permite pular se PRESSINADO o botão e não excedeu o número máximo de pulos
         if (context.performed && jumpCount < maxJumps)
         {
             verticalVelocity = jumpForce;
@@ -236,6 +251,7 @@ public class Player : MonoBehaviour
         else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding)
         {
             isGliding = true;
+            currentGlideTime = 0f; // Reseta o timer ao iniciar o glide
             if (planador != null)
             {
                 PlayGlideSound(); // INICIA O SOM
@@ -247,7 +263,7 @@ public class Player : MonoBehaviour
             }
         }
         // Desativa o glide AO SOLTAR a tecla de pulo
-        else if (context.canceled) // <<< REMOVIDO O '|| controller.isGrounded' DAQUI
+        else if (context.canceled)
         {
             if (isGliding) // Só executa se estava planando
             {
@@ -316,6 +332,25 @@ public class Player : MonoBehaviour
     #endregion Audio Methods
 
     #region Movement Methods
+
+    private void HandlePlatformMovement()
+    {
+        // Se estiver sobre uma plataforma e ela existe
+        if (isOnPlatform && currentPlatform != null && platformScript != null && controller != null)
+        {
+            // Pega o movimento da plataforma diretamente do script
+            Vector3 platformMovement = platformScript.GetMovementThisFrame();
+
+            // Debug para ver o movimento da plataforma
+            if (platformMovement.magnitude > 0.001f)
+            {
+                Debug.Log($"[Player] Movimento da plataforma: {platformMovement}");
+            }
+
+            // Move o player junto com a plataforma
+            controller.Move(platformMovement);
+        }
+    }
 
     private void HandlePlayerMovement()
     {
@@ -449,12 +484,26 @@ public class Player : MonoBehaviour
 
     private void HandlePlayerGlide()
     {
-        // TO-DO
-        // Se espaço estiver pressionado, o modo planagem continua ativo mesmo tocando o chão
-
         // Se estiver planando, aplica gravidade reduzida e inclina o player
         if (isGliding && controller != null && !controller.isGrounded)
         {
+            // Incrementa o tempo de planagem
+            currentGlideTime += Time.deltaTime;
+
+            // Verifica se excedeu o tempo máximo de planagem
+            if (currentGlideTime >= maxGlideTime)
+            {
+                // Desativa o glide automaticamente
+                isGliding = false;
+                StopGlideSound();
+                if (planador != null)
+                {
+                    planador.SetActive(false);
+                }
+                Debug.Log("[Player] Tempo máximo de planagem atingido!");
+                return; // Sai do método para não aplicar a gravidade de glide
+            }
+
             verticalVelocity += glideGravity * Time.deltaTime;
 
             // Inclina o player para o lado do movimento
@@ -500,6 +549,7 @@ public class Player : MonoBehaviour
         if (isGliding)
         {
             isGliding = false;
+            currentGlideTime = 0f; // Reseta o timer de planagem
             StopGlideSound();
             if (planador != null)
             {
@@ -510,6 +560,100 @@ public class Player : MonoBehaviour
         // Reseta a rotação para evitar que o player respawne inclinado
         transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
     }
+
+    // Detecta quando o player está sobre um trigger da plataforma
+    private void OnTriggerStay(Collider other)
+    {
+        // Verifica se é uma plataforma móvel E se o player está no chão (em cima da plataforma)
+        if (other.CompareTag("MovingPlatform") && controller != null && controller.isGrounded)
+        {
+     if (!isOnPlatform)
+   {
+      Debug.Log($"[Player] Entrou na plataforma: {other.gameObject.name}");
+        }
+
+            isOnPlatform = true;
+     currentPlatform = other.transform;
+     platformScript = other.GetComponent<PlataformaMover>();
+
+  if (platformScript == null)
+      {
+    Debug.LogError($"[Player] Plataforma {other.gameObject.name} não tem o script PlataformaMover!");
+  }
+    }
+    }
+
+    // Detecta quando o player sai do trigger da plataforma
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("MovingPlatform") && other.transform == currentPlatform)
+   {
+      Debug.Log("[Player] Saiu da plataforma");
+            isOnPlatform = false;
+     currentPlatform = null;
+       platformScript = null;
+  }
+    }
+
+    // MÉTODO REMOVIDO - NÃO É MAIS NECESSÁRIO
+    /*
+  // Detecta quando o CharacterController colide com algo
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // Verifica se colidiu com uma plataforma móvel (tag "MovingPlatform")
+        if (hit.gameObject.CompareTag("MovingPlatform"))
+ {
+      Debug.Log($"[Player] Colidiu com plataforma: {hit.gameObject.name}, Normal Y: {hit.normal.y}");
+
+            // Verifica se o player está em cima da plataforma
+        // A normal aponta para cima (Y positivo) quando estamos pisando por cima
+       // Usamos 0.3f para dar uma margem maior
+      if (hit.normal.y > 0.3f)
+  {
+      if (!isOnPlatform) // Log apenas quando começar a pisar
+    {
+         Debug.Log($"[Player] Agora está sobre a plataforma!");
+     }
+        isOnPlatform = true;
+currentPlatform = hit.transform;
+     lastPlatformPosition = currentPlatform.position;
+  }
+        }
+    }
+    */
+
+    // MÉTODO REMOVIDO - NÃO É MAIS NECESSÁRIO
+    /*
+    // Verifica se o player ainda está na plataforma a cada frame
+    // Este método é chamado automaticamente pelo Update via HandlePlatformMovement
+    private void CheckIfStillOnPlatform()
+ {
+        if (isOnPlatform && currentPlatform != null)
+        {
+   // Faz um raycast curto pra baixo para verificar se ainda está na plataforma
+            RaycastHit hit;
+       float rayDistance = controller.height / 2 + 0.3f; // Um pouco mais que a altura do controller
+
+       if (Physics.Raycast(transform.position, Vector3.down, out hit, rayDistance))
+      {
+       // Verifica se o que está abaixo ainda é a plataforma
+              if (hit.transform != currentPlatform)
+        {
+         Debug.Log("[Player] Saiu da plataforma (não está mais sobre ela)");
+         isOnPlatform = false;
+         currentPlatform = null;
+      }
+     }
+        else
+    {
+                // Nada foi detectado abaixo, player está no ar
+         Debug.Log("[Player] Saiu da plataforma (não está mais no chão)");
+           isOnPlatform = false;
+         currentPlatform = null;
+   }
+  }
+    }
+    */
 
 
     #endregion Movement Methods

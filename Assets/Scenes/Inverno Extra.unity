@@ -3914,7 +3914,7 @@ GameObject:
   - component: {fileID: 102620387}
   m_Layer: 0
   m_Name: Plataforma (11)
-  m_TagString: Obstaculo
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8651,7 +8651,7 @@ GameObject:
   - component: {fileID: 268149151}
   m_Layer: 0
   m_Name: Plataforma (12)
-  m_TagString: Obstaculo
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10769,7 +10769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.109539986, y: 0.0014961716, z: -0.00016488302, w: 0.99398124}
+  m_LocalRotation: {x: 0.10953989, y: 0.0017728748, z: -0.00019537652, w: 0.9939808}
   m_LocalPosition: {x: 72.14, y: 8.953104, z: -96.02558}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16477,9 +16477,10 @@ GameObject:
   - component: {fileID: 508726504}
   - component: {fileID: 508726503}
   - component: {fileID: 508726502}
+  - component: {fileID: 508726505}
   m_Layer: 0
   m_Name: Plataforma (14)
-  m_TagString: Obstaculo
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16515,7 +16516,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -16573,6 +16574,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508726500}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &508726505
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508726500}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &510943398 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9747e4a2a8edde54f8cc1698626018f0, type: 3}
@@ -19888,7 +19916,7 @@ GameObject:
   - component: {fileID: 610604627}
   m_Layer: 0
   m_Name: Plataforma (8)
-  m_TagString: Obstaculo
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23777,7 +23805,7 @@ GameObject:
   - component: {fileID: 718965381}
   m_Layer: 0
   m_Name: Plataforma (7)
-  m_TagString: Obstaculo
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34071,7 +34099,7 @@ GameObject:
   - component: {fileID: 1048533632}
   m_Layer: 0
   m_Name: Plataforma (13)
-  m_TagString: Obstaculo
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42038,7 +42066,7 @@ GameObject:
   - component: {fileID: 1291268604}
   m_Layer: 0
   m_Name: Plataforma (9)
-  m_TagString: Obstaculo
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44388,6 +44416,7 @@ MonoBehaviour:
   maxJumps: 2
   glideGravity: 25
   maxRollAngle: 90
+  maxGlideTime: 5
   mainCamera: {fileID: 1753387293}
   planador: {fileID: 13176007}
 --- !u!143 &1351561481
@@ -48864,7 +48893,7 @@ GameObject:
   - component: {fileID: 1513787769}
   m_Layer: 0
   m_Name: Plataforma (10)
-  m_TagString: Obstaculo
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56705,7 +56734,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753387293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10953994, y: 0.0014961713, z: -0.00016488292, w: 0.9939813}
+  m_LocalRotation: {x: 0.10953988, y: 0.0017728747, z: -0.00019537649, w: 0.9939808}
   m_LocalPosition: {x: 72.14, y: 8.953104, z: -96.02558}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
