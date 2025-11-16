@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3945325485150358703}
   - component: {fileID: 4917179719277947175}
   - component: {fileID: -2141358188590792757}
-  - component: {fileID: 8321534385155593289}
   m_Layer: 0
   m_Name: TroncoCortado
   m_TagString: Log
@@ -137,19 +136,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8321534385155593289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891638707320380054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624df4d32d7d3b84684c99aac581cde4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirection: {x: 0, y: 0, z: 0}
-  moveSpeed: 0
-  destroyPoint: {fileID: 0}
-  logSpawner: {fileID: 0}
