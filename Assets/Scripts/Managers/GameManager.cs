@@ -15,9 +15,20 @@ public class GameManager : BaseManager
 
     [Header("Level Management")]
     public int currentLevel = 1;
+
+    [Header("Season Configuration")]
+    [Tooltip("Define qual estação está associada a cada fase/nível")]
+    public Season[] levelSeasons = new Season[]
+    {
+        Season.Primavera,   // Level 0 (Menu)
+        Season.Primavera,   // Level 1
+        Season.Verao,       // Level 2
+        Season.Outono,      // Level 3
+        Season.Inverno     // Level 4
+    };
     
     [Header("Player Respawn")]
-    private Player player; // Referência ao script do player
+    private Player player;
     private Vector3 initialSpawnPoint;
     public Vector3 lastCheckpointPosition { get; private set; }
         
@@ -60,6 +71,20 @@ public class GameManager : BaseManager
     private void Start()
     {
         UpdateNutsUI();
+        UpdateSeasonForCurrentLevel();
+    }
+
+    private void UpdateSeasonForCurrentLevel()
+    {
+        if (SeasonManager.Instance == null)
+        {
+            Debug.LogWarning("[GameManager] SeasonManager não encontrado!");
+            return;
+        }
+
+        // Obtém o índice da cena atual
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
     }
     
     public void AddNut()
@@ -88,10 +113,8 @@ public class GameManager : BaseManager
         Debug.Log($"[GameManager] Carregando fase {levelIndex}...");
         currentLevel = levelIndex;
         
-        // Garante que o tempo esteja normal antes de carregar
         Time.timeScale = 1f;
         
-        // Carrega a cena
         SceneManager.LoadScene(levelIndex);
     }
     
@@ -120,12 +143,12 @@ public class GameManager : BaseManager
     }
     
     public void SetCheckpoint(Vector3 newPosition)
-{
-    Debug.Log($"[GameManager] Novo checkpoint definido em: {newPosition}");
-    // Armazena a posição do checkpoint, elevando-a ligeiramente
-    // para evitar que o player caia através do chão ao respawnar.
-    lastCheckpointPosition = newPosition + Vector3.up * 2f; 
-}
+    {
+        Debug.Log($"[GameManager] Novo checkpoint definido em: {newPosition}");
+        // Armazena a posição do checkpoint, elevando-a ligeiramente
+        // para evitar que o player caia através do chão ao respawnar.
+        lastCheckpointPosition = newPosition + Vector3.up * 2f; 
+    }
 
     public void RespawnPlayer()
     {
