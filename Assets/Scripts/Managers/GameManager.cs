@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : BaseManager
 {
@@ -10,7 +11,7 @@ public class GameManager : BaseManager
     public VeraoQuente veraoQuente;
     [Header("Collectibles")]
     public int nutsCollected = 0;
-    public Text nutsCounterText; // Refer�ncia para o texto UI
+    public TextMeshProUGUI nutsCounterText; // Refer�ncia para o texto UI
 
     [Header("Level Management")]
     public int currentLevel = 1;
@@ -33,7 +34,7 @@ public class GameManager : BaseManager
         // Tenta encontrar o texto do contador se não foi atribuído
         if (nutsCounterText == null)
         {
-            nutsCounterText = GameObject.Find("NutsCounter")?.GetComponent<Text>();
+            nutsCounterText = GameObject.Find("NutsCounter")?.GetComponent<TextMeshProUGUI>();
         }
 
         // --- LÓGICA DE SPAWN/CHECKPOINT ---
