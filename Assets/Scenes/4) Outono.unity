@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: de1d750fefeeac642bf9b11a3978ccf5, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -3986,7 +3986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20226565, y: 0.0014737676, z: -0.0003043843, w: 0.9793296}
+  m_LocalRotation: {x: 0.20226552, y: 0.0016662882, z: -0.00034414642, w: 0.9793292}
   m_LocalPosition: {x: -68.869, y: 2.5691483, z: -90.754234}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13383,6 +13383,7 @@ Transform:
   - {fileID: 1054135595}
   - {fileID: 1924570981}
   - {fileID: 876218794}
+  - {fileID: 1253101566}
   - {fileID: 553352544}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13911,6 +13912,51 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 934073775164488036, guid: 55cdf5e7eb04a49429742425b96af566, type: 3}
+--- !u!1 &1253101565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1253101566}
+  - component: {fileID: 1253101567}
+  m_Layer: 0
+  m_Name: Season (Manager)
+  m_TagString: Manager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1253101566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253101565}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1224160063}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1253101567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253101565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2d386f67ce47c4eab55765b7ecc104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSeason: 2
 --- !u!4 &1257996467 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5457386416949904793, guid: de11b7dc64e78364aaa70d52a0ffef43, type: 3}
@@ -19410,7 +19456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753387293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20226562, y: 0.0014737673, z: -0.0003043842, w: 0.9793296}
+  m_LocalRotation: {x: 0.20226553, y: 0.0016662881, z: -0.00034414645, w: 0.9793292}
   m_LocalPosition: {x: -68.869, y: 2.5691483, z: -90.754234}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21498,7 +21544,8 @@ MonoBehaviour:
   veraoQuente: {fileID: 0}
   nutsCollected: 0
   nutsCounterText: {fileID: 0}
-  currentLevel: 1
+  currentLevel: 2
+  levelSeasons: 00000000010000000200000003000000
 --- !u!4 &1929902470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
@@ -24782,6 +24829,7 @@ MonoBehaviour:
   maxJumps: 2
   glideGravity: 25
   maxRollAngle: 90
+  maxGlideTime: 3
   mainCamera: {fileID: 1753387293}
   planador: {fileID: 1698262928}
 --- !u!114 &284085909326262957

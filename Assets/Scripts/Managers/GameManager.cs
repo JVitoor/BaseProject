@@ -20,7 +20,6 @@ public class GameManager : BaseManager
     [Tooltip("Define qual estação está associada a cada fase/nível")]
     public Season[] levelSeasons = new Season[]
     {
-        Season.Primavera,   // Level 0 (Menu)
         Season.Primavera,   // Level 1
         Season.Verao,       // Level 2
         Season.Outono,      // Level 3
