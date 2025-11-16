@@ -39,7 +39,24 @@ public class Player : MonoBehaviour
 
     public float maxRollAngle = 30f; // Ângulo máximo de inclinação ao planar
 
+    [Header(" └─ Glide Settings")]
+    [Tooltip("Tempo máximo de planeio em segundos")]
+    public float maxGlideTime = 3f;
+
+    [Tooltip("Tempo atual de planeio")]
+    private float currentGlideTime = 0f;
+
     #endregion Movement Properties
+
+    #region Season Abilities Control
+
+    [Header(" └─ Season Abilities")]
+    [Tooltip("Habilidades habilitadas conforme a estação")]
+    private bool canJump = true;
+    private bool canDoubleJump = false;
+    private bool canGlide = false;
+
+    #endregion Season Abilities Control
 
     #region Data Properties
 
@@ -139,6 +156,8 @@ public class Player : MonoBehaviour
         // Verifica se AudioManager está disponível no Start
         CheckAudioManagerAvailability();
 
+        // Atualiza habilidades baseado na estação atual
+        UpdateSeasonAbilities();
     }
 
     private void CheckAudioManagerAvailability()
@@ -177,6 +196,30 @@ public class Player : MonoBehaviour
     }
 
     #endregion Unity Methods
+
+    #region Season Methods
+
+
+    public void UpdateSeasonAbilities()
+    {
+        if (SeasonManager.Instance == null)
+        {
+            Debug.LogWarning("[Player] SeasonManager não encontrado! Usando configurações padrão.");
+            canJump = true;
+            canDoubleJump = true;
+            canGlide = true;
+            return;
+        }
+
+        canJump = SeasonManager.Instance.IsJumpEnabled();
+        canDoubleJump = SeasonManager.Instance.IsDoubleJumpEnabled();
+        canGlide = SeasonManager.Instance.IsGlideEnabled();
+
+        Season currentSeason = SeasonManager.Instance.GetCurrentSeason();
+        Debug.Log($"[Player] Habilidades atualizadas para {currentSeason}: Jump={canJump}, DoubleJump={canDoubleJump}, Glide={canGlide}");
+    }
+
+    #endregion Season Methods
 
     #region Input Methods
 
@@ -225,38 +268,54 @@ public class Player : MonoBehaviour
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        // Permite pular se pressionou o botão e não excedeu o número máximo de pulos
-        if (context.performed && jumpCount < maxJumps)
+        // Verifica se pode pular (sempre pode em todas as estação)
+        if (context.performed && canJump && jumpCount < maxJumps)
         {
-            verticalVelocity = jumpForce;
-            jumpCount++;
-            PlayJumpSound();
+            // Se está no primeiro pulo OU se tem duplo pulo habilitado
+            if (jumpCount == 0 || (jumpCount > 0 && canDoubleJump))
+            {
+                verticalVelocity = jumpForce;
+                jumpCount++;
+                PlayJumpSound();
+            }
+            else if (jumpCount > 0 && !canDoubleJump)
+            {
+                Debug.Log("[Player] Duplo pulo não está disponível nesta estação!");
+            }
         }
         // Ativa o glide se estiver no ar, já usou o double jump e a tecla de pulo está pressionada
-        else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding)
+        else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding && canGlide)
         {
-            isGliding = true;
-            if (planador != null)
+            // Verifica se ainda tem tempo de planeio disponível
+            if (currentGlideTime < maxGlideTime)
             {
-                PlayGlideSound(); // INICIA O SOM
-                planador.SetActive(true);
+                isGliding = true;
+                if (planador != null)
+                {
+                    PlayGlideSound(); // INICIA O SOM
+                    planador.SetActive(true);
+                }
+                else
+                {
+                    Debug.LogWarning("[Player] GameObject planador não está atribuído!");
+                }
             }
             else
             {
-                Debug.LogWarning("[Player] GameObject planador não está atribuído!");
+                Debug.Log("[Player] Tempo de planeio esgotado!");
             }
         }
+        // Se tentou planar mas não pode
+        else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding && !canGlide)
+        {
+            Debug.Log("[Player] Planeio não está disponível nesta estação!");
+        }
         // Desativa o glide AO SOLTAR a tecla de pulo
-        else if (context.canceled) // <<< REMOVIDO O '|| controller.isGrounded' DAQUI
+        else if (context.canceled)
         {
             if (isGliding) // Só executa se estava planando
             {
-                isGliding = false;
-                StopGlideSound(); // PARA O SOM
-                if (planador != null)
-                {
-                    planador.SetActive(false);
-                }
+                StopGliding();
             }
         }
     }
@@ -419,18 +478,17 @@ public class Player : MonoBehaviour
             }
             jumpCount = 0;
 
+            // Reseta o tempo de planeio quando tocar o chão
+            currentGlideTime = 0f;
+
             // *** ADICIONE ESTA VERIFICAÇÃO ***
             // Se o player estava planando quando tocou o chão, pare o planeio
             if (isGliding)
             {
-                isGliding = false;
-                StopGlideSound(); // PARA O SOM
-                if (planador != null)
-                {
-                    planador.SetActive(false); // Esconde o planador
-                }
+                StopGliding();
             }
             // *** FIM DA ADIÇÃO ***
+
         }
         else
         {
@@ -455,6 +513,17 @@ public class Player : MonoBehaviour
         // Se estiver planando, aplica gravidade reduzida e inclina o player
         if (isGliding && controller != null && !controller.isGrounded)
         {
+            // Incrementa o tempo de planeio
+            currentGlideTime += Time.deltaTime;
+
+            // Verifica se atingiu o tempo máximo de planeio
+            if (currentGlideTime >= maxGlideTime)
+            {
+                Debug.Log($"[Player] Tempo máximo de planeio atingido ({maxGlideTime}s)");
+                StopGliding();
+                return;
+            }
+
             verticalVelocity += glideGravity * Time.deltaTime;
 
             // Inclina o player para o lado do movimento
@@ -467,6 +536,16 @@ public class Player : MonoBehaviour
             // Quando não estiver planando, reseta a inclinação
             Quaternion resetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, resetRotation, Time.deltaTime * 5f);
+        }
+    }
+
+    private void StopGliding()
+    {
+        isGliding = false;
+        StopGlideSound(); // PARA O SOM
+        if (planador != null)
+        {
+            planador.SetActive(false); // Esconde o planador
         }
     }
 
@@ -495,16 +574,11 @@ public class Player : MonoBehaviour
         currentSpeed = 0f;
         moveInput = Vector2.zero;
         jumpCount = 0;
-
+        currentGlideTime = 0f;
         // Garante que o planador seja desativado se o player morrer planando
         if (isGliding)
         {
-            isGliding = false;
-            StopGlideSound();
-            if (planador != null)
-            {
-                planador.SetActive(false);
-            }
+            StopGliding();
         }
 
         // Reseta a rotação para evitar que o player respawne inclinado
