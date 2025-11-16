@@ -5,8 +5,8 @@ public class VeraoQuente : MonoBehaviour
 {
     [Header("Configurações da Temperatura")]
     public float temperaturaMaxima = 100f;
-    public float taxaDeDano = 25f;
-    public float taxaDeRecuperacao = 10f;
+    public float taxaDeDano =15f;
+    public float taxaDeRecuperacao = 8f;
 
     // --- MUDANÇAS AQUI ---
     // A referência ao slider agora é privada.

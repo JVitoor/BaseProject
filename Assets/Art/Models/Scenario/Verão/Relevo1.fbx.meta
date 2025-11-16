@@ -3,7 +3,12 @@ guid: 29ba05a49696c54468248418b1638b09
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChaoVerde
+    second: {fileID: 2100000, guid: 5ea70d38d0ab9d0478fddc5ccfe5c7ee, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

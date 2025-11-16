@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2864526928210786419}
   - component: {fileID: 6198591976949616478}
   - component: {fileID: 7419075382974539586}
+  - component: {fileID: 4175635205235881925}
   m_Layer: 0
   m_Name: Cogumelo
   m_TagString: Untagged
@@ -107,8 +108,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0.07424668, y: 1.0166099, z: 0.071829975}
+  m_Size: {x: 1.9398746, y: 0.5470233, z: 2}
+  m_Center: {x: 0.10430943, y: 1.7430961, z: 0.071829975}
 --- !u!114 &7419075382974539586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,3 +123,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpBoost: 23
+--- !u!65 &4175635205235881925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4605235572073869864}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.6818624, y: 1.6155674, z: 2.6842666}
+  m_Center: {x: 0.04630909, y: 0.8212099, z: 0.020036494}
