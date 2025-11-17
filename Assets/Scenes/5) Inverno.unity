@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 80fa4f34db87aad4d93c45188b19bfd6, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -886,7 +886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10954015, y: 0.0016281626, z: -0.00017942912, w: 0.99398106}
+  m_LocalRotation: {x: 0.109540164, y: 0.0014961709, z: -0.00016488318, w: 0.99398124}
   m_LocalPosition: {x: 0, y: 1.443104, z: -2.9855776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2823,7 +2823,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1656622880}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -3233,10 +3233,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1656622881}
   - {fileID: 118753497}
   - {fileID: 298896094}
   - {fileID: 32227345}
+  - {fileID: 1392762004}
   m_Father: {fileID: 2080409667}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3549,6 +3549,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1392762004 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2564299876092430781, guid: 66c4e33aa5973ab40b05020bc3d84f21, type: 3}
+  m_PrefabInstance: {fileID: 1656622879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1584375370
 GameObject:
   m_ObjectHideFlags: 0
@@ -4179,16 +4184,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66c4e33aa5973ab40b05020bc3d84f21, type: 3}
---- !u!1 &1656622880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8567147891897821106, guid: 66c4e33aa5973ab40b05020bc3d84f21, type: 3}
-  m_PrefabInstance: {fileID: 1656622879}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1656622881 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1532685761210232554, guid: 66c4e33aa5973ab40b05020bc3d84f21, type: 3}
-  m_PrefabInstance: {fileID: 1656622879}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1687519464
 GameObject:
   m_ObjectHideFlags: 0
@@ -4348,7 +4343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753387293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.109540135, y: 0.0016281622, z: -0.0001794291, w: 0.99398106}
+  m_LocalRotation: {x: 0.10954016, y: 0.0014961709, z: -0.00016488315, w: 0.99398124}
   m_LocalPosition: {x: 0, y: 1.443104, z: -2.9855776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4983,6 +4978,7 @@ MonoBehaviour:
   nutsCollected: 0
   nutsCounterText: {fileID: 0}
   currentLevel: 1
+  levelSeasons: 00000000010000000200000003000000
 --- !u!1 &1950160807
 GameObject:
   m_ObjectHideFlags: 0
@@ -7629,6 +7625,7 @@ MonoBehaviour:
   maxJumps: 2
   glideGravity: 25
   maxRollAngle: 90
+  maxGlideTime: 3
   mainCamera: {fileID: 1753387293}
   planador: {fileID: 970916394}
 --- !u!1 &4784753139304397160
