@@ -479,6 +479,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8381332182546032079, guid: 6e48810142b80474f8d6c4fcd34e0cc3, type: 3}
   m_PrefabInstance: {fileID: 75122903}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &75122905 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4993355891579220468, guid: 6e48810142b80474f8d6c4fcd34e0cc3, type: 3}
+  m_PrefabInstance: {fileID: 75122903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &75703719
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,6 +5473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1393900414}
+  - component: {fileID: 1393900415}
   m_Layer: 0
   m_Name: VFX
   m_TagString: Untagged
@@ -5493,6 +5499,44 @@ Transform:
   - {fileID: 75122904}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1393900415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393900413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29494de81636dc439474ebca33662df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animators:
+  - {fileID: 5981603730569842440}
+  - {fileID: 536033116041490071}
+  - {fileID: 75122905}
+  parameters:
+  - name: Bola
+    type: 2
+    intValue: 0
+    floatValue: 0
+  - name: Flor
+    type: 2
+    intValue: 0
+    floatValue: 0
+  - name: Cogumelo
+    type: 2
+    intValue: 0
+    floatValue: 0
+  - name: Reset
+    type: 0
+    intValue: 0
+    floatValue: 0
+  logDebug: 0
+  autoResetEnabled: 1
+  autoResetDelay: 2
+  resetBoolsToFalse: 1
+  resetNumbersToZero: 0
 --- !u!1 &1409800586
 GameObject:
   m_ObjectHideFlags: 0
@@ -7708,6 +7752,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d3626f01a51b574ead1d03c294d6ce8, type: 3}
+--- !u!95 &536033116041490071 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1128526658326238709, guid: 2d3626f01a51b574ead1d03c294d6ce8, type: 3}
+  m_PrefabInstance: {fileID: 536033116041490070}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &543450652254628047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1772742889655306975, guid: 2d3626f01a51b574ead1d03c294d6ce8, type: 3}
@@ -7775,6 +7824,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ceb85a668938aa4d8ecde1ccc8da1fa, type: 3}
+--- !u!95 &5981603730569842440 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2890327857733466079, guid: 9ceb85a668938aa4d8ecde1ccc8da1fa, type: 3}
+  m_PrefabInstance: {fileID: 5981603730569842439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
