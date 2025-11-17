@@ -24,6 +24,17 @@ public class LevelTransition : MonoBehaviour
 
         isTransitioning = true;
 
+        // Para o timer do Inverno quando o nível é completado
+        if (SeasonManager.Instance != null)
+        {
+            Season currentSeason = SeasonManager.Instance.GetCurrentSeason();
+            if (currentSeason == Season.Inverno)
+            {
+                SeasonManager.Instance.StopWinterTimer();
+                Debug.Log("[LevelTransition] Timer do Inverno parado - Nível completado!");
+            }
+        }
+
         SceneManager.LoadScene(nextLevel);
 
     }

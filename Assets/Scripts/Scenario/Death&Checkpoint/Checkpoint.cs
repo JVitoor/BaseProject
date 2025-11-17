@@ -4,6 +4,11 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     public bool isActivated = false;
+    
+    [Header("Winter Timer Configuration")]
+    [Tooltip("Se verdadeiro, reseta o timer do Inverno quando ativado")]
+    public bool resetWinterTimer = true;
+    
     // Opcional: Efeitos para feedback
     // public GameObject activationEffect; 
 
@@ -23,6 +28,17 @@ public class Checkpoint : MonoBehaviour
             
             // Informa ao GameManager a nova posição de checkpoint
             GameManager.Instance.SetCheckpoint(transform.position);
+
+            // Reseta o timer do Inverno se configurado
+            if (resetWinterTimer && SeasonManager.Instance != null)
+            {
+                Season currentSeason = SeasonManager.Instance.GetCurrentSeason();
+                if (currentSeason == Season.Inverno)
+                {
+                    SeasonManager.Instance.ResetWinterTimer();
+                    Debug.Log("[Checkpoint] Timer do Inverno resetado!");
+                }
+            }
 
             // Feedback visual/sonoro (opcional)
             // if (activationEffect != null) Instantiate(activationEffect, transform.position, Quaternion.identity);
