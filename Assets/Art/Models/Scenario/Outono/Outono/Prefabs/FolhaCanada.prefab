@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 55cdf5e7eb04a49429742425b96af566, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -78.68152
+      value: -48.481136
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55cdf5e7eb04a49429742425b96af566, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55cdf5e7eb04a49429742425b96af566, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -72.41209
+      value: -135.30208
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55cdf5e7eb04a49429742425b96af566, type: 3}
       propertyPath: m_LocalRotation.w
@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55cdf5e7eb04a49429742425b96af566, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -88,6 +92,6 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 934073775164488036, guid: 55cdf5e7eb04a49429742425b96af566, type: 3}

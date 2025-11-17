@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.083
@@ -217,6 +221,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -315,6 +323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -331,6 +343,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -403,6 +419,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -477,6 +497,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.7
@@ -520,6 +564,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -681,9 +733,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -725,6 +793,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -746,6 +818,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -870,6 +946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.937
@@ -931,6 +1011,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -999,6 +1083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.515
@@ -1052,6 +1140,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 87
@@ -1095,6 +1207,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1242,6 +1362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1263,6 +1387,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1320,6 +1448,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1418,6 +1550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CogumeloPulo 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3455794400222499716, guid: 7e6c6915405fe84408cbfcfc67377fb0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1439,6 +1575,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1493,6 +1633,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 52.6
@@ -1537,6 +1701,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1566,7 +1738,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &177199159
 Transform:
@@ -1602,6 +1774,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4889240318246323480, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.26
@@ -1653,6 +1849,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1795,6 +1999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1818,6 +2026,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -61.5
@@ -1861,6 +2093,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1959,7 +2199,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &203600023
 Transform:
@@ -2230,6 +2470,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bab1377a79566ad42ab47dcb528bdb0f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2254,6 +2498,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2311,6 +2559,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2374,6 +2626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 66.12132
@@ -2430,6 +2686,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2585,6 +2845,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2853,6 +3117,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco_Toca
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5a5a129032582342acdbfc137cb2044, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2882,6 +3150,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3001,6 +3273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.995
@@ -3058,6 +3334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30.734
@@ -3111,6 +3391,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 41.8
@@ -3155,6 +3459,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3181,6 +3493,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3243,6 +3559,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalScale.x
@@ -3312,6 +3632,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3513,6 +3837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 64.775
@@ -3641,6 +3969,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3835,7 +4167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20226565, y: 0.0014729867, z: -0.00030422304, w: 0.9793296}
+  m_LocalRotation: {x: 0.20226556, y: 0.0016041627, z: -0.00033131536, w: 0.97932935}
   m_LocalPosition: {x: -68.869, y: 2.5691483, z: -90.754234}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3935,6 +4267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 58.963
@@ -3991,6 +4327,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4058,6 +4398,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4265,6 +4609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4286,6 +4634,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4344,6 +4696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.156
@@ -4397,6 +4753,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 91.1
@@ -4441,6 +4821,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4457,6 +4845,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4522,7 +4914,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &387999708
 Transform:
@@ -4628,6 +5020,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4752,6 +5148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 74.286
@@ -4854,6 +5254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4911,6 +5315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CogumeloPulo 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3455794400222499716, guid: 7e6c6915405fe84408cbfcfc67377fb0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4927,6 +5335,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5117,6 +5529,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.8
@@ -5161,6 +5597,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5184,9 +5628,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5228,6 +5688,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5246,9 +5710,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 387999708}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalScale.x
@@ -5301,6 +5781,10 @@ PrefabInstance:
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5413,6 +5897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5480,6 +5968,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 77.328
@@ -5533,9 +6025,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5577,6 +6085,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5593,6 +6105,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5727,6 +6243,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5955,9 +6475,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5999,6 +6535,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6012,6 +6552,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 85.9
@@ -6056,6 +6620,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6069,9 +6641,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6112,6 +6700,10 @@ PrefabInstance:
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6228,6 +6820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco_Toca
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5a5a129032582342acdbfc137cb2044, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6307,6 +6903,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6369,6 +6969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6400,6 +7004,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6596,6 +7204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 65.873
@@ -6766,6 +7378,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6983,6 +7599,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7844052
@@ -7052,6 +7672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 48.91
@@ -7109,6 +7733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -48.506
@@ -7162,6 +7790,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.23
@@ -7206,6 +7858,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7222,6 +7882,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7332,6 +7996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7405,6 +8073,10 @@ PrefabInstance:
     - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
       propertyPath: m_Name
       value: Cogumelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7483,6 +8155,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalScale.x
@@ -7598,6 +8274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4121997643928628389, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7658,6 +8338,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 55cdf5e7eb04a49429742425b96af566, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55cdf5e7eb04a49429742425b96af566, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7767,6 +8451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.077
@@ -7838,6 +8526,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8005,6 +8697,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd26bcbc874707341bb3c1e200930365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logOutono: {fileID: 1236938242}
+  playerTag: Player
+  triggerOnce: 1
+  requireInteraction: 0
+  interactionKey: 101
+  interactionPrompt: {fileID: 0}
+  showDebugLogs: 1
 --- !u!4 &741776926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
@@ -8098,6 +8797,10 @@ PrefabInstance:
     - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
       propertyPath: m_Name
       value: Cogumelo (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8305,6 +9008,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 88.8
@@ -8348,6 +9075,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8410,6 +9145,10 @@ PrefabInstance:
     - target: {fileID: 4121997643928628389, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
       propertyPath: m_Name
       value: Tronco 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121997643928628389, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8593,6 +9332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.31
@@ -8766,6 +9509,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35.488
@@ -8819,6 +9566,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35.1
@@ -8862,6 +9633,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8928,6 +9707,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bab1377a79566ad42ab47dcb528bdb0f, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bab1377a79566ad42ab47dcb528bdb0f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9001,6 +9784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9062,6 +9849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1abdb0237a7b1394097310803313bc2b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9081,6 +9872,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9316,6 +10111,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9378,6 +10177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9409,6 +10212,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9466,6 +10273,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9596,6 +10407,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 91.12
@@ -9640,6 +10475,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9656,6 +10499,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9754,6 +10601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9777,6 +10628,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 89.41
@@ -9820,6 +10695,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10086,6 +10969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.141
@@ -10309,6 +11196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 67.361
@@ -10370,6 +11261,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10485,6 +11380,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 90.37
@@ -10528,6 +11447,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10701,9 +11628,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10744,6 +11687,10 @@ PrefabInstance:
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10819,6 +11766,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 48.16
@@ -10862,6 +11833,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10957,6 +11936,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco 1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4121997643928628389, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10973,6 +11956,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11030,6 +12017,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11092,6 +12083,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11301,6 +12296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 75.745
@@ -11374,6 +12373,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40
@@ -11418,6 +12441,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11439,6 +12470,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11506,6 +12541,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11614,6 +12653,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalScale.x
@@ -11798,6 +12841,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.769
@@ -11928,6 +12975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.66
@@ -11999,6 +13050,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12101,6 +13156,10 @@ PrefabInstance:
     - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
       propertyPath: m_Name
       value: Cogumelo (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12263,6 +13322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 67.384
@@ -12357,6 +13420,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 48.05
@@ -12401,6 +13488,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12417,7 +13512,7 @@ GameObject:
   - component: {fileID: 1236938241}
   - component: {fileID: 1236938242}
   m_Layer: 0
-  m_Name: ----------------------------
+  m_Name: =====Log=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12450,6 +13545,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7785d44ca242c049b10b65a0996c63c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: {fileID: 3438350053722561717}
+  logCamera: {fileID: 2128898300}
+  playerCamera: {fileID: 330585545}
+  displayDuration: 3
+  activateOnStart: 0
+  deactivateLogAfterDisplay: 0
 --- !u!1001 &1238546155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12461,6 +13562,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12518,6 +13623,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12708,6 +13817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4121997643928628389, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12721,6 +13834,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 29.58
@@ -12765,6 +13902,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12781,6 +13926,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12950,6 +14099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12971,6 +14124,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13025,6 +14182,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.4
@@ -13068,6 +14249,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13163,6 +14352,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13273,6 +14466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7844052
@@ -13346,6 +14543,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13424,6 +14625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.305
@@ -13480,6 +14685,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13582,6 +14791,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55cdf5e7eb04a49429742425b96af566, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13601,6 +14814,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13700,6 +14917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.389
@@ -13757,6 +14978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 65.69426
@@ -13813,6 +15038,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalScale.x
@@ -13879,6 +15108,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40.9
@@ -13923,6 +15176,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13939,6 +15200,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14037,6 +15302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14098,6 +15367,10 @@ PrefabInstance:
     - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
       propertyPath: m_Name
       value: Cogumelo (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14252,6 +15525,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14427,6 +15704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4121997643928628389, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14509,6 +15790,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14607,6 +15892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14633,6 +15922,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14721,6 +16014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 61.366543
@@ -14782,6 +16079,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14916,6 +16217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -81.883995
@@ -14972,6 +16277,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15030,6 +16339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.353
@@ -15086,6 +16399,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15158,6 +16475,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15375,6 +16696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -50.66
@@ -15531,6 +16856,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 29.3
@@ -15574,6 +16923,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15644,6 +17001,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4121997643928628389, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15680,6 +17041,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15742,6 +17107,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15860,6 +17229,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16088,6 +17461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 71.839
@@ -16174,6 +17551,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16292,6 +17673,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16459,6 +17844,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.326
@@ -16520,6 +17909,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16683,6 +18076,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 91.1
@@ -16727,6 +18144,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16743,6 +18168,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16940,6 +18369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -34.5
@@ -17003,9 +18436,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17047,6 +18496,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17063,6 +18516,10 @@ PrefabInstance:
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalScale.x
@@ -17241,6 +18698,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalScale.x
@@ -17433,6 +18894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7844052
@@ -17521,7 +18986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753387293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20226562, y: 0.0014729867, z: -0.00030422295, w: 0.9793296}
+  m_LocalRotation: {x: 0.20226555, y: 0.0016041626, z: -0.00033131533, w: 0.9793294}
   m_LocalPosition: {x: -68.869, y: 2.5691483, z: -90.754234}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17808,6 +19273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.644
@@ -17861,9 +19330,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17904,6 +19389,10 @@ PrefabInstance:
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18091,6 +19580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18147,6 +19640,10 @@ PrefabInstance:
     - target: {fileID: 3455794400222499716, guid: 7e6c6915405fe84408cbfcfc67377fb0, type: 3}
       propertyPath: m_Name
       value: CogumeloPulo 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455794400222499716, guid: 7e6c6915405fe84408cbfcfc67377fb0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18243,6 +19740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -78.76999
@@ -18299,6 +19800,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18361,6 +19866,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18512,6 +20021,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 65.252
@@ -18568,6 +20081,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18719,6 +20236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.449
@@ -18862,6 +20383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18923,6 +20448,10 @@ PrefabInstance:
     - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
       propertyPath: m_Name
       value: Cogumelo (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19173,6 +20702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 71.066
@@ -19226,9 +20759,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19269,6 +20818,10 @@ PrefabInstance:
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19340,7 +20893,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1952208509
 BoxCollider:
@@ -19442,6 +20995,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19673,6 +21230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco_Toca (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5a5a129032582342acdbfc137cb2044, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19751,6 +21312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Galho (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -19825,6 +21390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.97
@@ -19878,6 +21447,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.3
@@ -19921,6 +21514,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20008,9 +21609,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20052,6 +21669,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20075,6 +21696,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 51.3
@@ -20119,6 +21764,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20140,6 +21793,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20250,6 +21907,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cogumelo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3370236148314299348, guid: e8b9344bd0f46934faea024f483a3148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20339,6 +22000,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20617,6 +22282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.303
@@ -20673,6 +22342,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20741,6 +22414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaCanada (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 58.256
@@ -20804,9 +22481,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 1652515591801255301, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611150515480512571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895946502791675726, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_Name
       value: Galho (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295835922693957825, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20847,6 +22540,10 @@ PrefabInstance:
     - target: {fileID: 6635101627485352571, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358401301524291233, guid: 6477d4f27c011b149bbe0ab8290c52d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21019,6 +22716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FolhaSimples (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 63.342
@@ -21072,6 +22773,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -60.1
@@ -21116,6 +22841,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronco1Galho (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21132,6 +22865,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21189,6 +22926,10 @@ PrefabInstance:
     - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_Name
       value: FolhaSimples (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126832303156433402, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7614540873721400128, guid: 3d39073ca2a16d84d825e751c1c9707c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21253,7 +22994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2128898297
 Transform:
   m_ObjectHideFlags: 0
@@ -21415,6 +23156,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: 231646712425157650, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 549339417516727322, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 825324504742175186, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 914090760805150772, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524920409676575385, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049802188478633484, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5742874356512892854, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.5
@@ -21458,6 +23223,14 @@ PrefabInstance:
     - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
       propertyPath: m_Name
       value: Tronco1Galho (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973875910345364679, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111930401546500515, guid: c9684122b49467642a49ddf1c680befc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21536,6 +23309,10 @@ PrefabInstance:
     - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_Name
       value: FolhaCanada (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805162507367993530, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23205,7 +24982,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!1 &932519173619121959
 GameObject:
@@ -26745,7 +28522,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5178194430329892234, guid: 3a601ca0ee524b944b021bf6335db17d, type: 3}
 --- !u!222 &2626097583634022139
@@ -28109,7 +29886,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!222 &3441165944084971389
 CanvasRenderer:
@@ -33615,6 +35392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CogumeloPulo
       objectReference: {fileID: 0}
+    - target: {fileID: 3455794400222499716, guid: 7e6c6915405fe84408cbfcfc67377fb0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36936,6 +38717,10 @@ PrefabInstance:
     - target: {fileID: 4121997643928628389, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
       propertyPath: m_Name
       value: Tronco
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121997643928628389, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
