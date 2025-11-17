@@ -69,6 +69,7 @@ public class InputManagers : BaseManager
     {
         Time.timeScale = pausePanel.activeSelf ? 1f : 0f;
         pausePanel.SetActive(!pausePanel.activeSelf);
+        ToggleCursor();
     }
 
     public void ChangeScene(int level)
@@ -81,5 +82,6 @@ public class InputManagers : BaseManager
     public void Unpause()
     {
         Time.timeScale = 1;
+        ToggleCursor();
     }
 }
