@@ -19,7 +19,7 @@ public class VfxControllerEditor : Editor
         EditorGUILayout.LabelField("Teste Rápido", EditorStyles.boldLabel);
 
         // PlayAllIndexed
-        if (GUILayout.Button("Play All Indexed"))
+        if (GUILayout.Button("Play Em Todos"))
         {
             ctrl.PlayAllIndexed();
         }
@@ -27,7 +27,7 @@ public class VfxControllerEditor : Editor
         EditorGUILayout.Space(4);
 
         // Trigger All
-        triggerName = EditorGUILayout.TextField("Trigger Name", triggerName);
+        triggerName = EditorGUILayout.TextField("Trigger em", triggerName);
         if (GUILayout.Button("Play Trigger All"))
         {
             ctrl.PlayTriggerAll(triggerName);
