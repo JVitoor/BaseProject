@@ -1213,7 +1213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10954015, y: 0.0014961706, z: -0.00016488314, w: 0.99398124}
+  m_LocalRotation: {x: 0.1095401, y: 0.0016733423, z: -0.00018440805, w: 0.99398094}
   m_LocalPosition: {x: 0, y: 1.943104, z: -2.9855776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2841,7 +2841,6 @@ MonoBehaviour:
   maxJumps: 2
   glideGravity: 25
   maxRollAngle: 90
-  maxGlideTime: 3
   mainCamera: {fileID: 1753387293}
   planador: {fileID: 1762598117}
 --- !u!143 &876148521
@@ -5517,8 +5516,20 @@ MonoBehaviour:
   - {fileID: 536033116041490071}
   - {fileID: 75122905}
   parameters:
-  - name: 
+  - name: Bola
     type: 2
+    intValue: 0
+    floatValue: 0
+  - name: Flor
+    type: 2
+    intValue: 0
+    floatValue: 0
+  - name: Cogumelo
+    type: 2
+    intValue: 0
+    floatValue: 0
+  - name: Reset
+    type: 0
     intValue: 0
     floatValue: 0
   logDebug: 0
@@ -6321,7 +6332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753387293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10954014, y: 0.0014961706, z: -0.00016488315, w: 0.99398124}
+  m_LocalRotation: {x: 0.109540105, y: 0.0016733421, z: -0.00018440804, w: 0.993981}
   m_LocalPosition: {x: 0, y: 1.943104, z: -2.9855776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7179,7 +7190,6 @@ MonoBehaviour:
   nutsCollected: 0
   nutsCounterText: {fileID: 0}
   currentLevel: 1
-  levelSeasons: 00000000010000000200000003000000
 --- !u!1 &1945121482
 GameObject:
   m_ObjectHideFlags: 0
