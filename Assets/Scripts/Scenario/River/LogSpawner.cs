@@ -10,48 +10,36 @@ public class LogSpawner : MonoBehaviour
     public float moveSpeed = 6f;
     public float spawnInterval = 5f;
     public float initialDelay = 0f;
-    public int maxLogs = 5; 
 
     private float spawnTimer = 4f;
-    private int spawnedLogsCount = 0;
-    private bool canSpawn = true;
     private bool hasStarted = false;
 
     private void Update()
     {   
-        if (canSpawn && spawnedLogsCount < maxLogs)
+        spawnTimer += Time.deltaTime;
+
+        if (!hasStarted)
         {
-            spawnTimer += Time.deltaTime;
-    
-            if (!hasStarted)
+            if (spawnTimer >= initialDelay)
             {
-                if (spawnTimer >= initialDelay)
-                {
-                    hasStarted = true;
-                    spawnTimer = 0f;
-                }
-                return;
-            }
-            
-            if (spawnTimer >= spawnInterval)
-            {
-                if (logPrefab.tag == "Log")
-                {
-                    SpawnLog();
-                }
-                else if (logPrefab.tag == "VitoriaRegia")
-                {
-                    SpawnVitoriaRegia();
-                }
-                 
+                hasStarted = true;
                 spawnTimer = 0f;
-                spawnedLogsCount++;
-                
-                if (spawnedLogsCount >= maxLogs)
-                {
-                    canSpawn = false;
-                }
             }
+            return;
+        }
+     
+        if (spawnTimer >= spawnInterval)
+        {
+            if (logPrefab.tag == "Log")
+            {
+                SpawnLog();
+            }
+            else if (logPrefab.tag == "VitoriaRegia")
+            {
+                SpawnVitoriaRegia();
+            }
+  
+            spawnTimer = 0f;
         }
     }
 
