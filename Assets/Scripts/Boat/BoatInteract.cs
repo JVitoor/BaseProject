@@ -3,7 +3,7 @@ using UnityEngine;
 public class BoatInteraction : MonoBehaviour
 {
     private Player player;
-    private BoatControlle currentBoat;
+    private BoatController currentBoat;
     private bool isInBoat = false;
 
     private void Start()

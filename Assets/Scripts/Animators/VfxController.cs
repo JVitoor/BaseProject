@@ -8,7 +8,7 @@ public class VfxController : MonoBehaviour
     [SerializeField] private List<Animator> animators = new List<Animator>();
 
     [Header("Lista de Parâmetros (mesmo índice que Animator)")]
-    [Tooltip("Parâmetros usados como Trigger ou Bool quando disparar por índice.")]
+    [Tooltip("Triggers e Bools NÃO possuem valor. Int e Float usam seus respectivos campos.")]
     [SerializeField] private List<AnimationParameter> parameters = new List<AnimationParameter>();
 
     [Header("Configuração Geral")]
@@ -34,6 +34,7 @@ public class VfxController : MonoBehaviour
     {
         public string name;
         public ParameterType type = ParameterType.Trigger;
+        // Usados SOMENTE quando type == Int ou Float (drawer oculta caso contrário)
         public int intValue;
         public float floatValue;
 
