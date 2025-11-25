@@ -46,6 +46,15 @@ public class Player : MonoBehaviour
     [Tooltip("Tempo atual de planeio")]
     private float currentGlideTime = 0f;
 
+    [Header(" └─ Slope Settings")]
+    [Tooltip("Ângulo máximo antes do player começar a escorregar")]
+    public float slopeLimit = 15f;
+
+    [Tooltip("Força aplicada quando o player está escorregando")]
+    public float slideForce = 200f;
+
+    private Vector3 velocity = Vector3.zero;
+
     #endregion Movement Properties
 
     #region Season Abilities Control
@@ -268,55 +277,62 @@ public class Player : MonoBehaviour
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
+     // Verifica se está em uma lombada íngreme - se sim, não pode pular
+        if (OnSteepSlope(out Vector3 _))
+        {
+       Debug.Log("[Player] Não é possível pular em uma lombada íngreme!");
+   return;
+  }
+
         // Verifica se pode pular (sempre pode em todas as estação)
-        if (context.performed && canJump && jumpCount < maxJumps)
+     if (context.performed && canJump && jumpCount < maxJumps)
         {
             // Se está no primeiro pulo OU se tem duplo pulo habilitado
-            if (jumpCount == 0 || (jumpCount > 0 && canDoubleJump))
-            {
+  if (jumpCount == 0 || (jumpCount > 0 && canDoubleJump))
+  {
                 verticalVelocity = jumpForce;
-                jumpCount++;
-                PlayJumpSound();
-            }
-            else if (jumpCount > 0 && !canDoubleJump)
+         jumpCount++;
+       PlayJumpSound();
+   }
+   else if (jumpCount > 0 && !canDoubleJump)
             {
                 Debug.Log("[Player] Duplo pulo não está disponível nesta estação!");
             }
-        }
+      }
         // Ativa o glide se estiver no ar, já usou o double jump e a tecla de pulo está pressionada
-        else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding && canGlide)
-        {
-            // Verifica se ainda tem tempo de planeio disponível
-            if (currentGlideTime < maxGlideTime)
-            {
-                isGliding = true;
+ else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding && canGlide)
+    {
+     // Verifica se ainda tem tempo de planeio disponível
+       if (currentGlideTime < maxGlideTime)
+    {
+          isGliding = true;
                 if (planador != null)
-                {
-                    PlayGlideSound(); // INICIA O SOM
-                    planador.SetActive(true);
+   {
+  PlayGlideSound(); // INICIA O SOM
+      planador.SetActive(true);
+       }
+        else
+    {
+        Debug.LogWarning("[Player] GameObject planador não está atribuído!");
                 }
-                else
-                {
-                    Debug.LogWarning("[Player] GameObject planador não está atribuído!");
-                }
-            }
-            else
-            {
+         }
+  else
+   {
                 Debug.Log("[Player] Tempo de planeio esgotado!");
             }
         }
         // Se tentou planar mas não pode
         else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding && !canGlide)
         {
-            Debug.Log("[Player] Planeio não está disponível nesta estação!");
-        }
+  Debug.Log("[Player] Planeio não está disponível nesta estação!");
+ }
         // Desativa o glide AO SOLTAR a tecla de pulo
-        else if (context.canceled)
-        {
+ else if (context.canceled)
+ {
             if (isGliding) // Só executa se estava planando
-            {
+   {
                 StopGliding();
-            }
+}
         }
     }
 
@@ -381,25 +397,25 @@ public class Player : MonoBehaviour
         // Verifica se o cameraController existe antes de usar
         if (cameraController == null)
         {
-            // Usa movimento padrão se não houver camera controller
-            desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
+   // Usa movimento padrão se não houver camera controller
+        desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
         }
         else
         {
-            switch (cameraController.name)
-            {
-                case "CameraThirdPerson":
-                    desiredMove = (cameraController.camForward * moveInput.y) + (cameraController.camRight * moveInput.x);
-                    break;
+    switch (cameraController.name)
+       {
+    case "CameraThirdPerson":
+    desiredMove = (cameraController.camForward * moveInput.y) + (cameraController.camRight * moveInput.x);
+           break;
 
-                case "CameraTopDown":
-                    desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
-                    break;
+       case "CameraTopDown":
+     desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
+       break;
 
                 default:
-                    desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
-                    break;
-            }
+          desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
+     break;
+   }
         }
 
         // Velocidade constante - se há input, usa velocidade máxima, senão é 0
@@ -407,34 +423,46 @@ public class Player : MonoBehaviour
         {
             currentSpeed = moveSpeed;
         }
-        else
+  else
         {
-            currentSpeed = 0f;
-        }
+      currentSpeed = 0f;
+      }
 
         // Normaliza o vetor de movimento e multiplica pela velocidade
-        move = desiredMove.normalized * currentSpeed;
+ move = desiredMove.normalized * currentSpeed;
 
-        // Aplica movimento vertical (pulo, gravidade e glide)
+      // Aplica movimento vertical (pulo, gravidade e glide)
         move.y = verticalVelocity;
 
         // Move o player usando o CharacterController
         if (controller != null)
         {
-            controller.Move(move * Time.deltaTime);
-        }
+    controller.Move(move * Time.deltaTime);
+
+    // Aplica o slope slide se estiver em uma lombada íngreme
+      if (OnSteepSlope(out Vector3 slopeDirection))
+    {
+       velocity += slopeDirection * slideForce * Time.deltaTime;
+          controller.Move(velocity * Time.deltaTime);
+    }
+            else
+          {
+   // Reseta a velocidade de slide quando não está em slope
+  velocity = Vector3.zero;
+            }
+}
 
         // Rotaciona o player para a direção do movimento, se houver input
         if (moveInput.magnitude > 0)
         {
             rotation = Quaternion.LookRotation(desiredMove);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotateSpeed);
-        }
+  transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotateSpeed);
+      }
 
         // Chama o método da câmera se existir
         if (cameraController != null)
         {
-            cameraController.HandleCamera();
+       cameraController.HandleCamera();
         }
     }
 
@@ -549,40 +577,70 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Detecta se o player está em uma lombada íngreme
+    /// </summary>
+    /// <param name="slopeDirection">Direção da inclinação para escorregamento</param>
+    /// <returns>True se estiver em uma lombada acima do limite de ângulo</returns>
+    private bool OnSteepSlope(out Vector3 slopeDirection)
+    {
+        slopeDirection = Vector3.zero;
+
+     // Só verifica slope se estiver no chão
+  if (!controller.isGrounded) return false;
+
+ // Lança um raycast para baixo para detectar a superfície
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 1.2f))
+        {
+ // Calcula o ângulo entre a normal da superfície e o vetor "para cima"
+       float angle = Vector3.Angle(hit.normal, Vector3.up);
+
+      // Se o ângulo for maior que o limite, está em uma lombada íngreme
+            if (angle > slopeLimit)
+   {
+  // Projeta o vetor "para baixo" no plano da superfície para obter a direção de escorregamento
+     slopeDirection = Vector3.ProjectOnPlane(Vector3.down, hit.normal);
+   return true;
+    }
+        }
+
+  return false;
+    }
+
     public void Respawn(Vector3 respawnPosition)
     {
         Debug.Log($"[Player] Respawnando em {respawnPosition}");
 
-        if (controller == null)
-        {
-            controller = GetComponent<CharacterController>();
+   if (controller == null)
+     {
+      controller = GetComponent<CharacterController>();
         }
 
-        // 1. Desabilita o CharacterController para permitir o teleporte
-        controller.enabled = false;
+     // 1. Desabilita o CharacterController para permitir o teleporte
+  controller.enabled = false;
 
-        // 2. Define a nova posição
+     // 2. Define a nova posição
         transform.position = respawnPosition;
 
         // 3. Reabilita o CharacterController
-        controller.enabled = true;
+    controller.enabled = true;
 
-        // --- Resetar o Estado do Player ---
+  // --- Resetar o Estado do Player ---
 
         // Reseta todas as velocidades e inputs
-        verticalVelocity = 0f;
+      verticalVelocity = 0f;
         currentSpeed = 0f;
         moveInput = Vector2.zero;
         jumpCount = 0;
         currentGlideTime = 0f;
         // Garante que o planador seja desativado se o player morrer planando
         if (isGliding)
-        {
+    {
             StopGliding();
-        }
+     }
 
-        // Reseta a rotação para evitar que o player respawne inclinado
-        transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+    // Reseta a rotação para evitar que o player respawne inclinado
+     transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
     }
 
 
