@@ -185,7 +185,7 @@ public class VfxController : MonoBehaviour
     }
     #endregion
 
-    #region Auto Reset Internals
+    #region Auto Reset Animations
     private void ScheduleAutoReset(string singleParamName = null)
     {
         if (!autoResetEnabled) return;
