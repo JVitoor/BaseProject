@@ -28,6 +28,9 @@ public class FlowerController : MonoBehaviour
     public Text feedbackText; // Texto para exibir mensagens ao jogador (UI Text Legacy)
     public Text sequenceText; // Texto para exibir a sequência correta
 
+    [Header("Parede de Contenção")]
+    public GameObject puzzleWall; // Parede que impede o jogador de sair da área
+
     // Estado do jogo
     private List<int> fullSequence = new List<int>(); // Sequência completa sorteada no início
     private int currentRoundLength = 1; // Quantas pétalas mostrar nesta rodada
@@ -36,6 +39,7 @@ public class FlowerController : MonoBehaviour
     private bool playerTurn = false;
     private bool isPlaying = false;
     private bool gameStarted = false;
+    private bool gameCompleted = false; // Flag para indicar que o jogo foi completado
     private bool processingInput = false; // Evita múltiplos inputs simultâneos
 
     private void Start()
@@ -43,14 +47,28 @@ public class FlowerController : MonoBehaviour
         // Inicializa as pétalas com suas cores normais
         ResetAllPetals();
         UpdateFeedbackText("");
+
+        // Garante que a parede está desativada no início
+        if (puzzleWall != null)
+        {
+            puzzleWall.SetActive(false);
+        }
     }
 
     // Chamado quando o player entra no centro da flor
     public void StartGame()
     {
-        if (!gameStarted)
+        // Só permite iniciar se não foi iniciado e não foi completado
+        if (!gameStarted && !gameCompleted)
         {
             gameStarted = true;
+
+            // Ativa a parede para impedir fuga
+            if (puzzleWall != null)
+            {
+                puzzleWall.SetActive(true);
+            }
+
             GenerateFullSequence(); // Sorteia a sequência completa
             StartCoroutine(InitialDelay());
         }
@@ -239,6 +257,7 @@ public class FlowerController : MonoBehaviour
 
         playerTurn = false;
         isPlaying = true;
+        gameCompleted = true; // Marca o jogo como completado
 
         // Toca som de vitória
         PlaySound(victorySound);
@@ -255,8 +274,17 @@ public class FlowerController : MonoBehaviour
 
         ResetAllPetals();
 
-        // Pode adicionar aqui lógica para desbloquear próxima área, dar recompensa, etc.
-        // TODO: Implementar recompensa/progressão
+        // Desativa a parede para liberar o jogador
+        if (puzzleWall != null)
+        {
+            puzzleWall.SetActive(false);
+        }
+
+        // Volta para a câmera de terceira pessoa
+        if (switchCamera != null)
+        {
+            switchCamera.ManagerCamera(1); // Troca para visão de terceira pessoa
+        }
     }
 
     private IEnumerator FlashAllPetals(int times, float interval, Color? color = null)
@@ -318,7 +346,7 @@ public class FlowerController : MonoBehaviour
 
     private void DisplayFullSequence()
     {
-   
+
         if (sequenceText == null) return;
 
         sequenceText.text = "";
@@ -338,11 +366,15 @@ public class FlowerController : MonoBehaviour
     // Método chamado pelo Player quando entra no centro da flor
     public void OnPlayerEnterCenter()
     {
-        if (switchCamera != null)
+        // Só inicia o jogo se ainda não foi iniciado e não foi completado
+        if (!gameStarted && !gameCompleted)
         {
-            switchCamera.ManagerCamera(0); // Troca para visão por cima
-        }
+            if (switchCamera != null)
+            {
+                switchCamera.ManagerCamera(0); // Troca para visão por cima
+            }
 
-        StartGame();
+            StartGame();
+        }
     }
 }
