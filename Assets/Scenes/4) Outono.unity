@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
+  resetWinterTimer: 0
 --- !u!65 &112550664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2381,7 +2381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
+  resetWinterTimer: 0
 --- !u!65 &178076109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4173,7 +4173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
+  resetWinterTimer: 0
 --- !u!65 &322131046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5360,7 +5360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
+  resetWinterTimer: 0
 --- !u!65 &390697627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6885,7 +6885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
+  resetWinterTimer: 0
 --- !u!65 &507647158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7932,7 +7932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
+  resetWinterTimer: 0
 --- !u!65 &625280810
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10302,7 +10302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
+  resetWinterTimer: 0
 --- !u!65 &825958989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10909,7 +10909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
+  resetWinterTimer: 0
 --- !u!65 &870916965
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16455,7 +16455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
+  resetWinterTimer: 0
 --- !u!65 &1423955477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19245,7 +19245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
+  resetWinterTimer: 0
 --- !u!65 &1708737177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19281,7 +19281,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1711882545}
-  - component: {fileID: 1711882547}
   - component: {fileID: 1711882546}
   - component: {fileID: 1711882548}
   m_Layer: 0
@@ -19319,28 +19318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
---- !u!65 &1711882547
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711882544}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 5.6664505, y: 0.8750981, z: 8.312149}
-  m_Center: {x: -0.039117813, y: 0.15742725, z: 0.62021637}
+  resetWinterTimer: 0
 --- !u!135 &1711882548
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19356,7 +19334,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -21377,7 +21355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  resetWinterTimer: 1
+  resetWinterTimer: 0
 --- !u!65 &1932889130
 BoxCollider:
   m_ObjectHideFlags: 0
