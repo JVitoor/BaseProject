@@ -663,6 +663,12 @@ public class Player : MonoBehaviour
         {
             petalController.OnPlayerEnter();
         }
+
+        FallingLeaf fallingLeaf = hit.gameObject.GetComponent<FallingLeaf>();
+        if (fallingLeaf != null)
+        {
+            fallingLeaf.AtivarQueda();
+        }
     }
 
     #endregion Puzzle Detection Methods
