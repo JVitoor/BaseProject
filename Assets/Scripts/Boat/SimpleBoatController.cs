@@ -27,9 +27,9 @@ public class SimpleBoatController : MonoBehaviour
     public GameObject interactionPanel;
 
     // Estado
-    private bool isOccupied = false;
+    public bool isOccupied = false;
     private bool playerInRange = false;
-    private GameObject currentPlayer;
+    public GameObject currentPlayer; 
 
     // Guarda a posição/rota original do jogador para retornar ao sair
     private Vector3 savedPlayerPosition;
@@ -39,8 +39,16 @@ public class SimpleBoatController : MonoBehaviour
     private CharacterController playerCC;
     private MonoBehaviour playerMovementScript;
 
+    // Posição inicial do barco para reset
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+
     private void Awake()
     {
+        // Armazena posição/rot inicial
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
+
         // Garante um trigger de interação
         if (interactionTrigger == null)
         {
@@ -147,14 +155,12 @@ public class SimpleBoatController : MonoBehaviour
         }
     }
 
-    private void ExitBoat()
+    public void ExitBoat()
     {
         if (currentPlayer == null) return;
 
         // Desparenta e mantém a posição/rotação atual do jogador (permanece onde está no assento)
         currentPlayer.transform.SetParent(null, true);
-
-        // Não restaura a posição salva: o jogador sai no mesmo local onde estava montado
 
         // Reativa componentes do jogador
         if (playerMovementScript != null) playerMovementScript.enabled = true;
@@ -167,6 +173,47 @@ public class SimpleBoatController : MonoBehaviour
         {
             interactionPanel.SetActive(true);
         }
+
+        // limpa referência ao jogador
+        currentPlayer = null;
+    }
+
+    // Força o jogador a sair do barco (usado por sistemas externos como DeadZone)
+    public void ForceExitPlayer()
+    {
+        if (currentPlayer != null)
+        {
+            // Reativa componentes do jogador
+            if (playerMovementScript != null) playerMovementScript.enabled = true;
+            if (playerCC != null) playerCC.enabled = true;
+
+            // Remove parent
+            currentPlayer.transform.SetParent(null, true);
+
+            currentPlayer = null;
+            isOccupied = false;
+
+            if (interactionPanel != null)
+                interactionPanel.SetActive(false);
+        }
+    }
+
+    // Desapega o jogador se necessário.
+    public void ResetToInitialPosition()
+    {
+        // Se houver jogador no barco, força saída
+        if (currentPlayer != null)
+        {
+            ForceExitPlayer();
+        }
+
+        // Move o barco para a posição inicial
+        transform.position = initialPosition;
+        transform.rotation = initialRotation;
+
+        // Reinicializa estado
+        isOccupied = false;
+        currentPlayer = null;
     }
 
     private void OnTriggerEnter(Collider other)

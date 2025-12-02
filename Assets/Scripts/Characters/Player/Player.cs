@@ -703,6 +703,18 @@ public class Player : MonoBehaviour
 
         // Reseta a rotação para evitar que o player respawne inclinado
         transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+
+        // Se o jogador estava em um barco, reseta o barco para sua posição inicial
+        // Procura por SimpleBoatController que tenha este jogador como currentPlayer
+        var boats = FindObjectsOfType<SimpleBoatController>();
+        foreach (var boat in boats)
+        {
+            if (boat != null && boat.currentPlayer == this.gameObject)
+            {
+                Debug.Log($"[Player] Player estava no barco '{boat.name}' no momento da morte. Resetando barco.");
+                boat.ResetToInitialPosition();
+            }
+        }
     }
 
     #endregion Movement Methods

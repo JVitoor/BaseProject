@@ -31,6 +31,13 @@ public class FlowerController : MonoBehaviour
     [Header("Parede de Contenção")]
     public GameObject puzzleWall; // Parede que impede o jogador de sair da área
 
+    [Header("Animator do Espinho")]
+    public Animator spikeAnimator; // Animator para controlar da vitoria
+
+    public Collider spikeCollider; // Collider do espinho para ativar/desativar
+    public string spikeVictoryTrigger = "Victory"; // Nome do trigger para animação de vitória
+
+    [Header("Estado do Jogo")]
     // Estado do jogo
     private List<int> fullSequence = new List<int>(); // Sequência completa sorteada no início
     private int currentRoundLength = 1; // Quantas pétalas mostrar nesta rodada
@@ -259,6 +266,18 @@ public class FlowerController : MonoBehaviour
         isPlaying = true;
         gameCompleted = true; // Marca o jogo como completado
 
+        // Dispara a animação do espinho
+        if (spikeAnimator != null && !string.IsNullOrEmpty(spikeVictoryTrigger))
+        {
+            spikeAnimator.SetTrigger(spikeVictoryTrigger);
+        }
+
+        // Desativa o collider (box) do espinho
+        if (spikeCollider != null)
+        {
+            spikeCollider.enabled = false;
+        }
+
         // Toca som de vitória
         PlaySound(victorySound);
 
@@ -285,6 +304,9 @@ public class FlowerController : MonoBehaviour
         {
             switchCamera.ManagerCamera(1); // Troca para visão de terceira pessoa
         }
+
+        
+        
     }
 
     private IEnumerator FlashAllPetals(int times, float interval, Color? color = null)
