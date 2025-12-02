@@ -735,41 +735,11 @@ public class Player : MonoBehaviour
             petalController.OnPlayerEnter();
         }
 
-        // Detecta colisão com troncos (logs)
-        if (hit.gameObject.CompareTag("Log"))
+        FallingLeaf fallingLeaf = hit.gameObject.GetComponent<FallingLeaf>();
+        if (fallingLeaf != null)
         {
-            AttachToLog(hit.gameObject);
+            fallingLeaf.AtivarQueda();
         }
-    }
-
-    private void AttachToLog(GameObject log)
-    {
-        // NÃO define como pai - CharacterController não funciona bem com hierarquia
-      // Apenas guarda a referência para seguir manualmente
-      currentLog = log.transform;
-   lastLogPosition = currentLog.position;
-     lastLogRotation = currentLog.rotation;
-  isOnMovingPlatform = true;
-
-        Debug.Log($"[Player] Anexado ao tronco: {log.name}");
-    }
-
-    public void DetachFromLog()
-    {
-        // Limpa a referência ao tronco
-  if (currentLog != null)
-        {
-   Debug.Log($"[Player] Desanexado de: {currentLog.name}");
-            currentLog = null;
-  }
-
-  isOnMovingPlatform = false;
-
-    // Remove parent se existir (segurança)
-        if (transform.parent != null)
-        {
-       transform.SetParent(null);
-   }
     }
 
     #endregion Puzzle Detection Methods
