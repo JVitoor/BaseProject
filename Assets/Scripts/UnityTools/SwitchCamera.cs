@@ -46,6 +46,7 @@ public class SwitchCamera : MonoBehaviour
     // Ativa a câmera de terceira pessoa e desativa as demais
     private void SwitchToThirdPersonCamera()
     {
+        Debug.Log("TROQUEEEEEEEEEEI");
         CameraThirdPerson.SetActive(true);
         foreach (var camera in CameraList)
         {

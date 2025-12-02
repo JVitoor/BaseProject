@@ -23,11 +23,13 @@ public class SimpleBoatController : MonoBehaviour
     public SphereCollider interactionTrigger;
     [Tooltip("Tecla para entrar/sair do barco")]
     public KeyCode interactKey = KeyCode.E;
+    [Tooltip("Painel UI que aparece quando o jogador se aproxima")]
+    public GameObject interactionPanel;
 
     // Estado
-    private bool isOccupied = false;
+    public bool isOccupied = false;
     private bool playerInRange = false;
-    private GameObject currentPlayer;
+    public GameObject currentPlayer; 
 
     // Guarda a posição/rota original do jogador para retornar ao sair
     private Vector3 savedPlayerPosition;
@@ -37,8 +39,16 @@ public class SimpleBoatController : MonoBehaviour
     private CharacterController playerCC;
     private MonoBehaviour playerMovementScript;
 
+    // Posição inicial do barco para reset
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+
     private void Awake()
     {
+        // Armazena posição/rot inicial
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
+
         // Garante um trigger de interação
         if (interactionTrigger == null)
         {
@@ -52,13 +62,10 @@ public class SimpleBoatController : MonoBehaviour
             interactionTrigger.isTrigger = true;
         }
 
-        // Se não houver collider (não-trigger), adiciona um para que OnTrigger funcione
-        Collider col = GetComponent<Collider>();
-        if (col == null)
+        // Garante que o painel de interação começa desativado
+        if (interactionPanel != null)
         {
-            SphereCollider sc = gameObject.AddComponent<SphereCollider>();
-            sc.isTrigger = true;
-            interactionTrigger = sc;
+            interactionPanel.SetActive(false);
         }
     }
 
@@ -140,44 +147,110 @@ public class SimpleBoatController : MonoBehaviour
         currentPlayer.transform.SetParent(seatTransform, true);
 
         isOccupied = true;
+
+        // Desativa o painel quando entrar no barco
+        if (interactionPanel != null)
+        {
+            interactionPanel.SetActive(false);
+        }
     }
 
-    private void ExitBoat()
+    public void ExitBoat()
     {
         if (currentPlayer == null) return;
 
         // Desparenta e mantém a posição/rotação atual do jogador (permanece onde está no assento)
         currentPlayer.transform.SetParent(null, true);
 
-        // Não restaura a posição salva: o jogador sai no mesmo local onde estava montado
-
         // Reativa componentes do jogador
         if (playerMovementScript != null) playerMovementScript.enabled = true;
         if (playerCC != null) playerCC.enabled = true;
 
         isOccupied = false;
+
+        // Reativa o painel se o jogador ainda estiver próximo
+        if (playerInRange && interactionPanel != null)
+        {
+            interactionPanel.SetActive(true);
+        }
+
+        // limpa referência ao jogador
+        currentPlayer = null;
+    }
+
+    // Força o jogador a sair do barco (usado por sistemas externos como DeadZone)
+    public void ForceExitPlayer()
+    {
+        if (currentPlayer != null)
+        {
+            // Reativa componentes do jogador
+            if (playerMovementScript != null) playerMovementScript.enabled = true;
+            if (playerCC != null) playerCC.enabled = true;
+
+            // Remove parent
+            currentPlayer.transform.SetParent(null, true);
+
+            currentPlayer = null;
+            isOccupied = false;
+
+            if (interactionPanel != null)
+                interactionPanel.SetActive(false);
+        }
+    }
+
+    // Desapega o jogador se necessário.
+    public void ResetToInitialPosition()
+    {
+        // Se houver jogador no barco, força saída
+        if (currentPlayer != null)
+        {
+            ForceExitPlayer();
+        }
+
+        // Move o barco para a posição inicial
+        transform.position = initialPosition;
+        transform.rotation = initialRotation;
+
+        // Reinicializa estado
+        isOccupied = false;
+        currentPlayer = null;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        // Verifica se é o jogador através da tag
         if (other == null) return;
         if (!other.CompareTag("Player")) return;
+
         playerInRange = true;
         currentPlayer = other.gameObject;
+
+        // Ativa o painel de interação apenas se o barco não estiver ocupado
+        if (!isOccupied && interactionPanel != null)
+        {
+            interactionPanel.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        // Verifica se é o jogador através da tag
         if (other == null) return;
         if (!other.CompareTag("Player")) return;
 
-        // Se o jogador sair do trigger enquanto não estiver no barco, limpa referência
+        playerInRange = false;
+
+        // Limpa referência ao jogador se não estiver no barco
         if (!isOccupied && currentPlayer == other.gameObject)
         {
             currentPlayer = null;
         }
 
-        playerInRange = false;
+        // Desativa o painel quando o jogador sair do alcance do trigger
+        if (interactionPanel != null)
+        {
+            interactionPanel.SetActive(false);
+        }
     }
 
     // Visualização da área no editor
