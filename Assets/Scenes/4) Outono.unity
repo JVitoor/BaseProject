@@ -4354,8 +4354,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20191973, y: 0.0037421682, z: -0.00077151495, w: 0.9793946}
-  m_LocalPosition: {x: 56.68668, y: 13.429149, z: -68.27543}
+  m_LocalRotation: {x: 0.20226553, y: 0.0014745371, z: -0.00030454306, w: 0.9793296}
+  m_LocalPosition: {x: 56.69301, y: 16.319147, z: -59.01124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4503,74 +4503,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
---- !u!1 &340197434
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 340197437}
-  - component: {fileID: 340197436}
-  - component: {fileID: 340197435}
-  m_Layer: 0
-  m_Name: TutorialAlavanca
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &340197435
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340197434}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.2038736, y: 1, z: 2.2083924}
-  m_Center: {x: 1.1019342, y: 0, z: -0.0064400192}
---- !u!114 &340197436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340197434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39f07c3a6e586b34087a51ee1440b8f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: Aperte E para acionar a Alavanca.
-  duration: 3
---- !u!4 &340197437
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340197434}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.26356584, z: -0, w: 0.96464145}
-  m_LocalPosition: {x: 46.418, y: 6.67, z: 76.145}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -30.564, z: 0}
 --- !u!1001 &346031324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8828,8 +8760,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 317, y: -32}
-  m_SizeDelta: {x: 1000.57, y: 529.89}
+  m_AnchoredPosition: {x: 29.961, y: 13.645}
+  m_SizeDelta: {x: 3371.754, y: 2238.328}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696345315
 MonoBehaviour:
@@ -8851,7 +8783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pressione E para interagir
+  m_text: Pressione "E" para acionar a Alavanca
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2b10c34c19e24c346b65c121f2276d63, type: 2}
   m_sharedMaterial: {fileID: -7108815551784711128, guid: 2b10c34c19e24c346b65c121f2276d63, type: 2}
@@ -8878,8 +8810,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 300
-  m_fontSizeBase: 300
+  m_fontSize: 292.26
+  m_fontSizeBase: 292.26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9004,6 +8936,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 203600023}
     m_Modifications:
+    - target: {fileID: -8939026400354990265, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
+      propertyPath: m_Radius
+      value: 8.281502
+      objectReference: {fileID: 0}
+    - target: {fileID: -8939026400354990265, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
+      propertyPath: m_Center.x
+      value: 0.65849686
+      objectReference: {fileID: 0}
     - target: {fileID: 3638793771915458079, guid: 9fe36f5f26fbc094083cd5edd8d46292, type: 3}
       propertyPath: m_LocalPosition.x
       value: -65.5
@@ -15839,6 +15779,74 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 244240694984127948, guid: c5a5a129032582342acdbfc137cb2044, type: 3}
+--- !u!1 &1322392670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1322392673}
+  - component: {fileID: 1322392672}
+  - component: {fileID: 1322392671}
+  m_Layer: 0
+  m_Name: MensagemPuzzleFinal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1322392671
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322392670}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.1388016, y: 1, z: 3.145691}
+  m_Center: {x: 0.073898315, y: 0, z: -0.07235718}
+--- !u!114 &1322392672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322392670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f07c3a6e586b34087a51ee1440b8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: 'Colete X nozes para liberar o desafio final! '
+  duration: 4
+--- !u!4 &1322392673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322392670}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 56.76, y: 8.98, z: -65.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1322441576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
@@ -17549,8 +17557,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 254, y: 52}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -527, y: 189}
+  m_SizeDelta: {x: 2229.897, y: 1525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1510478010
 MonoBehaviour:
@@ -17565,14 +17573,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5058824, g: 0.015686275, b: 0.14901961, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -132317166, guid: 81ec4bb5b2bf204429b379bda6a60a97, type: 3}
+  m_Sprite: {fileID: 1400403393, guid: 81ec4bb5b2bf204429b379bda6a60a97, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19317,7 +19325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: Segure a barra de espaco apos usar o pulo duplo para conseguir planar!
-  duration: 3
+  duration: 5.5
 --- !u!4 &1651388648
 Transform:
   m_ObjectHideFlags: 0
@@ -20665,8 +20673,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753387293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20191972, y: 0.0037421666, z: -0.0007715145, w: 0.9793947}
-  m_LocalPosition: {x: 56.699997, y: 13.429149, z: -68.27123}
+  m_LocalRotation: {x: 0.20226552, y: 0.001474537, z: -0.00030454295, w: 0.9793296}
+  m_LocalPosition: {x: 56.69301, y: 16.319147, z: -59.01124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40425,7 +40433,7 @@ Transform:
   m_GameObject: {fileID: 8919776431359216541}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 155.9, y: 11.3, z: -20.8}
+  m_LocalPosition: {x: 155.893, y: 14.19, z: -11.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42101,4 +42109,4 @@ SceneRoots:
   - {fileID: 778772756}
   - {fileID: 265963300}
   - {fileID: 1651388648}
-  - {fileID: 340197437}
+  - {fileID: 1322392673}
