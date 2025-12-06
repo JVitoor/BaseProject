@@ -717,7 +717,7 @@ public class Player : MonoBehaviour
     }
     #endregion Movement Methods
 
-    #region Puzzle Detection Methods
+        #region Puzzle Detection Methods
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
