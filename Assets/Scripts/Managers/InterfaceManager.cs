@@ -65,9 +65,6 @@ public class InterfaceManager : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
         if (AudioManager.instance.musics != null && AudioManager.instance.musics.Length > 0)
         {
             AudioManager.instance.SwitchMusic(AudioManager.instance.musics[0]);
@@ -77,37 +74,11 @@ public class InterfaceManager : MonoBehaviour
             Debug.LogWarning("[InterfaceManager] Nenhuma m�sica definida em AudioManager.");
         }
         SetDefaultVolume();
-
-        InitializeUIDictionary();
     }
 
     #endregion Unity Methods
 
     #region Auxiliar Methods
-
-    // Preenche o dicion�rio privado que relaciona o enum PanelsName com o GameObject do painel
-    // O nome do painel � o nome do enum + " Panel", obtido pela extens�o de PanelsName
-    private void InitializeUIDictionary()
-    {
-        foreach (PanelsName name in Enum.GetValues(typeof(PanelsName)))
-        {
-            string panelName = name.GetPanelName();
-            GameObject panel = GameObject.Find(panelName);
-
-            if (panel != null)
-            {
-                Debug.Log($"[InterfaceManager] Painel '{panelName}' encontrado e registrado.");
-                uiDictionary[name] = panel;
-                panel.SetActive(false); // Desativa o painel por padr�o
-            }
-            else
-            {
-                Debug.LogWarning($"[InterfaceManager] Painel '{panelName}' n�o encontrado na cena.");
-            }
-        }
-        ShowPanel(PanelsName.MainMenu); // Exibe o menu principal por padr�o
-    }
-
 
     public void ShowPanel(PanelsName name)
     {

@@ -18,16 +18,16 @@ public class InputManagers : BaseManager
     void Start()
     {
         if (lockOnStart)
+        {
             LockCursor();
+            Debug.Log("Cursor locked on start.");
+        }
         else
             UnlockCursor();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(toggleCursorKey))
-            ToggleCursor();
-
         if (Input.GetKeyDown(togglePauseKey))
             TogglePausePanel();
 

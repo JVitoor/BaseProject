@@ -318,6 +318,9 @@ public class Player : MonoBehaviour
                 // Desanexa do tronco ao pular
                 DetachFromLog();
 
+                // Remove efeito de fumaça ao pular (sai do chão quente)
+                RemoveSmokeEffect();
+
                 verticalVelocity = jumpForce;
                 jumpCount++;
                 PlayJumpSound();
@@ -535,32 +538,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    //TESTE DO DANDAN
-    /*private void HandlePlayerJump()
-    {
-        // Verifica se o controller existe antes de usar
-     if (controller == null) return;
-
-        // Aplica gravidade e reseta o contador de pulos ao tocar o chão
-        if (controller.isGrounded)
-     {
-            if (verticalVelocity < 0)
-      {
-        verticalVelocity = 0f;
-         }
-     jumpCount = 0;
-        isGliding = false;
-        }
-        else
-  {
-            verticalVelocity += gravity * Time.deltaTime;
-        }
-
-        HandlePlayerDoubleJump();
-        HandlePlayerGlide();
-        
-    }*/
-
     private void HandlePlayerJump()
     {
         // Verifica se o controller existe antes de usar
@@ -592,7 +569,7 @@ public class Player : MonoBehaviour
             verticalVelocity += gravity * Time.deltaTime;
 
             // Se não está no chão e não está em um tronco, desanexa
-            // Isso garante que o player se desanexe ao cair do tronco
+            // Isso garante que o player se desanexa ao cair do tronco
             if (currentLog != null)
             {
                 // Verifica se ainda está colidindo com o tronco
@@ -717,7 +694,7 @@ public class Player : MonoBehaviour
     }
     #endregion Movement Methods
 
-        #region Puzzle Detection Methods
+    #region Collider Methods
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -740,11 +717,28 @@ public class Player : MonoBehaviour
         {
             fallingLeaf.AtivarQueda();
         }
+
+        LogMovement logMovement = hit.gameObject.GetComponent<LogMovement>();
+        if (logMovement != null && controller.isGrounded)
+        {
+            if (currentLog == null || currentLog.gameObject != hit.gameObject)
+            {
+                AttachToLog(hit.gameObject);
+            }
+        }
+
+        if (hit.gameObject.CompareTag("VitoriaRegia") && controller.isGrounded)
+        {
+            if (currentLog == null || currentLog.gameObject != hit.gameObject)
+            {
+                AttachToLog(hit.gameObject);
+            }
+        }
     }
+
     private void AttachToLog(GameObject log)
     {
-        // NÃO define como pai - CharacterController não funciona bem com hierarquia
-        // Apenas guarda a referência para seguir manualmente
+
         currentLog = log.transform;
         lastLogPosition = currentLog.position;
         lastLogRotation = currentLog.rotation;
@@ -771,19 +765,24 @@ public class Player : MonoBehaviour
         }
     }
 
-    #endregion Puzzle Detection Methods
+    #endregion Collider Methods
 
     #region Hot Floor VFX Methods
 
     public void SpawnSmokeEffect()
     {
-        // Remove efeito anterior se existir
-        RemoveSmokeEffect();
-
         if (smokeVFXPrefab == null)
         {
             Debug.LogWarning("[Player] Smoke VFX Prefab não está configurado!");
             return;
+        }
+
+        // Remove efeito anterior se existir (após 1 segundo)
+        if (currentSmokeVFX != null)
+        {
+            currentSmokeVFX.Stop();
+            Destroy(currentSmokeVFX.gameObject, 0.75f);
+            currentSmokeVFX = null;
         }
 
         // Instancia o GameObject com Visual Effect como filho do player
@@ -819,7 +818,7 @@ public class Player : MonoBehaviour
             Debug.Log("[Player] Visual Effect de fumaça parado!");
 
             // Destrói o efeito após as partículas existentes desaparecerem
-            Destroy(currentSmokeVFX.gameObject, 2f);
+            Destroy(currentSmokeVFX.gameObject);
             currentSmokeVFX = null;
 
             Debug.Log("[Player] Efeito de fumaça removido!");
