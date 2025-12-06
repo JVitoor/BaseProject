@@ -29,7 +29,7 @@ public class SimpleBoatController : MonoBehaviour
     // Estado
     public bool isOccupied = false;
     private bool playerInRange = false;
-    public GameObject currentPlayer;
+    public GameObject currentPlayer; 
 
     // Guarda a posição/rota original do jogador para retornar ao sair
     private Vector3 savedPlayerPosition;

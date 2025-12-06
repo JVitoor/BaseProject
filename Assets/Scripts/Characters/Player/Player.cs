@@ -60,7 +60,6 @@ public class Player : MonoBehaviour
     private Transform currentLog; // Referência ao tronco atual
     private Vector3 lastLogPosition; // Última posição do tronco
     private Quaternion lastLogRotation; // Última rotação do tronco
-    private bool isOnMovingPlatform = false; // Flag para saber se está em plataforma móvel
 
     #endregion Movement Properties
 
@@ -213,6 +212,8 @@ public class Player : MonoBehaviour
     {
         HandlePlayerMovement();
         HandlePlayerJump();
+
+
     }
 
     #endregion Unity Methods
@@ -310,7 +311,7 @@ public class Player : MonoBehaviour
         }
 
         // Verifica se pode pular (sempre pode em todas as estação)
-        if (context.performed && canJump && jumpCount < maxJumps)
+     if (context.performed && canJump && jumpCount < maxJumps)
         {
             // Se está no primeiro pulo OU se tem duplo pulo habilitado
             if (jumpCount == 0 || (jumpCount > 0 && canDoubleJump))
@@ -319,48 +320,48 @@ public class Player : MonoBehaviour
                 DetachFromLog();
 
                 verticalVelocity = jumpForce;
-                jumpCount++;
-                PlayJumpSound();
-            }
-            else if (jumpCount > 0 && !canDoubleJump)
+         jumpCount++;
+       PlayJumpSound();
+   }
+   else if (jumpCount > 0 && !canDoubleJump)
             {
                 Debug.Log("[Player] Duplo pulo não está disponível nesta estação!");
             }
-        }
+      }
         // Ativa o glide se estiver no ar, já usou o double jump e a tecla de pulo está pressionada
-        else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding && canGlide)
-        {
-            // Verifica se ainda tem tempo de planeio disponível
-            if (currentGlideTime < maxGlideTime)
-            {
-                isGliding = true;
+ else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding && canGlide)
+    {
+     // Verifica se ainda tem tempo de planeio disponível
+       if (currentGlideTime < maxGlideTime)
+    {
+          isGliding = true;
                 if (planador != null)
-                {
-                    PlayGlideSound(); // INICIA O SOM
-                    planador.SetActive(true);
+   {
+  PlayGlideSound(); // INICIA O SOM
+      planador.SetActive(true);
+       }
+        else
+    {
+        Debug.LogWarning("[Player] GameObject planador não está atribuído!");
                 }
-                else
-                {
-                    Debug.LogWarning("[Player] GameObject planador não está atribuído!");
-                }
-            }
-            else
-            {
+         }
+  else
+   {
                 Debug.Log("[Player] Tempo de planeio esgotado!");
             }
         }
         // Se tentou planar mas não pode
         else if (context.performed && !controller.isGrounded && jumpCount >= maxJumps && !isGliding && !canGlide)
         {
-            Debug.Log("[Player] Planeio não está disponível nesta estação!");
-        }
+  Debug.Log("[Player] Planeio não está disponível nesta estação!");
+ }
         // Desativa o glide AO SOLTAR a tecla de pulo
-        else if (context.canceled)
-        {
+ else if (context.canceled)
+ {
             if (isGliding) // Só executa se estava planando
-            {
+   {
                 StopGliding();
-            }
+}
         }
     }
 
@@ -425,25 +426,25 @@ public class Player : MonoBehaviour
         // Verifica se o cameraController existe antes de usar
         if (cameraController == null)
         {
-            // Usa movimento padrão se não houver camera controller
-            desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
+   // Usa movimento padrão se não houver camera controller
+        desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
         }
         else
         {
-            switch (cameraController.name)
-            {
-                case "CameraThirdPerson":
-                    desiredMove = (cameraController.camForward * moveInput.y) + (cameraController.camRight * moveInput.x);
-                    break;
+    switch (cameraController.name)
+       {
+    case "CameraThirdPerson":
+    desiredMove = (cameraController.camForward * moveInput.y) + (cameraController.camRight * moveInput.x);
+           break;
 
-                case "CameraTopDown":
-                    desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
-                    break;
+       case "CameraTopDown":
+     desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
+       break;
 
                 default:
-                    desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
-                    break;
-            }
+          desiredMove = (Vector3.forward * moveInput.y) + (Vector3.right * moveInput.x);
+     break;
+   }
         }
 
         // Velocidade constante - se há input, usa velocidade máxima, senão é 0
@@ -451,15 +452,15 @@ public class Player : MonoBehaviour
         {
             currentSpeed = moveSpeed;
         }
-        else
+  else
         {
-            currentSpeed = 0f;
-        }
+      currentSpeed = 0f;
+      }
 
         // Normaliza o vetor de movimento e multiplica pela velocidade
-        move = desiredMove.normalized * currentSpeed;
+ move = desiredMove.normalized * currentSpeed;
 
-        // Aplica movimento vertical (pulo, gravidade e glide)
+      // Aplica movimento vertical (pulo, gravidade e glide)
         move.y = verticalVelocity;
 
         // Move o player usando o CharacterController
@@ -472,35 +473,23 @@ public class Player : MonoBehaviour
                 Vector3 logMovement = currentLog.position - lastLogPosition;
                 Quaternion logRotation = currentLog.rotation * Quaternion.Inverse(lastLogRotation);
 
-                // Aplica o movimento do tronco ao player APENAS se houver movimento significativo
-                // Isso evita micromovimentos que causam travadas
-                if (logMovement.magnitude > 0.0001f)
-                {
-                    controller.Move(logMovement);
-                }
+                // Aplica o movimento do tronco ao player
+                controller.Move(logMovement);
 
-                // Rotaciona o player junto com o tronco APENAS se houver rotação significativa
-                if (Quaternion.Angle(Quaternion.identity, logRotation) > 0.01f)
-                {
-                    Vector3 playerPosRelativeToLog = transform.position - currentLog.position;
-                    Vector3 newPlayerPos = currentLog.position + (logRotation * playerPosRelativeToLog);
-                    Vector3 rotationMovement = newPlayerPos - transform.position;
-
-                    if (rotationMovement.magnitude > 0.0001f)
-                    {
-                        controller.Move(rotationMovement);
-                    }
-                }
+                // Rotaciona o player junto com o tronco
+                Vector3 playerPosRelativeToLog = transform.position - currentLog.position;
+                Vector3 newPlayerPos = currentLog.position + (logRotation * playerPosRelativeToLog);
+                Vector3 rotationMovement = newPlayerPos - transform.position;
+                controller.Move(rotationMovement);
 
                 // Aplica o movimento do próprio player (input)
-                if (move.magnitude > 0.0001f)
-                {
-                    controller.Move(move * Time.deltaTime);
-                }
+                controller.Move(move * Time.deltaTime);
 
-                // ATUALIZA a posição do tronco AQUI, no final do movimento
+                // Atualiza a posição e rotação do tronco para o próximo frame
                 lastLogPosition = currentLog.position;
                 lastLogRotation = currentLog.rotation;
+
+                Debug.Log($"[Player] Movendo com pai: {currentLog.name} - LogMovement: {logMovement}");
             }
             else
             {
@@ -525,13 +514,13 @@ public class Player : MonoBehaviour
         if (moveInput.magnitude > 0)
         {
             rotation = Quaternion.LookRotation(desiredMove);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotateSpeed);
-        }
+  transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotateSpeed);
+      }
 
         // Chama o método da câmera se existir
         if (cameraController != null)
         {
-            cameraController.HandleCamera();
+       cameraController.HandleCamera();
         }
     }
 
@@ -681,9 +670,9 @@ public class Player : MonoBehaviour
     {
         Debug.Log($"[Player] Respawnando em {respawnPosition}");
 
-        if (controller == null)
-        {
-            controller = GetComponent<CharacterController>();
+   if (controller == null)
+     {
+      controller = GetComponent<CharacterController>();
         }
 
         // Desanexa do tronco antes de respawnar
@@ -692,32 +681,45 @@ public class Player : MonoBehaviour
         // 1. Desabilita o CharacterController para permitir o teleporte
         controller.enabled = false;
 
-        // 2. Define a nova posição
+     // 2. Define a nova posição
         transform.position = respawnPosition;
 
         // 3. Reabilita o CharacterController
-        controller.enabled = true;
+    controller.enabled = true;
 
-        // --- Resetar o Estado do Player ---
+  // --- Resetar o Estado do Player ---
 
         // Reseta todas as velocidades e inputs
-        verticalVelocity = 0f;
+      verticalVelocity = 0f;
         currentSpeed = 0f;
         moveInput = Vector2.zero;
         jumpCount = 0;
         currentGlideTime = 0f;
         // Garante que o planador seja desativado se o player morrer planando
         if (isGliding)
-        {
+    {
             StopGliding();
-        }
+     }
 
         // Reseta a rotação para evitar que o player respawne inclinado
         transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+
+        // Se o jogador estava em um barco, reseta o barco para sua posição inicial
+        // Procura por SimpleBoatController que tenha este jogador como currentPlayer
+        var boats = FindObjectsOfType<SimpleBoatController>();
+        foreach (var boat in boats)
+        {
+            if (boat != null && boat.currentPlayer == this.gameObject)
+            {
+                Debug.Log($"[Player] Player estava no barco '{boat.name}' no momento da morte. Resetando barco.");
+                boat.ResetToInitialPosition();
+            }
+        }
     }
+
     #endregion Movement Methods
 
-        #region Puzzle Detection Methods
+    #region Puzzle Detection Methods
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -735,12 +737,13 @@ public class Player : MonoBehaviour
             petalController.OnPlayerEnter();
         }
 
-        FallingLeaf fallingLeaf = hit.gameObject.GetComponent<FallingLeaf>();
-        if (fallingLeaf != null)
+        // Detecta colisão com troncos (logs)
+        if (hit.gameObject.CompareTag("Log"))
         {
-            fallingLeaf.AtivarQueda();
+            AttachToLog(hit.gameObject);
         }
     }
+
     private void AttachToLog(GameObject log)
     {
         // NÃO define como pai - CharacterController não funciona bem com hierarquia
@@ -748,7 +751,6 @@ public class Player : MonoBehaviour
         currentLog = log.transform;
         lastLogPosition = currentLog.position;
         lastLogRotation = currentLog.rotation;
-        isOnMovingPlatform = true;
 
         Debug.Log($"[Player] Anexado ao tronco: {log.name}");
     }
@@ -761,8 +763,6 @@ public class Player : MonoBehaviour
             Debug.Log($"[Player] Desanexado de: {currentLog.name}");
             currentLog = null;
         }
-
-        isOnMovingPlatform = false;
 
         // Remove parent se existir (segurança)
         if (transform.parent != null)
