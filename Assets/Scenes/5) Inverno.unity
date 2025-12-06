@@ -3945,6 +3945,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1021043233}
   - {fileID: 1656912414771764104}
   - {fileID: 7409846654066376097}
   - {fileID: 1329793312902686862}
@@ -3953,7 +3954,6 @@ RectTransform:
   - {fileID: 1413250908}
   - {fileID: 1627056241}
   - {fileID: 626794472}
-  - {fileID: 1021043233}
   m_Father: {fileID: 2080409667}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -10131,7 +10131,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1054135596}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ChangeMasterVolume
         m_Mode: 0
@@ -16950,7 +16950,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1054135596}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ChangeSFXVolume
         m_Mode: 0
@@ -22583,7 +22583,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1054135596}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ChangeMusicVolume
         m_Mode: 0
