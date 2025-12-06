@@ -6924,8 +6924,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3784450591684291562, guid: 368789e7568dd0a40a0968894a34b22d, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 74bb59c319ba2fb4798b319ec2bebde0, type: 3}
+  m_Resource: {fileID: 8300000, guid: 74bb59c319ba2fb4798b319ec2bebde0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -16239,6 +16239,7 @@ MonoBehaviour:
   slideForce: 100
   mainCamera: {fileID: 1753387293}
   planador: {fileID: 970916394}
+  smokeVFXPrefab: {fileID: 0}
 --- !u!1 &4730131696946141946
 GameObject:
   m_ObjectHideFlags: 0
