@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class PuzzleBlocked : MonoBehaviour
 {
@@ -21,16 +20,10 @@ public class PuzzleBlocked : MonoBehaviour
     public float animationDuration = 2f;
 
     [Header("UI Feedback")]
-    [Tooltip("Texto UI para mostrar mensagens ao jogador")]
-    public TextMeshProUGUI feedbackText;
+    [Tooltip("Painel UI para mostrar quando não tem nozes suficientes")]
+    public GameObject feedbackPanel;
 
-    [Tooltip("Mensagem quando não tem nozes suficientes")]
-    public string insufficientNutsMessage = "Você precisa coletar {0} nozes para desbloquear!";
-
-    [Tooltip("Mensagem quando está desbloqueando")]
-    public string unlockingMessage = "Desbloqueando passagem...";
-
-    [Tooltip("Tempo que a mensagem fica na tela (segundos)")]
+    [Tooltip("Tempo que o painel fica na tela (segundos)")]
     public float messageDuration = 3f;
 
     private bool hasBeenUnlocked = false;
@@ -60,10 +53,9 @@ public class PuzzleBlocked : MonoBehaviour
 
         if (currentNuts < requiredNuts)
         {
-            // Não tem nozes suficientes - mostra mensagem
+            // Não tem nozes suficientes - mostra painel
             int nutsNeeded = requiredNuts - currentNuts;
-            string message = string.Format(insufficientNutsMessage, nutsNeeded);
-            ShowFeedbackMessage(message);
+            ShowFeedbackPanel();
             Debug.Log($"[PuzzleBlocked] Nozes insuficientes! Tem: {currentNuts}, Precisa: {requiredNuts}");
         }
         else
@@ -78,9 +70,6 @@ public class PuzzleBlocked : MonoBehaviour
         hasBeenUnlocked = true;
 
         Debug.Log("[PuzzleBlocked] Desbloqueando parede!");
-
-        // Mostra mensagem de desbloqueio
-        ShowFeedbackMessage(unlockingMessage);
 
         // Toca a animação se tiver animator
         if (wallAnimator != null && !string.IsNullOrEmpty(disappearTrigger))
@@ -109,29 +98,27 @@ public class PuzzleBlocked : MonoBehaviour
         }
     }
 
-    private void ShowFeedbackMessage(string message)
+    private void ShowFeedbackPanel()
     {
-        if (feedbackText != null)
+        if (feedbackPanel != null)
         {
-            feedbackText.text = message;
-            feedbackText.gameObject.SetActive(true);
+            feedbackPanel.SetActive(true);
 
-            // Esconde a mensagem após um tempo
-            CancelInvoke(nameof(HideFeedbackMessage));
-            Invoke(nameof(HideFeedbackMessage), messageDuration);
+            // Esconde o painel após um tempo
+            CancelInvoke(nameof(HideFeedbackPanel));
+            Invoke(nameof(HideFeedbackPanel), messageDuration);
         }
         else
         {
-            // Se não tiver UI, mostra no console
-            Debug.Log($"[PuzzleBlocked] Mensagem: {message}");
+            Debug.LogWarning("[PuzzleBlocked] Painel de feedback não está configurado!");
         }
     }
 
-    private void HideFeedbackMessage()
+    private void HideFeedbackPanel()
     {
-        if (feedbackText != null)
+        if (feedbackPanel != null)
         {
-            feedbackText.gameObject.SetActive(false);
+            feedbackPanel.SetActive(false);
         }
     }
 }
