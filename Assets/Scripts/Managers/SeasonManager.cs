@@ -148,9 +148,6 @@ public class SeasonManager : BaseManager
 
     #region Season Intro Panel Methods
 
-    /// <summary>
-    /// Mostra o painel de introdução correspondente à estação atual
-    /// </summary>
     private void ShowSeasonIntroPanel()
     {
         GameObject panelToShow = null;
@@ -183,21 +180,16 @@ public class SeasonManager : BaseManager
         }
     }
 
-    /// <summary>
-    /// Corrotina que mostra o painel por alguns segundos e depois o esconde
-    /// </summary>
     private IEnumerator ShowIntroPanelCoroutine(GameObject panel)
     {
         // Ativa o painel
         panel.SetActive(true);
-        Debug.Log($"[SeasonManager] Mostrando painel de introdução da {currentSeason}");
 
         // Aguarda o tempo definido
         yield return new WaitForSeconds(introPanelDuration);
 
         // Desativa o painel
         panel.SetActive(false);
-        Debug.Log($"[SeasonManager] Painel de introdução da {currentSeason} escondido");
     }
 
     #endregion
