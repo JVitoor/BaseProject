@@ -65,9 +65,6 @@ public class InterfaceManager : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
         if (AudioManager.instance.musics != null && AudioManager.instance.musics.Length > 0)
         {
             AudioManager.instance.SwitchMusic(AudioManager.instance.musics[0]);
