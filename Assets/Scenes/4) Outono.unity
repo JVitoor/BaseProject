@@ -1437,6 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!65 &112550664
@@ -2170,6 +2171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!65 &178076109
@@ -3978,6 +3980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!65 &322131046
@@ -4215,8 +4218,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20226553, y: 0.0014745371, z: -0.00030454306, w: 0.9793296}
-  m_LocalPosition: {x: 56.702, y: 15.291319, z: -56.565243}
+  m_LocalRotation: {x: 0.20226565, y: 0.0014741145, z: -0.00030445596, w: 0.9793296}
+  m_LocalPosition: {x: -68.84599, y: 2.1761482, z: -88.97124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5133,6 +5136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!65 &390697627
@@ -6626,6 +6630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!65 &507647158
@@ -7641,6 +7646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!65 &625280810
@@ -10159,6 +10165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!65 &825958989
@@ -10734,6 +10741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!65 &870916965
@@ -14531,12 +14539,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   log: {fileID: 2126917036}
-  logAnimator: {fileID: 0}
-  animatorTriggerName: 
   logCamera: {fileID: 784673}
   playerCamera: {fileID: 330585545}
-  cameraAnimator: {fileID: 784674}
-  cameraAnimatorTriggerName: Camera
   displayDuration: 4
   activateOnStart: 0
   deactivateLogAfterDisplay: 0
@@ -14742,6 +14746,11 @@ MonoBehaviour:
   winterTimeLimitInSeconds: 300
   winterTimerText: {fileID: 0}
   gameOverPanel: {fileID: 0}
+  primaveraIntroPanel: {fileID: 0}
+  veraoIntroPanel: {fileID: 0}
+  outonoIntroPanel: {fileID: 0}
+  invernoIntroPanel: {fileID: 0}
+  introPanelDuration: 3
 --- !u!4 &1257996467 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5457386416949904793, guid: de11b7dc64e78364aaa70d52a0ffef43, type: 3}
@@ -16460,6 +16469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!65 &1423955477
@@ -19578,6 +19588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!65 &1708737177
@@ -19651,6 +19662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!135 &1711882548
@@ -20006,8 +20018,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753387293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20226552, y: 0.001474537, z: -0.00030454295, w: 0.9793296}
-  m_LocalPosition: {x: 56.702, y: 15.291319, z: -56.565243}
+  m_LocalRotation: {x: 0.20226562, y: 0.0014741144, z: -0.00030445599, w: 0.9793296}
+  m_LocalPosition: {x: -68.84599, y: 2.1761482, z: -88.97124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21616,6 +21628,7 @@ MonoBehaviour:
   nutsCounterText: {fileID: 4718254420950625579}
   currentLevel: 2
   levelSeasons: 00000000010000000200000003000000
+  checkpointList: []
 --- !u!4 &1929902470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4577196053815462400, guid: a94a9f091b85a154a9f28537eb1e168d, type: 3}
@@ -21666,6 +21679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec491d193a764c48b8eec7da7f07046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointID: Checkpoint1
   isActivated: 0
   resetWinterTimer: 0
 --- !u!65 &1932889130
@@ -34995,7 +35009,7 @@ Transform:
   m_GameObject: {fileID: 3783058112645561770}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 155.902, y: 13.16217, z: -9.094006}
+  m_LocalPosition: {x: 30.354, y: 0.047, z: -41.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
