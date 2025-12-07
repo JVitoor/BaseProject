@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class InputManagers : BaseManager
 {
-    [Header("Configuração do Mouse")]
+    [Header("ConfiguraÃ§Ã£o do Mouse")]
     [Tooltip("Tecla para alternar o lock do mouse")]
     public KeyCode toggleCursorKey;
     public KeyCode togglePauseKey;
@@ -18,13 +18,16 @@ public class InputManagers : BaseManager
     void Start()
     {
         if (lockOnStart)
+        {
             LockCursor();
+            Debug.Log("Cursor locked on start.");
+        }
         else
             UnlockCursor();
     }
 
     void Update()
-    {
+    {            
         if (Input.GetKeyDown(toggleCursorKey))
             ToggleCursor();
 
