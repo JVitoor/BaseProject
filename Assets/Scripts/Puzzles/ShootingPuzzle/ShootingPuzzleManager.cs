@@ -23,6 +23,9 @@ public class ShootingPuzzleManager : MonoBehaviour
     [Tooltip("Força do disparo")]
     public float shootForce = 30f;
 
+    [Tooltip("Tempo de cooldown entre disparos (em segundos)")]
+    public float shootCooldown = 0.5f;
+
     [Header("Target Settings")]
     [Tooltip("Número total de alvos que precisam ser acertados")]
     public int totalTargets = 5;
@@ -72,6 +75,9 @@ public class ShootingPuzzleManager : MonoBehaviour
 
     // Controle de input do player
     private bool playerMovementDisabled = false;
+
+    // Controle de cooldown
+    private float lastShootTime = 0f;
 
     private void Start()
     {
@@ -198,7 +204,12 @@ public class ShootingPuzzleManager : MonoBehaviour
         // Dispara com o botão esquerdo do mouse
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            // Verifica se o cooldown já passou
+            if (Time.time >= lastShootTime + shootCooldown)
+            {
+                Shoot();
+                lastShootTime = Time.time;
+            }
         }
     }
 
