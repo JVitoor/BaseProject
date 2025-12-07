@@ -25,6 +25,12 @@ public class SimpleBoatController : MonoBehaviour
     public KeyCode interactKey = KeyCode.E;
     [Tooltip("Painel UI que aparece quando o jogador se aproxima")]
     public GameObject interactionPanel;
+    [Tooltip("Painel UI mostrado quando não há nozes suficientes")]
+    public GameObject insufficientNutsPanel;
+
+    [Header("Requisitos")]
+    [Tooltip("Quantidade mínima de nozes necessárias para entrar no barco")]
+    public int requiredNuts = 0;
 
     // Estado
     public bool isOccupied = false;
@@ -62,10 +68,14 @@ public class SimpleBoatController : MonoBehaviour
             interactionTrigger.isTrigger = true;
         }
 
-        // Garante que o painel de interação começa desativado
+        // Garante que os painéis de interação começam desativados
         if (interactionPanel != null)
         {
             interactionPanel.SetActive(false);
+        }
+        if (insufficientNutsPanel != null)
+        {
+            insufficientNutsPanel.SetActive(false);
         }
     }
 
@@ -117,13 +127,80 @@ public class SimpleBoatController : MonoBehaviour
         {
             if (playerInRange && !isOccupied && currentPlayer != null)
             {
-                EnterBoat();
+                // Verifica requisito de nozes antes de permitir entrar
+                if (CanEnterBoat())
+                {
+                    EnterBoat();
+                }
+                else
+                {
+                    Debug.Log($"[SimpleBoatController] Jogador precisa de {requiredNuts} nozes para entrar no barco. Atual: {GetCurrentNuts()}");
+                    ShowInsufficientNutsUI();
+                }
             }
             else if (isOccupied && currentPlayer != null)
             {
                 ExitBoat();
             }
         }
+    }
+
+    private void ShowInsufficientNutsUI()
+    {
+        // Mostra painel de insuficiência e esconde o painel padrão
+        if (insufficientNutsPanel != null)
+        {
+            insufficientNutsPanel.SetActive(true);
+        }
+        if (interactionPanel != null)
+        {
+            interactionPanel.SetActive(false);
+        }
+    }
+
+    private void HideAllInteractionUI()
+    {
+        if (interactionPanel != null) interactionPanel.SetActive(false);
+        if (insufficientNutsPanel != null) insufficientNutsPanel.SetActive(false);
+    }
+
+    private void ShowAppropriatePanel()
+    {
+        // Decide qual painel mostrar quando o jogador entra no trigger
+        bool canEnter = CanEnterBoat();
+        if (!isOccupied)
+        {
+            if (canEnter)
+            {
+                if (interactionPanel != null) interactionPanel.SetActive(true);
+                if (insufficientNutsPanel != null) insufficientNutsPanel.SetActive(false);
+            }
+            else
+            {
+                if (insufficientNutsPanel != null) insufficientNutsPanel.SetActive(true);
+                if (interactionPanel != null) interactionPanel.SetActive(false);
+            }
+        }
+    }
+
+    private bool CanEnterBoat()
+    {
+        // Se não houver restrição, permite entrar
+        if (requiredNuts <= 0) return true;
+
+        // Usa GameManager para verificar quantidade de nozes coletadas
+        if (GameManager.Instance == null)
+        {
+            Debug.LogWarning("[SimpleBoatController] GameManager.Instance é null. Permitindo entrada por segurança.");
+            return true;
+        }
+
+        return GameManager.Instance.nutsCollected >= requiredNuts;
+    }
+
+    private int GetCurrentNuts()
+    {
+        return GameManager.Instance != null ? GameManager.Instance.nutsCollected : 0;
     }
 
     private void EnterBoat()
@@ -148,11 +225,8 @@ public class SimpleBoatController : MonoBehaviour
 
         isOccupied = true;
 
-        // Desativa o painel quando entrar no barco
-        if (interactionPanel != null)
-        {
-            interactionPanel.SetActive(false);
-        }
+        // Desativa todos os painéis quando entrar no barco
+        HideAllInteractionUI();
     }
 
     public void ExitBoat()
@@ -168,10 +242,14 @@ public class SimpleBoatController : MonoBehaviour
 
         isOccupied = false;
 
-        // Reativa o painel se o jogador ainda estiver próximo
-        if (playerInRange && interactionPanel != null)
+        // Mostra o painel apropriado se o jogador ainda estiver próximo
+        if (playerInRange)
         {
-            interactionPanel.SetActive(true);
+            ShowAppropriatePanel();
+        }
+        else
+        {
+            HideAllInteractionUI();
         }
 
         // limpa referência ao jogador
@@ -193,8 +271,7 @@ public class SimpleBoatController : MonoBehaviour
             currentPlayer = null;
             isOccupied = false;
 
-            if (interactionPanel != null)
-                interactionPanel.SetActive(false);
+            HideAllInteractionUI();
         }
     }
 
@@ -214,6 +291,8 @@ public class SimpleBoatController : MonoBehaviour
         // Reinicializa estado
         isOccupied = false;
         currentPlayer = null;
+
+        HideAllInteractionUI();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -225,11 +304,8 @@ public class SimpleBoatController : MonoBehaviour
         playerInRange = true;
         currentPlayer = other.gameObject;
 
-        // Ativa o painel de interação apenas se o barco não estiver ocupado
-        if (!isOccupied && interactionPanel != null)
-        {
-            interactionPanel.SetActive(true);
-        }
+        // Mostra o painel correto dependendo da quantidade de nozes
+        ShowAppropriatePanel();
     }
 
     private void OnTriggerExit(Collider other)
@@ -246,11 +322,8 @@ public class SimpleBoatController : MonoBehaviour
             currentPlayer = null;
         }
 
-        // Desativa o painel quando o jogador sair do alcance do trigger
-        if (interactionPanel != null)
-        {
-            interactionPanel.SetActive(false);
-        }
+        // Desativa todos os painéis quando o jogador sair do alcance do trigger
+        HideAllInteractionUI();
     }
 
     // Visualização da área no editor
