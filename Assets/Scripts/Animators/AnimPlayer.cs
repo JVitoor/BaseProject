@@ -19,6 +19,8 @@ public class AnimPlayer : MonoBehaviour
     public string doubleJumpTrigger = "DoubleJump";
     public string isGroundedParam = "IsGrounded";
     public string velocityYParam = "VelocityY";
+    // Glider press state parameter (true when glider input is pressed/active, false otherwise)
+    public string gliderPressedParam = "GliderPressed";
     #endregion
 
     #region Idle Settings
@@ -225,6 +227,16 @@ public class AnimPlayer : MonoBehaviour
         // Usa o raycast para definir o parâmetro IsGrounded
         animator.SetBool(isGroundedParam, isGroundedByRaycast);
         animator.SetFloat(velocityYParam, player.verticalVelocity);
+
+        // Atualiza o estado do glider (true quando o input/glide está ativo)
+        animator.SetBool(gliderPressedParam, IsGliderPressed());
+    }
+
+    private bool IsGliderPressed()
+    {
+        // Como o campo isGliding é privado em Player, usamos o estado do objeto planador como proxy.
+        // Se o planador está ativo, consideramos que o glide está sendo pressionado/ativo.
+        return player != null && player.planador != null && player.planador.activeSelf;
     }
 
     #endregion
