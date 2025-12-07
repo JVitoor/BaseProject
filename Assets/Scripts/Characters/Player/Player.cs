@@ -60,7 +60,6 @@ public class Player : MonoBehaviour
     private Transform currentLog; // Referência ao tronco atual
     private Vector3 lastLogPosition; // Última posição do tronco
     private Quaternion lastLogRotation; // Última rotação do tronco
-    private bool isOnMovingPlatform = false; // Flag para saber se está em plataforma móvel
 
     #endregion Movement Properties
 
@@ -152,8 +151,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("[Player] Start() chamado!");
-
         // Inicializa CharacterController
         controller = GetComponent<CharacterController>();
         if (controller == null)
@@ -213,6 +210,8 @@ public class Player : MonoBehaviour
     {
         HandlePlayerMovement();
         HandlePlayerJump();
+
+
     }
 
     #endregion Unity Methods
@@ -475,35 +474,23 @@ public class Player : MonoBehaviour
                 Vector3 logMovement = currentLog.position - lastLogPosition;
                 Quaternion logRotation = currentLog.rotation * Quaternion.Inverse(lastLogRotation);
 
-                // Aplica o movimento do tronco ao player APENAS se houver movimento significativo
-                // Isso evita micromovimentos que causam travadas
-                if (logMovement.magnitude > 0.0001f)
-                {
-                    controller.Move(logMovement);
-                }
+                // Aplica o movimento do tronco ao player
+                controller.Move(logMovement);
 
-                // Rotaciona o player junto com o tronco APENAS se houver rotação significativa
-                if (Quaternion.Angle(Quaternion.identity, logRotation) > 0.01f)
-                {
-                    Vector3 playerPosRelativeToLog = transform.position - currentLog.position;
-                    Vector3 newPlayerPos = currentLog.position + (logRotation * playerPosRelativeToLog);
-                    Vector3 rotationMovement = newPlayerPos - transform.position;
-
-                    if (rotationMovement.magnitude > 0.0001f)
-                    {
-                        controller.Move(rotationMovement);
-                    }
-                }
+                // Rotaciona o player junto com o tronco
+                Vector3 playerPosRelativeToLog = transform.position - currentLog.position;
+                Vector3 newPlayerPos = currentLog.position + (logRotation * playerPosRelativeToLog);
+                Vector3 rotationMovement = newPlayerPos - transform.position;
+                controller.Move(rotationMovement);
 
                 // Aplica o movimento do próprio player (input)
-                if (move.magnitude > 0.0001f)
-                {
-                    controller.Move(move * Time.deltaTime);
-                }
+                controller.Move(move * Time.deltaTime);
 
-                // ATUALIZA a posição do tronco AQUI, no final do movimento
+                // Atualiza a posição e rotação do tronco para o próximo frame
                 lastLogPosition = currentLog.position;
                 lastLogRotation = currentLog.rotation;
+
+                Debug.Log($"[Player] Movendo com pai: {currentLog.name} - LogMovement: {logMovement}");
             }
             else
             {
@@ -691,10 +678,24 @@ public class Player : MonoBehaviour
 
         // Reseta a rotação para evitar que o player respawne inclinado
         transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+
+        // Se o jogador estava em um barco, reseta o barco para sua posição inicial
+        // Procura por SimpleBoatController que tenha este jogador como currentPlayer
+        var boats = FindObjectsOfType<SimpleBoatController>();
+        foreach (var boat in boats)
+        {
+            if (boat != null && boat.currentPlayer == this.gameObject)
+            {
+                Debug.Log($"[Player] Player estava no barco '{boat.name}' no momento da morte. Resetando barco.");
+                boat.ResetToInitialPosition();
+            }
+        }
     }
+
     #endregion Movement Methods
 
     #region Collider Methods
+
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -712,10 +713,10 @@ public class Player : MonoBehaviour
             petalController.OnPlayerEnter();
         }
 
-        FallingLeaf fallingLeaf = hit.gameObject.GetComponent<FallingLeaf>();
-        if (fallingLeaf != null)
+        // Detecta colisão com troncos (logs)
+        if (hit.gameObject.CompareTag("Log"))
         {
-            fallingLeaf.AtivarQueda();
+            AttachToLog(hit.gameObject);
         }
 
         LogMovement logMovement = hit.gameObject.GetComponent<LogMovement>();
@@ -742,7 +743,6 @@ public class Player : MonoBehaviour
         currentLog = log.transform;
         lastLogPosition = currentLog.position;
         lastLogRotation = currentLog.rotation;
-        isOnMovingPlatform = true;
 
         Debug.Log($"[Player] Anexado ao tronco: {log.name}");
     }
@@ -755,8 +755,6 @@ public class Player : MonoBehaviour
             Debug.Log($"[Player] Desanexado de: {currentLog.name}");
             currentLog = null;
         }
-
-        isOnMovingPlatform = false;
 
         // Remove parent se existir (segurança)
         if (transform.parent != null)

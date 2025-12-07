@@ -1,7 +1,14 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+[System.Serializable]
+public class CheckpointEntry
+{
+    public string id;
+    public Checkpoint checkpoint;
+}
 
 public class GameManager : BaseManager
 {
@@ -11,7 +18,7 @@ public class GameManager : BaseManager
     public VeraoQuente veraoQuente;
     [Header("Collectibles")]
     public int nutsCollected = 0;
-    public TextMeshProUGUI nutsCounterText; // Refer�ncia para o texto UI
+    public TextMeshProUGUI nutsCounterText; // Referência para o texto UI
 
     [Header("Level Management")]
     public int currentLevel = 1;
@@ -25,12 +32,18 @@ public class GameManager : BaseManager
         Season.Outono,      // Level 3
         Season.Inverno     // Level 4
     };
-    
+
     [Header("Player Respawn")]
     private Player player;
     private Vector3 initialSpawnPoint;
     public Vector3 lastCheckpointPosition { get; private set; }
-        
+
+    [Header("Checkpoint System")]
+    [Tooltip("Arraste os checkpoints aqui e configure seus IDs")]
+    public List<CheckpointEntry> checkpointList = new List<CheckpointEntry>();
+
+    private Dictionary<string, Checkpoint> checkpoints = new Dictionary<string, Checkpoint>();
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -38,9 +51,9 @@ public class GameManager : BaseManager
             Destroy(gameObject);
             return;
         }
-        
+
         Instance = this;
-        
+
         // Tenta encontrar o texto do contador se não foi atribuído
         if (nutsCounterText == null)
         {
@@ -60,17 +73,36 @@ public class GameManager : BaseManager
             Debug.LogError("[GameManager] Player não encontrado na cena!");
         }
 
-        /*veraoQuente = FindObjectOfType<VeraoQuente>();
-        if (veraoQuente == null)
-        {
-            Debug.LogWarning("[GameManager] Script VeraoQuente não encontrado na cena.");
-        }*/
+        // Converte a lista de checkpoints para o dicionário
+        InitializeCheckpoints();
     }
-    
+
     private void Start()
     {
         UpdateNutsUI();
         UpdateSeasonForCurrentLevel();
+    }
+
+    private void InitializeCheckpoints()
+    {
+        checkpoints.Clear();
+
+        foreach (var entry in checkpointList)
+        {
+            if (entry.checkpoint != null && !string.IsNullOrEmpty(entry.id))
+            {
+                if (checkpoints.ContainsKey(entry.id))
+                {
+                    Debug.LogWarning($"[GameManager] Checkpoint com ID '{entry.id}' duplicado! Ignorando...");
+                }
+                else
+                {
+                    checkpoints.Add(entry.id, entry.checkpoint);
+                }
+            }
+        }
+
+        Debug.Log($"[GameManager] {checkpoints.Count} checkpoint(s) registrado(s)");
     }
 
     private void UpdateSeasonForCurrentLevel()
@@ -85,14 +117,14 @@ public class GameManager : BaseManager
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
     }
-    
+
     public void AddNut()
     {
         nutsCollected++;
         UpdateNutsUI();
         Debug.Log($"Noz coletada! Total: {nutsCollected}");
     }
-    
+
     private void UpdateNutsUI()
     {
         if (nutsCounterText != null)
@@ -101,29 +133,29 @@ public class GameManager : BaseManager
         }
         else
         {
-            Debug.LogWarning("[GameManager] Texto do contador de nozes n�o encontrado!");
+            Debug.LogWarning("[GameManager] Texto do contador de nozes não encontrado!");
         }
     }
-    
+
     #region Level Loading Methods
-    
+
     public void LoadLevel(int levelIndex)
     {
         Debug.Log($"[GameManager] Carregando fase {levelIndex}...");
         currentLevel = levelIndex;
-        
+
         Time.timeScale = 1f;
-        
+
         SceneManager.LoadScene(levelIndex);
     }
-    
+
     public void LoadNextLevel()
     {
         int nextLevel = currentLevel + 1;
-        Debug.Log($"[GameManager] Carregando pr�xima fase: {nextLevel}");
+        Debug.Log($"[GameManager] Carregando próxima fase: {nextLevel}");
         LoadLevel(nextLevel);
     }
-    
+
     public void RestartCurrentLevel()
     {
         Debug.Log($"[GameManager] Reiniciando fase atual: {currentLevel}");
@@ -137,16 +169,16 @@ public class GameManager : BaseManager
         // Garante que o tempo esteja normal
         Time.timeScale = 1f;
 
-        // Carrega a cena do menu principal (assumindo que seja o �ndice 0)
+        // Carrega a cena do menu principal (assumindo que seja o índice 0)
         SceneManager.LoadScene(0);
     }
-    
+
     public void SetCheckpoint(Vector3 newPosition)
     {
         Debug.Log($"[GameManager] Novo checkpoint definido em: {newPosition}");
         // Armazena a posição do checkpoint, elevando-a ligeiramente
         // para evitar que o player caia através do chão ao respawnar.
-        lastCheckpointPosition = newPosition + Vector3.up * 2f; 
+        lastCheckpointPosition = newPosition + Vector3.up * 2f;
     }
 
     public void RespawnPlayer()
@@ -167,6 +199,27 @@ public class GameManager : BaseManager
             // Como último recurso, recarrega a cena
             RestartCurrentLevel();
         }
+    }
+
+    public void TeleportToCheckpoint(string checkpointID)
+    {
+        if (player == null)
+        {
+            Debug.LogError("[GameManager] Player não encontrado!");
+            return;
+        }
+
+        if (!checkpoints.ContainsKey(checkpointID))
+        {
+            Debug.LogError($"[GameManager] Checkpoint '{checkpointID}' não encontrado!");
+            return;
+        }
+
+        Checkpoint targetCheckpoint = checkpoints[checkpointID];
+        Vector3 teleportPosition = targetCheckpoint.GetTeleportPosition();
+
+        Debug.Log($"[GameManager] Teleportando para '{checkpointID}'");
+        player.Respawn(teleportPosition);
     }
 
     #endregion Level Loading Methods

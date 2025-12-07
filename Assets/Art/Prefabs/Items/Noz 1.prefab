@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1027542480254324567}
   - component: {fileID: 403440982187206935}
   - component: {fileID: 3652136797269294136}
+  - component: {fileID: 3949075260333468384}
   m_Layer: 0
   m_Name: Noz 1
   m_TagString: Nut
@@ -28,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6173818046013998435}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -2.22, y: 0.93, z: -3.57}
-  m_LocalScale: {x: 149.56442, y: 149.56442, z: 149.56442}
+  m_LocalScale: {x: 149.56442, y: 149.5644, z: 149.5644}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &2653663892680443940
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -108,8 +109,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0018096134, y: 0.0019079316, z: 0.002644238}
-  m_Center: {x: 0.000024228715, y: -0.000011976469, z: -0.00016828599}
+  m_Size: {x: 0.004037158, y: 0.0040264577, z: 0.0045496137}
+  m_Center: {x: 0.000023141747, y: -0.00012034116, z: -0.00021847391}
 --- !u!114 &3652136797269294136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,3 +124,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
+--- !u!114 &3949075260333468384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6173818046013998435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4c08e6deff97e449ce3c167200c2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 90
+  velocidadeRotacao: 90
+  amplitude: 0.25
+  velocidadeFlutuacao: 2

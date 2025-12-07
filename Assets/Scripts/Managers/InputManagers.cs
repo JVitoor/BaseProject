@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class InputManagers : BaseManager
 {
-    [Header("Configuração do Mouse")]
+    [Header("ConfiguraÃ§Ã£o do Mouse")]
     [Tooltip("Tecla para alternar o lock do mouse")]
     public KeyCode toggleCursorKey;
     public KeyCode togglePauseKey;
@@ -27,9 +27,12 @@ public class InputManagers : BaseManager
     }
 
     void Update()
-    {
-        if (Input.GetKeyDown(togglePauseKey))
-            TogglePausePanel();
+    {            
+        if (Input.GetKeyDown(toggleCursorKey))
+            ToggleCursor();
+
+        if (Input.GetKeyDown(togglePauseKey) && Time.timeScale == 1)
+            ActivePausePanel();
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
             ChangeScene(1);
@@ -65,11 +68,11 @@ public class InputManagers : BaseManager
         else LockCursor();
     }
 
-    public void TogglePausePanel()
+    public void ActivePausePanel()
     {
-        Time.timeScale = pausePanel.activeSelf ? 1f : 0f;
-        pausePanel.SetActive(!pausePanel.activeSelf);
-        ToggleCursor();
+        Time.timeScale = 0f;
+        pausePanel.SetActive(true);
+        UnlockCursor();
     }
 
     public void ChangeScene(int level)
