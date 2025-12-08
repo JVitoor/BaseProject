@@ -53,6 +53,10 @@ public class SeasonManager : BaseManager
     [Tooltip("Tempo em segundos que o painel de introdução fica visível")]
     public float introPanelDuration = 3f;
 
+    [Header("Referências de Managers")]
+    [Tooltip("Referência para o InputManager (para desbloquear cursor no Game Over)")]
+    public InputManagers inputManager;
+
     #endregion
 
     #region Unity Methods
@@ -73,6 +77,17 @@ public class SeasonManager : BaseManager
 
     private void Start()
     {
+        // Tenta encontrar o InputManager se não estiver atribuído
+        if (inputManager == null)
+        {
+            inputManager = FindObjectOfType<InputManagers>();
+        }
+
+        if (inputManager == null)
+        {
+            Debug.LogWarning("[SeasonManager] InputManager não encontrado na cena!");
+        }
+
         // Mostra o painel de introdução da estação atual
         ShowSeasonIntroPanel();
 
@@ -276,6 +291,17 @@ public class SeasonManager : BaseManager
         // Pausa o jogo
         Time.timeScale = 0f;
 
+        // Desbloqueia o cursor para permitir interação com a UI
+        if (inputManager != null)
+        {
+            inputManager.UnlockCursor();
+            Debug.Log("[SeasonManager] Cursor desbloqueado para interação com Game Over!");
+        }
+        else
+        {
+            Debug.LogWarning("[SeasonManager] InputManager não está disponível para desbloquear cursor!");
+        }
+
         // Exibe o painel de Game Over
         if (gameOverPanel != null)
         {
@@ -290,9 +316,6 @@ public class SeasonManager : BaseManager
         OnGameOver();
     }
 
-    /// <summary>
-    /// Reinicia o timer do Inverno (útil para quando o jogador respawna em um checkpoint)
-    /// </summary>
     public void ResetWinterTimer()
     {
         if (currentSeason == Season.Inverno)
@@ -304,9 +327,6 @@ public class SeasonManager : BaseManager
         }
     }
 
-    /// <summary>
-    /// Para o timer do Inverno (útil para quando o nível é concluído)
-    /// </summary>
     public void StopWinterTimer()
     {
         winterTimerActive = false;
