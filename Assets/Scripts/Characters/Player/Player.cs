@@ -787,7 +787,7 @@ public class Player : MonoBehaviour
         GameObject vfxObject = Instantiate(smokeVFXPrefab, transform);
 
         // Define a posição LOCAL do efeito (relativa ao player)
-        vfxObject.transform.localPosition = new Vector3(0f, -0.5f, 0f);
+        vfxObject.transform.localPosition = new Vector3(0f, -0.25f, 0f);
         vfxObject.transform.localRotation = Quaternion.identity;
         vfxObject.transform.localScale = Vector3.one;
 
