@@ -12,6 +12,7 @@ public class PuzzleBlocked : MonoBehaviour
 
     [Tooltip("Animator da parede para tocar a animação de desaparecer")]
     public Animator wallAnimator;
+    public Animator wallAnimator2;
 
     [Tooltip("Nome do trigger da animação de desaparecer")]
     public string disappearTrigger = "Disappear";
@@ -75,6 +76,11 @@ public class PuzzleBlocked : MonoBehaviour
         if (wallAnimator != null && !string.IsNullOrEmpty(disappearTrigger))
         {
             wallAnimator.SetTrigger(disappearTrigger);
+        }
+        
+        if (wallAnimator2 != null && !string.IsNullOrEmpty(disappearTrigger))
+        {
+            wallAnimator2.SetTrigger(disappearTrigger);
         }
 
         // Desativa a parede após a duração da animação

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.VFX;
 
 public class VeraoQuente : MonoBehaviour
 {
@@ -9,19 +8,14 @@ public class VeraoQuente : MonoBehaviour
     public float taxaDeDano = 15f;
     public float taxaDeRecuperacao = 8f;
 
-    [Header("Efeitos Visuais e Sonoros")]
-    [Tooltip("Prefab com Visual Effect de fumaça (GameObject contendo componente VisualEffect)")]
-    public GameObject smokeVFXPrefab;
-
+    [Header("Efeitos Sonoros")]
     [Tooltip("Som que toca quando o player entra no chão quente")]
     public AudioClip hotFloorSizzleSound;
 
-    private VisualEffect currentVFX;
-
-    // --- MUDANÇAS AQUI ---
-    // A referência ao slider agora é privada.
-    // Ela será obtida do InterfaceManager.
     private Slider sliderTemperatura;
+
+    // Referência ao Player para chamar SpawnSmokeEffect/RemoveSmokeEffect
+    private Player playerReference;
     // --------------------
 
     private float temperaturaAtual;
@@ -96,8 +90,18 @@ public class VeraoQuente : MonoBehaviour
             playerEstaNoChaoQuente = true;
             GameManager.Instance.veraoQuente = this;
 
-            // Spawna o efeito de fumaça no pé do player
-            SpawnSmokeEffect(other.transform);
+            // Obtém referência ao componente Player
+            playerReference = other.GetComponent<Player>();
+
+            if (playerReference != null)
+            {
+                // Chama o método do Player para spawnar o efeito de fumaça
+                playerReference.SpawnSmokeEffect();
+            }
+            else
+            {
+                Debug.LogWarning("[VeraoQuente] Componente Player não encontrado no GameObject do player!");
+            }
 
             // Toca o som de chão quente
             PlayHotFloorSound();
@@ -110,54 +114,12 @@ public class VeraoQuente : MonoBehaviour
         {
             playerEstaNoChaoQuente = false;
 
-            // Remove o efeito de fumaça quando o player sai do chão quente
-            RemoveSmokeEffect();
-        }
-    }
-
-    private void SpawnSmokeEffect(Transform playerTransform)
-    {
-
-        // Remove efeito anterior se existir
-        RemoveSmokeEffect();
-
-        // Instancia o GameObject com Visual Effect
-        GameObject vfxObject = Instantiate(smokeVFXPrefab, playerTransform);
-
-        // Define a posição LOCAL do efeito (relativa ao player)
-        vfxObject.transform.localPosition = new Vector3(0f, -8f, 0f);
-        vfxObject.transform.localRotation = Quaternion.identity;
-        vfxObject.transform.localScale = Vector3.one;
-
-        // Obtém o componente Visual Effect
-        currentVFX = vfxObject.GetComponent<VisualEffect>();
-
-        if (currentVFX != null)
-        {
-            // Inicia o Visual Effect
-            currentVFX.Play();
-            Debug.Log("[VeraoQuente] Visual Effect iniciado!");
-        }
-        else
-        {
-            Debug.LogError("[VeraoQuente] O prefab não contém um componente VisualEffect!");
-            Destroy(vfxObject);
-        }
-    }
-
-    private void RemoveSmokeEffect()
-    {
-        if (currentVFX != null)
-        {
-            // Para o Visual Effect
-            currentVFX.Stop();
-            Debug.Log("[VeraoQuente] Visual Effect parado!");
-
-            // Destrói o efeito após as partículas existentes desaparecerem
-            Destroy(currentVFX.gameObject, 2f);
-            currentVFX = null;
-
-            Debug.Log("[VeraoQuente] Efeito de fumaça removido!");
+            // Chama o método do Player para remover o efeito de fumaça
+            if (playerReference != null)
+            {
+                playerReference.RemoveSmokeEffect();
+                playerReference = null;
+            }
         }
     }
 
