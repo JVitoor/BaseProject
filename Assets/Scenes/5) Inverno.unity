@@ -2245,7 +2245,6 @@ GameObject:
   - component: {fileID: 154664736}
   - component: {fileID: 154664735}
   - component: {fileID: 154664734}
-  - component: {fileID: 154664737}
   m_Layer: 5
   m_Name: Restart(Button)
   m_TagString: Untagged
@@ -2367,23 +2366,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154664732}
   m_CullTransparentMesh: 1
---- !u!114 &154664737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154664732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efe16bb789b39047b11f0f5106ee902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalScale: {x: 1, y: 1, z: 1}
-  hoverScale: {x: 1.15, y: 1.15, z: 1}
-  speed: 10
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &178376834
 GameObject:
   m_ObjectHideFlags: 0
@@ -3789,7 +3771,6 @@ GameObject:
   - component: {fileID: 268829389}
   - component: {fileID: 268829388}
   - component: {fileID: 268829387}
-  - component: {fileID: 268829390}
   m_Layer: 5
   m_Name: 'Continue (Button) '
   m_TagString: Untagged
@@ -3923,23 +3904,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268829385}
   m_CullTransparentMesh: 1
---- !u!114 &268829390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268829385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efe16bb789b39047b11f0f5106ee902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalScale: {x: 1, y: 1, z: 1}
-  hoverScale: {x: 1.15, y: 1.15, z: 1}
-  speed: 10
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &271762059
 GameObject:
   m_ObjectHideFlags: 0
@@ -21201,7 +21165,6 @@ GameObject:
   - component: {fileID: 1609070729}
   - component: {fileID: 1609070728}
   - component: {fileID: 1609070727}
-  - component: {fileID: 1609070730}
   m_Layer: 5
   m_Name: Options (Button)
   m_TagString: Untagged
@@ -21335,23 +21298,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609070725}
   m_CullTransparentMesh: 1
---- !u!114 &1609070730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609070725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efe16bb789b39047b11f0f5106ee902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalScale: {x: 1, y: 1, z: 1}
-  hoverScale: {x: 1.15, y: 1.15, z: 1}
-  speed: 10
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1609682710
 GameObject:
   m_ObjectHideFlags: 0
@@ -23475,7 +23421,6 @@ GameObject:
   - component: {fileID: 1735210954}
   - component: {fileID: 1735210953}
   - component: {fileID: 1735210952}
-  - component: {fileID: 1735210955}
   m_Layer: 5
   m_Name: Exit (Button)
   m_TagString: Untagged
@@ -23610,23 +23555,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735210950}
   m_CullTransparentMesh: 1
---- !u!114 &1735210955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735210950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efe16bb789b39047b11f0f5106ee902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalScale: {x: 1, y: 1, z: 1}
-  hoverScale: {x: 1.15, y: 1.15, z: 1}
-  speed: 10
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1744576114
 GameObject:
   m_ObjectHideFlags: 0
@@ -25249,7 +25177,6 @@ GameObject:
   - component: {fileID: 1839993916}
   - component: {fileID: 1839993915}
   - component: {fileID: 1839993914}
-  - component: {fileID: 1839993917}
   m_Layer: 5
   m_Name: Controls (Button)
   m_TagString: Untagged
@@ -25383,23 +25310,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839993912}
   m_CullTransparentMesh: 1
---- !u!114 &1839993917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839993912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efe16bb789b39047b11f0f5106ee902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalScale: {x: 1, y: 1, z: 1}
-  hoverScale: {x: 1.15, y: 1.15, z: 1}
-  speed: 10
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1847116440
 GameObject:
   m_ObjectHideFlags: 0
@@ -27638,7 +27548,6 @@ GameObject:
   - component: {fileID: 1986495849}
   - component: {fileID: 1986495848}
   - component: {fileID: 1986495847}
-  - component: {fileID: 1986495850}
   m_Layer: 5
   m_Name: Cheats (Button)
   m_TagString: Untagged
@@ -27772,23 +27681,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986495845}
   m_CullTransparentMesh: 1
---- !u!114 &1986495850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986495845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efe16bb789b39047b11f0f5106ee902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalScale: {x: 1, y: 1, z: 1}
-  hoverScale: {x: 1.15, y: 1.15, z: 1}
-  speed: 10
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1986593234
 GameObject:
   m_ObjectHideFlags: 0
