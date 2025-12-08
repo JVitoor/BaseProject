@@ -735,6 +735,12 @@ public class Player : MonoBehaviour
                 AttachToLog(hit.gameObject);
             }
         }
+
+        FallingLeaf fallingLeaf = hit.gameObject.GetComponent<FallingLeaf>();
+        if (fallingLeaf != null)
+        {
+            fallingLeaf.AtivarQueda();
+        }
     }
 
     private void AttachToLog(GameObject log)
