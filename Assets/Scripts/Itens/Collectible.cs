@@ -1,9 +1,12 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
     [Header("Collectible Settings")]
     public int count = 0;
+
+    public AudioClip clip;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +26,13 @@ public class Collectible : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.AddNut();
+
+            AudioManager audioManager = AudioManager.GetInstance();
+
+            if (audioManager != null)
+            {
+                audioManager.PlaySFX(clip);
+            }
         }
         else
         {
